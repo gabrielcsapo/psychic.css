@@ -1,0 +1,23 @@
+| table(class="table responsive border-#{val}")
+br
+table(class="table responsive")
+    thead
+        tr
+            th First Name
+            th Last Name
+    tbody
+        tr
+            th John
+            th Doe
+br
+each val in ['default', 'primary', 'success', 'info', 'warning', 'danger']
+    table(class="table responsive border-#{val}")
+        thead
+            tr
+                th First Name
+                th Last Name
+        tbody
+            tr
+                th John
+                th Doe
+    br

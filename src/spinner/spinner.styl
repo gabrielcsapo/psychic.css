@@ -1,0 +1,64 @@
+.spinner-overlay
+    position: relative
+    top: 0
+    left: 0
+    width: 100%
+    height: auto
+    background-color: #fff
+    opacity: 0.75
+    z-index: 3
+
+    .spinner-wrapper
+        position: relative
+        top: calc(50% - 50px)
+
+    .spinner-message
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 100%;
+        margin-top: 30px;
+        text-align: center;
+        font-weight: 400;
+        z-index: 100;
+        outline: none;
+
+    .spinner
+        height: 30px
+        width: 30px
+        margin: 0 auto;
+        opacity: 1
+        background-color: rgba(255, 255, 255, 0.701961);
+        -webkit-animation: rotation .7s infinite linear;
+        -moz-animation: rotation .7s infinite linear;
+        -o-animation: rotation .7s infinite linear;
+        animation: rotation .7s infinite linear;
+        border-left: 8px solid rgba(0, 0, 0, .20);
+        border-right: 8px solid rgba(0, 0, 0, .20);
+        border-bottom: 8px solid rgba(0, 0, 0, .20);
+        border-top: 8px solid rgba(33, 128, 192, 1);
+        border-radius: 100%;
+
+        for $brand in $brands
+            &.{$brand}
+              border-top: 8px solid $brands[$brand]
+
+            &.{$brand}.done
+              border-left: 8px solid $brands[$brand]
+              border-right: 8px solid $brands[$brand]
+              border-bottom: 8px solid $brands[$brand]
+              border-top: 8px solid $brands[$brand]
+
+            &.{$brand}.done:after
+              border-right: 8px solid $brands[$brand]
+              border-bottom: 8px solid $brands[$brand]
+
+    @keyframes rotation {
+        from {
+            transform: rotate(0deg)
+        }
+        to {
+            transform: rotate(359deg)
+        }
+    }

@@ -1,0 +1,24 @@
+{
+  "name": "psychic-ui",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielcsapo/psychic-ui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielcsapo/psychic-ui/issues"
+  },
+  "homepage": "https://github.com/gabrielcsapo/psychic-ui#readme",
+  "devDependencies": {
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-pug": "0.0.0",
+    "grunt-contrib-stylus": "^1.2.0"
+  }
+}

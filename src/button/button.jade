@@ -1,0 +1,17 @@
+| button(class="btn btn-{val}") {val}
+br
+each val in ['default', 'primary', 'success', 'info', 'warning', 'danger']
+    button(class="btn btn-#{val}") #{val}
+br
+
+| button(class="btn border-{val}") {val}
+br
+each val in ['default', 'primary', 'success', 'info', 'warning', 'danger']
+    button(class="btn border-#{val}") #{val}
+br
+
+| button(class="btn border-{val} border-radius-5") {val}
+br
+each val in ['default', 'primary', 'success', 'info', 'warning', 'danger']
+    button(class="btn border-#{val} border-radius-5") #{val}
+br

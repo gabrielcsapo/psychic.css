@@ -1,0 +1,11 @@
+| div(class="navbar navbar-#{val}")
+|    div(class="container")
+|        div(class="navbar-title")
+|            span navbar title
+br        
+each val in ['default', 'primary', 'success', 'info', 'warning', 'danger']
+    div(class="navbar navbar-#{val}")
+        div(class="container")
+            div(class="navbar-title")
+                span navbar title
+    br

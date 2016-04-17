@@ -1,0 +1,32 @@
+.btn
+    padding: 12px 18px
+    margin: 10px
+    cursor: pointer
+    display: inline-block
+    text-align: center
+    background-color: white
+    border: 1px solid $brands['default']
+    color: #ffffff
+
+    &:hover
+        opacity: .95
+
+    &:focus
+        outline: none
+
+    for radius in range(0, 100)
+        &.border-radius-{radius}
+            border-radius: radius
+
+    for key, value in $brands
+        &.border-{key}
+            border: 1px solid value
+            color: value
+
+            &:hover
+                color: white
+                opacity: .95
+                background-color: value
+
+        &.btn-{key}
+            background-color: value

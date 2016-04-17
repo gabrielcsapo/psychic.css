@@ -1,0 +1,19 @@
+style.
+    .spinner-overlay {
+        height:100px;
+        display:inline-block;
+        width:auto;
+    }
+    .spinner {
+        height:50px;
+        width:50px;
+    }
+
+| div(class="spinner-overlay")
+|    div(class="spinner #{val}")
+br
+div(style="width:100%;text-align:center;")
+
+    each val in ['default', 'primary', 'success', 'info', 'warning', 'danger']
+        div(class="spinner-overlay")
+            div(class="spinner #{val}")
