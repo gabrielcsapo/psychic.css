@@ -6,8 +6,11 @@ module.exports = function(grunt) {
     grunt.initConfig({
         stylus: {
             compile: {
+                options: {
+                    'include css': true
+                },
                 files: {
-                    'psychic.css': 'psychic.styl',
+                    'psychic.css': 'src/psychic.styl',
                 }
             }
         },
@@ -31,7 +34,7 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    'index.html': 'src/index.pug'
+                    'examples/index.html': 'examples/index.pug'
                 }
             }
         }

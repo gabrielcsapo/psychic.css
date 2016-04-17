@@ -1,0 +1,113 @@
+.popover-container
+    display: inline-block
+    position: relative
+
+    &:hover .popover
+        display: block
+
+    &:hover .popover.right
+        display: inline-block
+
+    &:hover .popover.left
+        display: inline-block
+
+  .popover
+    position: absolute
+    font-size: 12px
+    display: none
+    padding: 7px 10px
+    color: #fff
+    background-color: rgba(0,0,0,0.85)
+    border-radius: $popover['border-radius']
+
+    &.top
+        bottom: 10px
+        width: 200px
+        z-index: 4
+        left: 50%
+        margin-right: -50%
+        transform: translate(-50%, -50%)
+
+        &:before
+            border-top: 7px solid rgba(0,0,0,0.85)
+            border-right: 7px solid transparent
+            border-left: 7px solid transparent
+            bottom: -7px
+            content: ''
+            display: block
+            left: 50%
+            margin-left: -7px
+            position: absolute
+
+    &.bottom
+        bottom: -50px
+        width: 200px
+        z-index: 4
+        left: 50%
+        margin-right: -50%
+        transform: translate(-50%, -50%)
+
+        &:before
+            border-bottom: 7px solid rgba(0,0,0,0.85)
+            border-right: 7px solid transparent
+            border-left: 7px solid transparent
+            top: -7px
+            content: ''
+            display: block
+            left: 50%
+            margin-left: -7px
+            position: absolute
+
+    &.right
+        margin-left: 10px
+        margin-top: -10px
+
+        &:before
+            border-right: 7px solid rgba(0,0,0,0.85)
+            border-top: 7px solid transparent
+            border-bottom: 7px solid transparent
+            content: ''
+            display: inline-block
+            left: -7px
+            margin-top: 7px
+            position: absolute
+
+    &.left
+        margin-top: -10px
+        right: 115%
+
+        &:before
+            border-left: 7px solid rgba(0,0,0,0.85)
+            border-top: 7px solid transparent
+            border-bottom: 7px solid transparent
+            content: ''
+            display: inline-block
+            margin-top: 7px
+            right: -10%
+            position: absolute
+
+
+@-webkit-keyframes fade-in {
+    from   { opacity: 0 }
+    to { opacity: 1 }
+}
+@-moz-keyframes fade-in {
+    from   { opacity: 0 }
+    to { opacity: 1 }
+}
+@-ms-keyframes fade-in {
+    from   { opacity: 0 }
+    to { opacity: 1 }
+}
+@-webkit-keyframes move-up {
+    from   { bottom: 30px }
+    to { bottom: 42px }
+}
+@-moz-keyframes move-up {
+    from   { bottom: 30px }
+    to { bottom: 42px }
+}
+@-ms-keyframes move-up {
+    from { bottom: 30px }
+    to { bottom: 42px }
+}
