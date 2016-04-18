@@ -4,6 +4,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-pug');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-autoshot');
+    grunt.loadNpmTasks('grunt-contrib-rename');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
     grunt.initConfig({
         stylus: {
@@ -47,16 +50,44 @@ module.exports = function(grunt) {
             }
         },
         connect: {
-           server: {
-             options: {
-               port: 8000,
-               base: 'examples'
-             }
-           }
-         }
+            server: {
+                options: {
+                    port: 8000,
+                    base: 'examples'
+                }
+            }
+        },
+        autoshot: {
+            default_options: {
+                options: {
+                    path: './examples/assets',
+                    remote: {
+                        files: [{
+                            src: "http://localhost:8000",
+                            dest: "doc.png"
+                        }]
+                    },
+                    local: {
+                        path: './examples/assets',
+                        files: [
+                            {src: "./examples/index.html", dest: "doc.png"}
+                        ]
+                    }
+                }
+            }
+        },
+        rename: {
+            main: {
+                files: [{
+                    src: ['examples/assets/remote-1920x1080-doc.png'],
+                    dest: 'examples/assets/doc.png'
+                }]
+            }
+        },
+        clean: ['examples/assets/local-1920x1080-doc.png']
     });
 
-    grunt.registerTask('start', ['connect', 'watch']);
+    grunt.registerTask('start', ['default', 'connect', 'autoshot', 'rename', 'clean', 'watch']);
     grunt.registerTask('default', ['stylus', 'cssmin', 'pug']);
 
 };
