@@ -1,8 +1,8 @@
 # psychic-ui
 
 > a composable css ui library
-- main-size: 22.38 KiB
-- minified-size: 16.44 KiB
+- main-size: 23.19 KiB
+- minified-size: 17.32 KiB
 
 ![Doc Page](examples/assets/doc.png)
 
