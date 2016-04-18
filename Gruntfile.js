@@ -1,3 +1,6 @@
+var fs = require("fs");
+var filesize = require('file-size');
+
 module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -7,6 +10,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-autoshot');
     grunt.loadNpmTasks('grunt-contrib-rename');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-readme');
 
     grunt.initConfig({
         stylus: {
@@ -85,6 +89,13 @@ module.exports = function(grunt) {
             }
         },
         clean: ['examples/assets/local-1920x1080-doc.png']
+    });
+
+    grunt.registerTask('size', function() {
+        var output = "";
+        output += "> main-size: " + filesize(fs.statSync("psychic.css")["size"]).human() + '\n';
+        output += "> minified-size: " + filesize(fs.statSync("psychic-min.css")["size"]).human() + '\n';
+        console.log(output);
     });
 
     grunt.registerTask('start', ['default', 'connect', 'autoshot', 'rename', 'clean', 'watch']);
