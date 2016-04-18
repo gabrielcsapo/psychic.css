@@ -10,7 +10,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-autoshot');
     grunt.loadNpmTasks('grunt-contrib-rename');
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-readme');
+    grunt.loadNpmTasks('grunt-contrib-compress');
 
     grunt.initConfig({
         stylus: {
@@ -73,9 +73,10 @@ module.exports = function(grunt) {
                     },
                     local: {
                         path: './examples/assets',
-                        files: [
-                            {src: "./examples/index.html", dest: "doc.png"}
-                        ]
+                        files: [{
+                            src: "./examples/index.html",
+                            dest: "doc.png"
+                        }]
                     }
                 }
             }
@@ -88,18 +89,29 @@ module.exports = function(grunt) {
                 }]
             }
         },
-        clean: ['examples/assets/local-1920x1080-doc.png']
+        clean: ['examples/assets/local-1920x1080-doc.png'],
+        compress: {
+  main: {
+    options: {
+      mode: 'gzip'
+    },
+  files: [
+    {expand: true, src: ['psychic-min.css'], ext: '.css.gz'}
+    ]
+  }
+},
     });
 
     grunt.registerTask('stats', function() {
         var output = "";
         output += "- main-size: " + filesize(fs.statSync("psychic.css")["size"]).human() + '\n';
         output += "- minified-size: " + filesize(fs.statSync("psychic-min.css")["size"]).human() + '\n';
+        output += "- gzipped-size: " + filesize(fs.statSync("psychic-min.css.gz")["size"]).human() + '\n';
         console.log(output);
     });
 
     grunt.registerTask('start', ['default', 'connect', 'watch']);
     grunt.registerTask('build', ['default', 'connect', 'autoshot', 'rename', 'clean']);
-    grunt.registerTask('default', ['stylus', 'cssmin', 'pug']);
+    grunt.registerTask('default', ['stylus', 'cssmin', 'pug', 'compress']);
 
 };

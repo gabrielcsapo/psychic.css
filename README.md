@@ -3,6 +3,7 @@
 > a composable css ui library
 - main-size: 23.19 KiB
 - minified-size: 17.32 KiB
+- gzipped-size: 4.17 KiB
 
 ![Doc Page](examples/assets/doc.png)
 
