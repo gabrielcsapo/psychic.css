@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/gabrielcsapo/psychic-ui#readme",
   "devDependencies": {
+    "grunt-contrib-connect": "^1.0.1",
     "grunt-contrib-cssmin": "^1.0.1",
     "grunt-contrib-pug": "0.0.0",
     "grunt-contrib-stylus": "^1.2.0",

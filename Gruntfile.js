@@ -3,6 +3,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-pug');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-connect');
 
     grunt.initConfig({
         stylus: {
@@ -44,9 +45,18 @@ module.exports = function(grunt) {
                     livereload: true,
                 }
             }
-        }
+        },
+        connect: {
+           server: {
+             options: {
+               port: 8000,
+               base: 'examples'
+             }
+           }
+         }
     });
 
+    grunt.registerTask('start', ['connect', 'watch']);
     grunt.registerTask('default', ['stylus', 'cssmin', 'pug']);
 
 };
