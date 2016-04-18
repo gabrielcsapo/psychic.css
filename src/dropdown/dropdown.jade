@@ -1,0 +1,17 @@
+pre(class="prettyprint linenums lang-html")
+    div(class="dropdown btn btn-#{val}")
+        div(class="dropdown-title") DropDown
+        div(class="dropdown-content")
+            ul
+                li Item 1
+                li Item 2
+                li Item 3
+                    
+each val in ['default', 'primary', 'success', 'info', 'warning', 'danger']
+    div(class="dropdown btn btn-#{val}")
+        div(class="dropdown-title") DropDown
+        div(class="dropdown-content")
+            ul
+                li Item 1
+                li Item 2
+                li Item 3

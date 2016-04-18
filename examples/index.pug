@@ -1,12 +1,40 @@
 html
     head
+        style
+            include assets/prettify.css
+        script.
+            var entityMap = {
+               "&": "&amp;",
+               "<": "&lt;",
+               ">": "&gt;",
+               '"': '&quot;',
+               "'": '&#39;',
+               "/": '&#x2F;'
+             };
+
+             function escapeHtml(string) {
+               return String(string).replace(/[&<>"'\/]/g, function (s) {
+                 return entityMap[s];
+               });
+             }
+             document.onreadystatechange = function () {
+                 if (document.readyState == "complete") {
+                    var code = document.querySelectorAll('pre');
+                    for (var i = code.length; i--;) {
+                        code[i].innerHTML = escapeHtml(code[i].innerHTML)
+                    }
+                    prettyPrint();
+                 }
+             }
+        script
+            include assets/prettify.js
         style.
             .example {
-                width:65%;
+                width: 65%;
                 margin: 0 auto;
             }
             body {
-                padding-bottom: 60px;
+                padding-bottom: 120px;
             }
         style
             include ../psychic.css
@@ -29,3 +57,6 @@ html
         br
         div
             include ../src/popover/popover.jade
+        br
+        div
+            include ../src/dropdown/dropdown.jade

@@ -1,6 +1,7 @@
 $grid-columns = 12
 $grid-gutter = 0
 
+$border-radius = 5px
 $bright-text-lightness = 70%
 $bright-border-lightness = 99%
 
@@ -19,9 +20,13 @@ $table = {
 
 $navbar = {
     border-width: 1px
-    border-color: $brands['primary']
+    border-color: $brands['default']
 }
 
 $popover = {
-    border-radius: 5px
+    border-radius: $border-radius
+}
+
+$dropdown = {
+    border: 1px solid $brands['default']
 }

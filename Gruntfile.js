@@ -2,7 +2,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-pug');
-
+    
     grunt.initConfig({
         stylus: {
             compile: {
@@ -28,10 +28,7 @@ module.exports = function(grunt) {
         pug: {
             release: {
                 options: {
-                    pretty: true,
-                    data: {
-                        debug: true
-                    }
+                    pretty: true
                 },
                 files: {
                     'examples/index.html': 'examples/index.pug'
