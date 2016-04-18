@@ -41,16 +41,16 @@
         border-radius: 100%;
 
         for $brand in $brands
-            &.{$brand}
+            &.spinner-{$brand}
               border-top: 8px solid $brands[$brand]
 
-            &.{$brand}.done
+            &.spinner-{$brand}.spinner-done
               border-left: 8px solid $brands[$brand]
               border-right: 8px solid $brands[$brand]
               border-bottom: 8px solid $brands[$brand]
               border-top: 8px solid $brands[$brand]
 
-            &.{$brand}.done:after
+            &.spinner-{$brand}.done:after
               border-right: 8px solid $brands[$brand]
               border-bottom: 8px solid $brands[$brand]
 

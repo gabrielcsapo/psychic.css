@@ -91,15 +91,15 @@ module.exports = function(grunt) {
         clean: ['examples/assets/local-1920x1080-doc.png']
     });
 
-    grunt.registerTask('size', function() {
+    grunt.registerTask('stats', function() {
         var output = "";
-        output += "> main-size: " + filesize(fs.statSync("psychic.css")["size"]).human() + '\n';
-        output += "> minified-size: " + filesize(fs.statSync("psychic-min.css")["size"]).human() + '\n';
+        output += "- main-size: " + filesize(fs.statSync("psychic.css")["size"]).human() + '\n';
+        output += "- minified-size: " + filesize(fs.statSync("psychic-min.css")["size"]).human() + '\n';
         console.log(output);
     });
 
     grunt.registerTask('start', ['default', 'connect', 'watch']);
-    grunt.registerTask('build', ['autoshot', 'rename', 'clean']);
+    grunt.registerTask('build', ['default', 'connect', 'autoshot', 'rename', 'clean']);
     grunt.registerTask('default', ['stylus', 'cssmin', 'pug']);
 
 };
