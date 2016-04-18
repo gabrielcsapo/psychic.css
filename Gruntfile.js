@@ -98,7 +98,8 @@ module.exports = function(grunt) {
         console.log(output);
     });
 
-    grunt.registerTask('start', ['default', 'connect', 'autoshot', 'rename', 'clean', 'watch']);
+    grunt.registerTask('start', ['default', 'connect', 'watch']);
+    grunt.registerTask('build', ['autoshot', 'rename', 'clean']);
     grunt.registerTask('default', ['stylus', 'cssmin', 'pug']);
 
 };

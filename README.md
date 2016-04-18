@@ -20,7 +20,7 @@ open http://localhost:8000
 ```
 grunt stats;
 // replace stats output in readme
-grunt start;
+grunt build;
 // to get new screenshot of docs
 // commit like normal
 ```
