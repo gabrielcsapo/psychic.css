@@ -2,7 +2,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-pug');
-    
+    grunt.loadNpmTasks('grunt-contrib-watch');
+
     grunt.initConfig({
         stylus: {
             compile: {
@@ -32,6 +33,15 @@ module.exports = function(grunt) {
                 },
                 files: {
                     'examples/index.html': 'examples/index.pug'
+                }
+            }
+        },
+        watch: {
+            scripts: {
+                files: ['**/**/*.jade', '**/**/*.pug', '**/**/*.styl'],
+                tasks: ['default'],
+                options: {
+                    livereload: true,
                 }
             }
         }
