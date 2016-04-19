@@ -7,7 +7,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-pug');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-autoshot');
+    grunt.loadNpmTasks('grunt-screenshot');
     grunt.loadNpmTasks('grunt-contrib-rename');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-compress');
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
                 }
             }
         },
-        autoshot: {
+        screenshot: {
             default_options: {
                 options: {
                     path: './examples/assets',
@@ -91,15 +91,17 @@ module.exports = function(grunt) {
         },
         clean: ['examples/assets/local-1920x1080-doc.png'],
         compress: {
-  main: {
-    options: {
-      mode: 'gzip'
-    },
-  files: [
-    {expand: true, src: ['psychic-min.css'], ext: '.css.gz'}
-    ]
-  }
-},
+            main: {
+                options: {
+                    mode: 'gzip'
+                },
+                files: [{
+                    expand: true,
+                    src: ['psychic-min.css'],
+                    ext: '.css.gz'
+                }]
+            }
+        },
     });
 
     grunt.registerTask('stats', function() {
@@ -107,11 +109,10 @@ module.exports = function(grunt) {
         output += "- main-size: " + filesize(fs.statSync("psychic.css")["size"]).human() + '\n';
         output += "- minified-size: " + filesize(fs.statSync("psychic-min.css")["size"]).human() + '\n';
         output += "- gzipped-size: " + filesize(fs.statSync("psychic-min.css.gz")["size"]).human() + '\n';
-        console.log(output);
     });
 
     grunt.registerTask('start', ['default', 'connect', 'watch']);
-    grunt.registerTask('build', ['default', 'connect', 'autoshot', 'rename', 'clean']);
+    grunt.registerTask('build', ['default', 'connect', 'screenshot', 'rename', 'clean']);
     grunt.registerTask('default', ['stylus', 'cssmin', 'pug', 'compress']);
 
 };

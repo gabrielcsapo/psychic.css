@@ -26,6 +26,6 @@
     "grunt-contrib-rename": "0.0.3",
     "grunt-contrib-stylus": "^1.2.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-localscreenshots": "^1.0.0"
+    "grunt-screenshot": "0.0.2"
   }
 }
