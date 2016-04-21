@@ -1,6 +1,7 @@
 .progress
     width: 100%
     border: $progress['border']
+    text-align: center
 
     .progress-fill
         padding: $progress['padding']
@@ -10,6 +11,7 @@
         for $brand in $brands
             &.progress-fill-{$brand}
                 background-color: $brands[$brand]
+                color: lightness($brands[$brand]) < $bright-text-lightness ? #ffffff : #000000
 
                 &:hover
                     background-color: lighten($brands[$brand], 25%)
