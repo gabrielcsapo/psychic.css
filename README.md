@@ -12,7 +12,7 @@
 > development
 
 ```
-grunt start;
+grunt dev;
 open http://localhost:8000
 ```
 
