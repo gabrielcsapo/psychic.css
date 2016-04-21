@@ -1,9 +1,9 @@
 # psychic-ui
 
 > a composable css ui library
-- main-size: 28.92 KiB
-- minified-size: 22.48 KiB
-- gzipped-size: 5.34 KiB
+- main-size: 29.92 KiB
+- minified-size: 23.47 KiB
+- gzipped-size: 5.48 KiB
 
 ![Doc Page](examples/assets/doc.png)
 
@@ -16,7 +16,7 @@ grunt start;
 open http://localhost:8000
 ```
 
-> commiting
+> committing
 
 ```
 grunt build;

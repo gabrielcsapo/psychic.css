@@ -1,0 +1,15 @@
+.progress
+    width: 100%
+    border: $progress['border']
+
+    .progress-fill
+        padding: $progress['padding']
+        height: $progress['height']
+        background-color: $progress['background-color']
+
+        for $brand in $brands
+            &.progress-fill-{$brand}
+                background-color: $brands[$brand]
+
+                &:hover
+                    background-color: lighten($brands[$brand], 25%)
