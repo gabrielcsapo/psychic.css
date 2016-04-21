@@ -109,10 +109,11 @@ module.exports = function(grunt) {
         output += "- main-size: " + filesize(fs.statSync("psychic.css")["size"]).human() + '\n';
         output += "- minified-size: " + filesize(fs.statSync("psychic-min.css")["size"]).human() + '\n';
         output += "- gzipped-size: " + filesize(fs.statSync("psychic-min.css.gz")["size"]).human() + '\n';
+        console.log(output);
     });
 
     grunt.registerTask('start', ['default', 'connect', 'watch']);
-    grunt.registerTask('build', ['default', 'connect', 'screenshot', 'rename', 'clean']);
+    grunt.registerTask('build', ['default', 'connect', 'screenshot', 'rename', 'clean', 'stats']);
     grunt.registerTask('default', ['stylus', 'cssmin', 'pug', 'compress']);
 
 };
