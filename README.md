@@ -1,9 +1,9 @@
 # psychic-ui
 
 > a composable css ui library
-- main-size: 25.48 KiB
-- minified-size: 19.54 KiB
-- gzipped-size: 4.76 KiB
+- main-size: 28.92 KiB
+- minified-size: 22.48 KiB
+- gzipped-size: 5.34 KiB
 
 ![Doc Page](examples/assets/doc.png)
 
@@ -19,9 +19,8 @@ open http://localhost:8000
 > commiting
 
 ```
-grunt stats;
-// replace stats output in readme
 grunt build;
 // to get new screenshot of docs
+// replace stats output in readme
 // commit like normal
 ```
