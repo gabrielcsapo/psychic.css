@@ -1,0 +1,15 @@
+.badge
+    display: table-cell
+    padding: $badge['padding']
+    border-radius: $badge['border-radius']
+    text-align: center
+    vertical-align: middle
+
+    for key, value in $brands
+        &.badge-{key}
+            background-color: value
+            color: white
+
+.list-item > .badge
+    float: right
+    line-height: 20px;
