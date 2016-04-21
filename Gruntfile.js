@@ -112,7 +112,7 @@ module.exports = function(grunt) {
         console.log(output);
     });
 
-    grunt.registerTask('start', ['default', 'connect', 'watch']);
+    grunt.registerTask('dev', ['default', 'connect', 'watch']);
     grunt.registerTask('build', ['default', 'connect', 'screenshot', 'rename', 'clean', 'stats']);
     grunt.registerTask('default', ['stylus', 'cssmin', 'pug', 'compress']);
 
