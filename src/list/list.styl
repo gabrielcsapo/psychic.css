@@ -1,0 +1,16 @@
+.list
+    list-style: none
+    margin: 0
+    padding: 0
+
+    > .list-item
+        padding: 10px
+        border: $list['border']
+
+        &:first-child
+            border-top-left-radius: $list['border-radius']
+            border-top-right-radius: $list['border-radius']
+
+        &:last-child
+            border-bottom-left-radius: $list['border-radius']
+            border-bottom-right-radius: $list['border-radius']
