@@ -17,6 +17,12 @@ ul(class="list")
         li(class="list-item list-item-#{val}") Item
 
 br
+ul(class="list")
+    each val in ['default', 'primary', 'success', 'info', 'warning', 'danger']
+        li(class="list-item list-item-#{val}") Item
+            div(class="badge badge-default") 3
+
+br
 pre(class="prettyprint linenums lang-html")
     ul(class="list")
         li(class="list-item") Item 1
