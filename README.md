@@ -1,4 +1,6 @@
-# [psychic-ui](http://gabrielcsapo.github.io/psychic-ui/)
+# psychic-ui
+
+#### http://gabrielcsapo.github.io/psychic-ui/
 
 > a composable css ui library
 - main-size: 32.77 KiB
