@@ -40,7 +40,7 @@ module.exports = function(grunt) {
                     pretty: true
                 },
                 files: {
-                    'examples/index.html': 'examples/index.pug'
+                    'index.html': 'examples/index.pug'
                 }
             }
         },
