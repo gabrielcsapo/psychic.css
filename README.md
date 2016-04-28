@@ -9,16 +9,14 @@
 
 ![Doc Page](examples/assets/doc.png)
 
-## dev-flow
-
-> development
+# Development
 
 ```
 grunt dev;
 open http://localhost:8000
 ```
 
-> committing
+# Contribution
 
 ```
 grunt build;
