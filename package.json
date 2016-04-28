@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-      "gh-pages": "git checkout gh-pages;git pull origin master;git push -f;"
+      "gh-pages": "git checkout gh-pages;git pull origin master;git push -f;git checkout master;"
   },
   "repository": {
     "type": "git",
