@@ -3,9 +3,9 @@
 #### http://gabrielcsapo.github.io/psychic-ui/
 
 > a composable css ui library
-- main-size: 36.10 KiB
-- minified-size: 29.47 KiB
-- gzipped-size: 6.49 KiB
+- main-size: 37.08 KiB
+- minified-size: 30.33 KiB
+- gzipped-size: 6.61 KiB
 
 ![Doc Page](examples/assets/doc.png)
 
