@@ -1,7 +1,27 @@
 .panel
-    padding: 15px
+    position: relative
+    height: auto
+    border: 1px solid $brands['default']
 
     for key, value in $brands
         &.panel-{key}
-            background-color: value
-            color: white
+            border: 1px solid value
+
+            >.panel-header
+                background-color: value
+                color: white
+
+            >.panel-footer
+                background-color: value
+                color: white
+
+    >.panel-body
+        padding: 15px
+
+    >.panel-header
+        top: 0
+        padding: 15px
+
+    >.panel-footer
+        bottom: 0
+        padding: 15px;
