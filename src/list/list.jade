@@ -1,3 +1,7 @@
+hr
+h3 List
+hr
+
 pre(class="prettyprint linenums lang-html")
     ul(class="list")
         li(class="list-item") Item 1
@@ -15,12 +19,17 @@ br
 ul(class="list")
     each val, index in ['default', 'primary', 'success', 'info', 'warning', 'danger']
         li(class="list-item list-item-#{val}") Item #{index}
-
+br
+pre(class="prettyprint linenums lang-html")
+    ul(class="list")
+        each val, index in ['default', 'primary', 'success', 'info', 'warning', 'danger']
+            li(class="list-item list-item-#{val}") Item
+                div(class="badge badge-#{val}") #{index}
 br
 ul(class="list")
     each val, index in ['default', 'primary', 'success', 'info', 'warning', 'danger']
         li(class="list-item list-item-#{val}") Item
-            div(class="badge badge-default") #{index}
+            div(class="badge badge-#{val}") #{index}
 
 br
 pre(class="prettyprint linenums lang-html")
