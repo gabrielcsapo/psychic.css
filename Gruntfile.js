@@ -62,7 +62,7 @@ module.exports = function(grunt) {
             }
         },
         screenshot: {
-            default_options: {
+            psychic: {
                 options: {
                     path: './examples/assets',
                     files: [{
