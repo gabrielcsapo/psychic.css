@@ -1,0 +1,5 @@
+pre(class="prettyprint linenums lang-html")
+    div(class="panel panel-{val}") {val}
+br
+each val in ['default', 'primary', 'success', 'info', 'warning', 'danger']
+    div(class="panel panel-#{val}") #{val}
