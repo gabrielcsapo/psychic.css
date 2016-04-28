@@ -4,7 +4,12 @@ hr
 
 pre(class="prettyprint linenums lang-html")
     each val in ['default', 'primary', 'success', 'info', 'warning', 'danger']
-        div(class="panel panel-#{val}") #{val}
+        div(class="panel panel-#{val}")
+            div(class="panel-body") #{val}
 br
 each val in ['default', 'primary', 'success', 'info', 'warning', 'danger']
-    div(class="panel panel-#{val}") #{val}
+    div(class="panel panel-#{val}")
+        div(class="panel-header") header
+        div(class="panel-body") body
+        div(class="panel-footer") footer
+    br
