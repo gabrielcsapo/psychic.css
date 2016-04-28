@@ -65,19 +65,12 @@ module.exports = function(grunt) {
             default_options: {
                 options: {
                     path: './examples/assets',
-                    remote: {
-                        files: [{
-                            src: "http://localhost:8000",
-                            dest: "doc.png"
-                        }]
-                    },
-                    local: {
-                        path: './examples/assets',
-                        files: [{
-                            src: "./examples/index.html",
-                            dest: "doc.png"
-                        }]
-                    }
+                    files: [{
+                        type: 'remote',
+                        src: "http://localhost:8000",
+                        dest: "doc.png",
+                        delay: 2000
+                    }]
                 }
             }
         },
