@@ -4,33 +4,40 @@
     width: 100%
     display: table
 
-    &.center
+    &.navbar-absolute,
+    &.navbar-fixed
+        border-right: 1px solid $brands['default']
+        border-left: 1px solid $brands['default']
+        border-bottom: 1px solid $brands['default']
+
+    &.navbar-center
 
         > .container
-            margin: 0 auto;
-            width: 50%;
+            margin: 0 auto
+            width: 50%
             position: relative
 
     for $brand in $brands
-        &.navbar-{$brand}
+        &.navbar-{$brand},
+        &.navbar-{$brand} > .navbar-title
+            color: lightness($brands[$brand]) < $bright-text-lightness ? #ffffff : #000000
 
             > .container
                 background-color: $brands[$brand]
                 border-color: lightness($brands[$brand]) < $bright-border-lightness ? $brands[$brand] : darken(#ffffff, 25%)
 
     > .container
-        margin-right: auto;
+        margin-right: auto
         margin-left: auto
-        display: table;
-        width:100%;
-        height:60px;
+        display: table
+        width:100%
+        height:60px
 
     .navbar-title
         display: inline-block
         margin-left: 20px
         margin-top: 20px
         font-weight: bold
-        color: lightness($brands[$brand]) < $bright-text-lightness ? #ffffff : #000000
 
         > * > a
             color: black

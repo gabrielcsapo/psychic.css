@@ -3,12 +3,14 @@
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+      "gh-pages": "git checkout gh-pages;git pull origin master;git push -f;"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gabrielcsapo/psychic-ui.git"
   },
-  "author": "",
+  "author": "Gabriel Csapo <gabecsapo@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/gabrielcsapo/psychic-ui/issues"
