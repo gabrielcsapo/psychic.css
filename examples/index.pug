@@ -41,10 +41,8 @@ html
         style
             include ../psychic.css
     body(class="example")
-        div(class="navbar navbar-absolute")
-            div(class="container")
-                div(class="navbar-title")
-                    span psychic-ui
+        div
+            include ./intro.jade
         br
         div
             include ../src/grid/grid.jade
@@ -97,3 +95,8 @@ html
         div
             include ../src/examples/example.jade
         br
+        br
+        div(class="navbar navbar-center")
+            div(class="container text-center")
+                div(class="text-black") created with ♥ by
+                    a(class="text-black" href="https://github.com/gabrielcsapo") @gabrielcsapo
