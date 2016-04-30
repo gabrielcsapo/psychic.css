@@ -1,0 +1,10 @@
+.callout
+    padding: $callout['padding']
+    border-radius: $border-radius
+    border-top: 1px solid $callout['border-color']
+    border-bottom: 1px solid $callout['border-color']
+    border-right: 1px solid $callout['border-color']
+
+    for key, value in $brands
+        &.callout-{key}
+            border-left: 5px solid value
