@@ -8,8 +8,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-screenshot');
-    grunt.loadNpmTasks('grunt-contrib-rename');
-    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-compress');
 
     grunt.initConfig({
@@ -64,25 +62,17 @@ module.exports = function(grunt) {
         screenshot: {
             psychic: {
                 options: {
-                    path: './examples/assets',
+                    path: './screenshots',
                     files: [{
                         type: 'remote',
                         src: "http://localhost:8000",
-                        dest: "doc.png",
+                        dest: "example.png",
                         delay: 2000
-                    }]
+                    }],
+                    viewport: ['1920x1080','1024x768','640x960','320x480']
                 }
             }
         },
-        rename: {
-            main: {
-                files: [{
-                    src: ['examples/assets/remote-1920x1080-doc.png'],
-                    dest: 'examples/assets/doc.png'
-                }]
-            }
-        },
-        clean: ['examples/assets/local-1920x1080-doc.png'],
         compress: {
             main: {
                 options: {
@@ -106,7 +96,7 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('dev', ['default', 'connect', 'watch']);
-    grunt.registerTask('build', ['default', 'connect', 'screenshot', 'rename', 'clean', 'stats']);
+    grunt.registerTask('build', ['default', 'connect', 'screenshot', 'stats']);
     grunt.registerTask('default', ['stylus', 'cssmin', 'pug', 'compress']);
 
 };
