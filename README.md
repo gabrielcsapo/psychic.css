@@ -5,9 +5,9 @@
 [Rendered Example Page](/screenshots)
 
 > a composable css ui library
-- main-size: 42.09 KiB
-- minified-size: 34.87 KiB
-- gzipped-size: 7.48 KiB
+- main-size: 42.08 KiB
+- minified-size: 34.86 KiB
+- gzipped-size: 7.47 KiB
 
 
 # Development
