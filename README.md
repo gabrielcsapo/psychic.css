@@ -2,7 +2,7 @@
 
 #### http://gabrielcsapo.github.io/psychic-ui/
 
-[Rendered Example Page](examples/assets/doc.png)
+[Rendered Example Page](/screenshots)
 
 > a composable css ui library
 - main-size: 42.09 KiB
