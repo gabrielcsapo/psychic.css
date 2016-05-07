@@ -11,7 +11,7 @@
     "url": "git+https://github.com/gabrielcsapo/psychic-ui.git"
   },
   "author": "Gabriel Csapo <gabecsapo@gmail.com>",
-  "license": "ISC",
+   "license": "Apache 2.0",
   "bugs": {
     "url": "https://github.com/gabrielcsapo/psychic-ui/issues"
   },
