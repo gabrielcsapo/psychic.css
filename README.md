@@ -1,14 +1,19 @@
 # psychic-ui
 
-#### http://gabrielcsapo.github.io/psychic-ui/
+http://gabrielcsapo.github.io/psychic-ui/
 
-[Rendered Example Page](/screenshots)
+> the working mans css framework
+- main-size: 42.14 KiB
+- minified-size: 34.92 KiB
+- gzipped-size: 7.48 KiB
 
-> a composable css ui library
-- main-size: 42.08 KiB
-- minified-size: 34.86 KiB
-- gzipped-size: 7.47 KiB
+####
 
+# Examples
+
+[Screenshots](/screenshots)
+
+[Website](http://gabrielcsapo.github.io/psychic-ui/)
 
 # Development
 
