@@ -1,7 +1,7 @@
 {
   "name": "psychic-ui",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "the working mans css framework",
   "main": "index.js",
   "scripts": {
       "gh-pages": "git checkout gh-pages;git pull origin master;git push -f;git checkout master;"
