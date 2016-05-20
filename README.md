@@ -2,10 +2,10 @@
 
 http://gabrielcsapo.github.io/psychic-ui/
 
-> the working mans css framework
-- main-size: 42.14 KiB
-- minified-size: 34.92 KiB
-- gzipped-size: 7.48 KiB
+> the working man's css framework
+- main-size: 42.01 KiB
+- minified-size: 34.82 KiB
+- gzipped-size: 7.50 KiB
 
 ####
 
