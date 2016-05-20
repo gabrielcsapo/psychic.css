@@ -14,3 +14,21 @@ each val in ['default', 'primary', 'success', 'info', 'warning', 'danger']
             div(class="navbar-title")
                 span Title
     br
+    
+pre(class="prettyprint linenums lang-html")
+    div(class="navbar navbar-#{val}")
+        div(class="container")
+            div(class="navbar-title")
+                span navbar title
+            
+br        
+each val in ['default', 'primary', 'success', 'info', 'warning', 'danger']
+    div(class="navbar navbar-#{val}")
+        div(class="container")
+            div(class="navbar-title")
+                span Title
+            div.nav
+                a(href="/blog") Blog
+                a(href="/about") About
+                a(href="/store") Store
+    br
