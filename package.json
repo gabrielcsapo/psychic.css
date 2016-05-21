@@ -4,6 +4,7 @@
   "description": "the working mans css framework",
   "main": "index.js",
   "scripts": {
+      "start": "grunt dev",
       "gh-pages": "git checkout gh-pages;git pull origin master;git push -f;git checkout master;"
   },
   "repository": {
