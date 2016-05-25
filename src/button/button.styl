@@ -42,6 +42,11 @@
             border: 1px solid darken(value, 15%)
             background-color: value
 
+            &:hover
+                background-color:lighten(value, 50%)
+                border-color:darken(value, 15%)
+                color: lightness(value) < $bright-text-lightness ? #ffffff : #000000
+
             &:active
                 background-color: darken(value, 15%)
                 opacity: .5
