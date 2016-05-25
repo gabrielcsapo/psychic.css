@@ -35,7 +35,10 @@ module.exports = function(grunt) {
         pug: {
             release: {
                 options: {
-                    pretty: true
+                    pretty: true,
+                    data: {
+                        brands: ['default', 'primary', 'success', 'info', 'warning', 'danger', 'white', 'black']
+                    }
                 },
                 files: {
                     'index.html': 'examples/index.pug'

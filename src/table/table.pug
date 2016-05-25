@@ -3,7 +3,7 @@ h3 Table
 hr
 
 pre(class="prettyprint linenums lang-html")
-    table(class="table responsive border-#{val}")
+    table(class="table responsive border-"+ val)
         thead
             tr
                 th First Name
@@ -23,8 +23,8 @@ table(class="table responsive")
             th John
             th Doe
 br
-each val in ['default', 'primary', 'success', 'info', 'warning', 'danger', 'white', 'black']
-    table(class="table responsive border-#{val}")
+each val in brands
+    table(class="table responsive border-"+ val)
         thead
             tr
                 th First Name
