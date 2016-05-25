@@ -7,4 +7,11 @@ pre(class="prettyprint linenums lang-html")
 br
 each val in ['default', 'primary', 'success', 'info', 'warning', 'danger']
     div(class="badge badge-#{val}") #{val} 
-    
+
+br
+pre(class="prettyprint linenums lang-html")
+    each val in ['default', 'primary', 'success', 'info', 'warning', 'danger']
+        div(class="badge border-#{val}") #{val}
+br
+each val in ['default', 'primary', 'success', 'info', 'warning', 'danger']
+    div(class="badge border-#{val}") #{val}     
