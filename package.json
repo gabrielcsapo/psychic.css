@@ -4,15 +4,15 @@
   "description": "the working mans css framework",
   "main": "index.js",
   "scripts": {
-      "start": "grunt dev",
-      "gh-pages": "git checkout gh-pages;git pull origin master;git push -f;git checkout master;"
+    "start": "grunt dev",
+    "gh-pages": "git checkout gh-pages;git pull origin master;git push -f;git checkout master;"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gabrielcsapo/psychic-ui.git"
   },
   "author": "Gabriel Csapo <gabecsapo@gmail.com>",
-   "license": "Apache 2.0",
+  "license": "Apache 2.0",
   "bugs": {
     "url": "https://github.com/gabrielcsapo/psychic-ui/issues"
   },
@@ -23,7 +23,7 @@
     "grunt-contrib-compress": "^1.2.0",
     "grunt-contrib-connect": "^1.0.1",
     "grunt-contrib-cssmin": "^1.0.1",
-    "grunt-contrib-pug": "0.0.0",
+    "grunt-contrib-pug": "^1.0.0",
     "grunt-contrib-stylus": "^1.2.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-screenshot": "0.1.0"
