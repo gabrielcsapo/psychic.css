@@ -41,7 +41,7 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    'index.html': 'examples/index.pug'
+                    'index.html': 'src/examples/index.pug'
                 }
             }
         },
