@@ -1,17 +1,30 @@
-div(style="height:500px;width:100%;background-color: #333;position:relative;") 
+div(style="height:500px;width:100%;position:relative;" class="background-default")
     div(class="navbar")
         div(class="container")
             div(class="navbar-title")
                 span(class="text-white") psychic-ui
             div(class="nav")
                 a(class="text-white" href="https://github.com/gabrielcsapo/psychic-ui" target="_blank") Source
-                
+                div(class="dropdown btn btn-info")
+                    div(class="dropdown-title") Themes
+                    div(class="dropdown-content dropdown-content-right")
+                        ul
+                            li
+                                a(href="/") Base
+                            li
+                                a(href="/cosmo.html") Cosmo
+                            li
+                                a(href="/cyborg.html") Cyborg
+                            li
+                                a(href="/paper.html") Paper
+
     div(class="text-center", style="width:100%;position: absolute;top: 50%;transform: translateY(-50%);")
         h3(class="text-white") Welcome!
         div(class="text-white") Psychic-ui is a minimalistic CSS only framework
-        br
+        if title
+            span(class="badge badge-primary" style="display:inline-block;margin-top:10px;")=title
 
     div(class="navbar navbar-center" style="bottom:0;position:absolute;")
         div(class="container text-center")
-            div(class="text-white") created with ♥ by 
+            div(class="text-white") created with ♥ by
                 a(class="text-white" href="https://github.com/gabrielcsapo") @gabrielcsapo
