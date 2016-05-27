@@ -99,8 +99,25 @@ module.exports = function(grunt) {
         connect: {
             server: {
                 options: {
+                    keepalive: true,
                     port: 8000,
-                    base: '.'
+                    base: '.',
+                    middleware: function(connect, options, middlewares) {
+
+                      middlewares.unshift(function forward(req, res, next) {
+                          if (req.url.indexOf('/psychic-ui') > -1) {
+                              req.url = req.url.replace('/psychic-ui', '');
+                              res.writeHead(302, {
+                                  'Location': 'http://localhost:8000' + req.url
+                              });
+                              res.end();
+                          } else {
+                              next();
+                          }
+                      });
+
+                      return middlewares;
+                  }
                 }
             }
         },
@@ -114,7 +131,7 @@ module.exports = function(grunt) {
                         dest: "base.png",
                         delay: 2000
                     }],
-                    viewport: ['1920x1080','1024x768','640x960','320x480']
+                    viewport: ['1920x1080', '1024x768', '640x960', '320x480']
                 }
             },
             cosmo: {
@@ -126,7 +143,7 @@ module.exports = function(grunt) {
                         dest: "cosmo.png",
                         delay: 2000
                     }],
-                    viewport: ['1920x1080','1024x768','640x960','320x480']
+                    viewport: ['1920x1080', '1024x768', '640x960', '320x480']
                 }
             },
             cyborg: {
@@ -138,7 +155,7 @@ module.exports = function(grunt) {
                         dest: "cyborg.png",
                         delay: 2000
                     }],
-                    viewport: ['1920x1080','1024x768','640x960','320x480']
+                    viewport: ['1920x1080', '1024x768', '640x960', '320x480']
                 }
             },
             paper: {
@@ -150,7 +167,7 @@ module.exports = function(grunt) {
                         dest: "cosmo.png",
                         delay: 2000
                     }],
-                    viewport: ['1920x1080','1024x768','640x960','320x480']
+                    viewport: ['1920x1080', '1024x768', '640x960', '320x480']
                 }
             }
         },
