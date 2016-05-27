@@ -10,6 +10,7 @@
 
         for $brand in $brands
             &.progress-fill-{$brand}
+                font-size: $progress['font-size']
                 background-color: $brands[$brand]
                 color: lightness($brands[$brand]) < $bright-text-lightness ? #ffffff : #000000
 
