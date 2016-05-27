@@ -18,8 +18,6 @@
 
 [Screenshots](/screenshots)
 
-[Website](http://gabrielcsapo.github.io/psychic-ui/)
-
 # Development
 
 ```
