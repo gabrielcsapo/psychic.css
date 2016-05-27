@@ -15,18 +15,20 @@ $breakpoints = {
 $brands = {
     white: #ffffff
     black: #000000
-    default: #CFCFC4
-    primary: #779ECB
-    success: #77DD77
-    info: #9BDDFF
-    warning: #FFB347
-    danger: #FF6961
+    default: #c3c3c3
+    primary: #2196f3
+    success: #4caf50
+    info: #9c27b0
+    warning: #ff9800
+    danger: #e51c23
 }
-
-$button = {}
 
 $colors = {
     link: #0079ad
+}
+
+$button = {
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4)
 }
 
 $alert = {
@@ -58,9 +60,9 @@ $popover = {
 $progress = {
     border: 1px solid $brands['default']
     background-color: $brands['primary']
-    padding: 10px
-    height: 15px
-    font-size: 16px
+    padding: 5px
+    height: 10px
+    font-size: 9px
 }
 
 $list = {
@@ -77,3 +79,23 @@ $callout = {
     padding: 15px
     border-color: #eee
 }
+
+@import 'utils/normalize.css'
+@import 'helper/helper.styl'
+@import 'typography/typography.styl'
+@import 'grid/grid.styl'
+@import 'table/table.styl'
+@import 'navbar/navbar.styl'
+@import 'nav/nav.styl'
+@import 'spinner/spinner.styl'
+@import 'button/button.styl'
+@import 'popover/popover.styl'
+@import 'progress/progress.styl'
+@import 'list/list.styl'
+@import 'dropdown/dropdown.styl'
+@import 'modal/modal.styl'
+@import 'panel/panel.styl'
+@import 'badge/badge.styl'
+@import 'icon/icon.styl'
+@import 'alert/alert.styl'
+@import 'callout/callout.styl'
