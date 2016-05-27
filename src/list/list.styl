@@ -14,9 +14,6 @@
         border-right: $list['border']
         border-left: $list['border']
 
-        &:last-child
-            border-bottom: $list['border']
-
         for $brand in $brands
             &.list-item-{$brand}
                 border-top: 1px solid lighten($brands[$brand], 20%)
@@ -33,6 +30,7 @@
             border-top-right-radius: $list['border-radius']
 
         &:last-child
+            border-bottom: $list['border']
             border-bottom-left-radius: $list['border-radius']
             border-bottom-right-radius: $list['border-radius']
 
