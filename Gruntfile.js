@@ -104,20 +104,20 @@ module.exports = function(grunt) {
                     base: '.',
                     middleware: function(connect, options, middlewares) {
 
-                      middlewares.unshift(function forward(req, res, next) {
-                          if (req.url.indexOf('/psychic-ui') > -1) {
-                              req.url = req.url.replace('/psychic-ui', '');
-                              res.writeHead(302, {
-                                  'Location': 'http://localhost:8000' + req.url
-                              });
-                              res.end();
-                          } else {
-                              next();
-                          }
-                      });
+                        middlewares.unshift(function forward(req, res, next) {
+                            if (req.url.indexOf('/psychic-ui') > -1) {
+                                req.url = req.url.replace('/psychic-ui', '');
+                                res.writeHead(302, {
+                                    'Location': 'http://localhost:8000' + req.url
+                                });
+                                res.end();
+                            } else {
+                                next();
+                            }
+                        });
 
-                      return middlewares;
-                  }
+                        return middlewares;
+                    }
                 }
             }
         },
