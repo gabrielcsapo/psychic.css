@@ -2,24 +2,48 @@ hr
 h3 Cover
 hr
 
-// this emulates the dom 
-div(style="height:500px;width:100%;background-color: #333;position:relative;") 
+pre(class="prettyprint linenums lang-html")
+    // this emulates the dom
+    div(style="height:500px;width:100%;background-color: #333;position:relative;")
+        div(class="navbar navbar-center")
+            div(class="container")
+                div(class="navbar-title")
+                    span(class="text-white") Cover
+                div(class="navbar-content")
+                    div(class="nav")
+                        a(class="text-white" href="#home" id="home") Home
+                        a(class="text-white" href="#blog" id="blog") Blog
+                        a(class="text-white" href="#contact" id="contact") Contact
+
+        div(class="text-center", style="width:100%;position: absolute;top: 50%;transform: translateY(-50%);")
+            h3(class="text-white") Hello
+            div(class="text-white") This is a cover template for psychic
+            br
+            small(class="text-white") Enjoy!
+
+        div(class="navbar navbar-center" style="bottom:0;position:absolute;")
+            div(class="container text-center")
+                div(class="text-white") Cover template for Psychic, by @gabrielcsapo
+
+
+// this emulates the dom
+div(style="height:500px;width:100%;background-color: #333;position:relative;")
     div(class="navbar navbar-center")
         div(class="container")
             div(class="navbar-title")
                 span(class="text-white") Cover
-            div(class="navbar-content") 
+            div(class="navbar-content")
                 div(class="nav")
                     a(class="text-white" href="#home" id="home") Home
                     a(class="text-white" href="#blog" id="blog") Blog
                     a(class="text-white" href="#contact" id="contact") Contact
-    
+
     div(class="text-center", style="width:100%;position: absolute;top: 50%;transform: translateY(-50%);")
         h3(class="text-white") Hello
         div(class="text-white") This is a cover template for psychic
         br
         small(class="text-white") Enjoy!
-        
+
     div(class="navbar navbar-center" style="bottom:0;position:absolute;")
         div(class="container text-center")
             div(class="text-white") Cover template for Psychic, by @gabrielcsapo
