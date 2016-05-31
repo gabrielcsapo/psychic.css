@@ -10,6 +10,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-screenshot');
     grunt.loadNpmTasks('grunt-contrib-compress');
 
+    var size = {
+        unminified: filesize(fs.statSync("psychic.css")["size"]).human(),
+        minified: filesize(fs.statSync("psychic-min.css")["size"]).human(),
+        gzipped: filesize(fs.statSync("psychic-min.css.gz")["size"]).human()
+    };
+    var brands = ['default', 'primary', 'success', 'info', 'warning', 'danger', 'white', 'black']
     grunt.initConfig({
         stylus: {
             compile: {
@@ -43,7 +49,8 @@ module.exports = function(grunt) {
                 options: {
                     pretty: true,
                     data: {
-                        brands: ['default', 'primary', 'success', 'info', 'warning', 'danger', 'white', 'black']
+                        size: size,
+                        brands: brands
                     }
                 },
                 files: {
@@ -54,8 +61,9 @@ module.exports = function(grunt) {
                 options: {
                     pretty: true,
                     data: {
+                        size: size,
                         title: 'Cosmo',
-                        brands: ['default', 'primary', 'success', 'info', 'warning', 'danger', 'white', 'black']
+                        brands: brands
                     }
                 },
                 files: {
@@ -66,8 +74,9 @@ module.exports = function(grunt) {
                 options: {
                     pretty: true,
                     data: {
+                        size: size,
                         title: 'Cyborg',
-                        brands: ['default', 'primary', 'success', 'info', 'warning', 'danger', 'white', 'black']
+                        brands: brands
                     }
                 },
                 files: {
@@ -78,8 +87,9 @@ module.exports = function(grunt) {
                 options: {
                     pretty: true,
                     data: {
+                        size: size,
                         title: 'Paper',
-                        brands: ['default', 'primary', 'success', 'info', 'warning', 'danger', 'white', 'black']
+                        brands: brands
                     }
                 },
                 files: {
@@ -186,7 +196,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('stats', function() {
         var output = "";
-        output += "- main-size: " + filesize(fs.statSync("psychic.css")["size"]).human() + '\n';
+        output += "- unminified-size: " + filesize(fs.statSync("psychic.css")["size"]).human() + '\n';
         output += "- minified-size: " + filesize(fs.statSync("psychic-min.css")["size"]).human() + '\n';
         output += "- gzipped-size: " + filesize(fs.statSync("psychic-min.css.gz")["size"]).human() + '\n';
         console.log(output);
