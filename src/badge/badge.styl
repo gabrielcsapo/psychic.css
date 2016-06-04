@@ -4,6 +4,8 @@
     border-radius: $badge['border-radius']
     text-align: center
     vertical-align: middle
+    if $badge['box-shadow']
+        box-shadow: $badge['box-shadow']
 
     for key, value in $brands
         &.badge-{key}

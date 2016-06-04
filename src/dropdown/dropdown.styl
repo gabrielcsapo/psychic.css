@@ -19,6 +19,8 @@
         margin-left: -1px
 
 .dropdown-content
+    if $dropdown['box-shadow']
+        box-shadow: $dropdown['box-shadow']
     display: none
     z-index: 10000
     position: absolute
