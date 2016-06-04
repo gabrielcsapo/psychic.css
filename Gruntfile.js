@@ -172,8 +172,8 @@ module.exports = function(grunt) {
                     path: './screenshots/themes/paper',
                     files: [{
                         type: 'remote',
-                        src: "http://localhost:8000/cyborg.html",
-                        dest: "cosmo.png",
+                        src: "http://localhost:8000/paper.html",
+                        dest: "paper.png",
                         delay: 2000
                     }],
                     viewport: ['1920x1080', '1024x768', '640x960', '320x480']
