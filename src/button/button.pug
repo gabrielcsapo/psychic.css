@@ -10,6 +10,19 @@ each val in brands
 br
 
 pre(class="prettyprint linenums lang-html")
+    div(class="btn-group")
+        button(class="btn btn-{brand}") {val}
+        button(class="btn btn-{brand}") {val}
+        button(class="btn btn-{brand}") {val}
+br
+each val in brands
+    div(class="btn-group")
+        button(class="btn btn-"+ val) #{val}
+        button(class="btn btn-"+ val) #{val}
+        button(class="btn btn-"+ val) #{val}
+br
+
+pre(class="prettyprint linenums lang-html")
     button(class="btn btn-{brand} btn-block") {val}
 br
 each val in brands
@@ -23,7 +36,7 @@ each val in brands
     button(class="btn border-"+ val) #{val}
 br
 
-pre(class="prettyprint linenums lang-html") 
+pre(class="prettyprint linenums lang-html")
     button(class="btn border-{brand} border-radius-5") {val}
 br
 each val in brands
