@@ -1,3 +1,19 @@
+.btn-group
+    margin: 10px
+    display: inline-block
+
+    > .btn
+        margin: -3px
+        border-radius: 0px !important
+
+        &:first-child
+            border-top-left-radius: $border-radius !important
+            border-bottom-left-radius: $border-radius !important
+
+        &:last-child
+            border-top-right-radius: $border-radius !important
+            border-bottom-right-radius: $border-radius !important
+
 .btn
     padding: 12px 18px
     margin: 10px
@@ -5,6 +21,7 @@
     display: inline-block
     text-align: center
     background-color: white
+    border-radius: $border-radius
     border: 1px solid $brands['default']
     color: #ffffff
     if $button['box-shadow']
