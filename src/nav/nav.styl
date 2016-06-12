@@ -1,5 +1,21 @@
 .nav
 
+  &.nav-outline
+
+      > a
+          padding: 10px
+
+          &:hover
+            border: 0 !important
+            background-color: lighten($brands['black'], 75%)
+            color: $brands['white']
+
+          &:target,
+          &.active
+            border: 0 !important
+            background-color: $brands['black']
+            color: $brands['white']
+
   &.nav-left
 
       > a
