@@ -135,6 +135,8 @@ module.exports = function(grunt) {
                 options: {
                     path: './screenshots',
                     files: [{
+                        parallel: true,
+                        compress: true,
                         type: 'remote',
                         src: "http://localhost:8000",
                         dest: "base.png",
@@ -147,6 +149,8 @@ module.exports = function(grunt) {
                 options: {
                     path: './screenshots/themes/cosmo',
                     files: [{
+                        parallel: true,
+                        compress: true,
                         type: 'remote',
                         src: "http://localhost:8000/cosmo.html",
                         dest: "cosmo.png",
@@ -159,6 +163,8 @@ module.exports = function(grunt) {
                 options: {
                     path: './screenshots/themes/cyborg',
                     files: [{
+                        parallel: true,
+                        compress: true,
                         type: 'remote',
                         src: "http://localhost:8000/cyborg.html",
                         dest: "cyborg.png",
@@ -171,6 +177,8 @@ module.exports = function(grunt) {
                 options: {
                     path: './screenshots/themes/paper',
                     files: [{
+                        parallel: true,
+                        compress: true,
                         type: 'remote',
                         src: "http://localhost:8000/paper.html",
                         dest: "paper.png",
