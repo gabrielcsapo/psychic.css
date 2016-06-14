@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "grunt dev",
-    "gh-pages": "git checkout gh-pages;git pull origin master;git push -f;git checkout master;"
+    "gh-pages": "git checkout gh-pages;git pull origin master;git push origin `git subtree split --prefix dist/pages master`:gh-pages --force;git checkout master;"
   },
   "repository": {
     "type": "git",
