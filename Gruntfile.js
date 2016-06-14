@@ -10,11 +10,19 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-screenshot');
     grunt.loadNpmTasks('grunt-contrib-compress');
 
-    var size = {
-        unminified: filesize(fs.statSync("psychic.css")["size"]).human(),
-        minified: filesize(fs.statSync("psychic-min.css")["size"]).human(),
-        gzipped: filesize(fs.statSync("psychic-min.css.gz")["size"]).human()
-    };
+    try {
+        var size = {
+            unminified: filesize(fs.statSync("dist/psychic.css")["size"]).human(),
+            minified: filesize(fs.statSync("dist/psychic-min.css")["size"]).human(),
+            gzipped: filesize(fs.statSync("dist/psychic-min.css.gz")["size"]).human()
+        };
+    } catch (ex) {
+        var size = {
+            unminified: 0,
+            minified: 0,
+            gzipped: 0
+        };
+    }
     var brands = ['default', 'primary', 'success', 'info', 'warning', 'danger', 'white', 'black']
     grunt.initConfig({
         stylus: {
@@ -23,10 +31,10 @@ module.exports = function(grunt) {
                     'include css': true
                 },
                 files: {
-                    'psychic.css': 'src/psychic.styl',
-                    'psychic-cosmo.css': 'src/psychic-cosmo.styl',
-                    'psychic-cyborg.css': 'src/psychic-cyborg.styl',
-                    'psychic-paper.css': 'src/psychic-paper.styl'
+                    'dist/psychic.css': 'src/psychic.styl',
+                    'dist/psychic-cosmo.css': 'src/psychic-cosmo.styl',
+                    'dist/psychic-cyborg.css': 'src/psychic-cyborg.styl',
+                    'dist/psychic-paper.css': 'src/psychic-paper.styl'
                 }
             }
         },
@@ -37,10 +45,10 @@ module.exports = function(grunt) {
             },
             target: {
                 files: {
-                    'psychic-min.css': ['psychic.css'],
-                    'psychic-cosmo-min.css': ['psychic-cosmo.css'],
-                    'psychic-cyborg-min.css': ['psychic-cyborg.css'],
-                    'psychic-paper-min.css': ['psychic-paper.css']
+                    'dist/psychic-min.css': ['dist/psychic.css'],
+                    'dist/psychic-cosmo-min.css': ['dist/psychic-cosmo.css'],
+                    'dist/psychic-cyborg-min.css': ['dist/psychic-cyborg.css'],
+                    'dist/psychic-paper-min.css': ['dist/psychic-paper.css']
                 }
             }
         },
@@ -54,7 +62,7 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    'index.html': 'src/examples/index.pug',
+                    'dist/pages/index.html': 'src/examples/index.pug',
                 }
             },
             cosmo: {
@@ -67,7 +75,7 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    'cosmo.html': 'src/examples/themes/cosmo.pug',
+                    'dist/pages/cosmo.html': 'src/examples/themes/cosmo.pug',
                 }
             },
             cyborg: {
@@ -80,7 +88,7 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    'cyborg.html': 'src/examples/themes/cyborg.pug',
+                    'dist/pages/cyborg.html': 'src/examples/themes/cyborg.pug',
                 }
             },
             paper: {
@@ -93,7 +101,7 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    'paper.html': 'src/examples/themes/paper.pug',
+                    'dist/pages/paper.html': 'src/examples/themes/paper.pug',
                 }
             }
         },
@@ -110,7 +118,7 @@ module.exports = function(grunt) {
             server: {
                 options: {
                     port: 8000,
-                    base: '.',
+                    base: 'dist/pages',
                     middleware: function(connect, options, middlewares) {
 
                         middlewares.unshift(function forward(req, res, next) {
@@ -195,7 +203,7 @@ module.exports = function(grunt) {
                 },
                 files: [{
                     expand: true,
-                    src: ['psychic-min.css'],
+                    src: ['dist/psychic-min.css'],
                     ext: '.css.gz'
                 }]
             }
@@ -204,9 +212,9 @@ module.exports = function(grunt) {
 
     grunt.registerTask('stats', function() {
         var output = "";
-        output += "- unminified-size: " + filesize(fs.statSync("psychic.css")["size"]).human() + '\n';
-        output += "- minified-size: " + filesize(fs.statSync("psychic-min.css")["size"]).human() + '\n';
-        output += "- gzipped-size: " + filesize(fs.statSync("psychic-min.css.gz")["size"]).human() + '\n';
+        output += "- unminified-size: " + filesize(fs.statSync("dist/psychic.css")["size"]).human() + '\n';
+        output += "- minified-size: " + filesize(fs.statSync("dist/psychic-min.css")["size"]).human() + '\n';
+        output += "- gzipped-size: " + filesize(fs.statSync("dist/psychic-min.css.gz")["size"]).human() + '\n';
         console.log(output);
     });
 
