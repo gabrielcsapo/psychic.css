@@ -2,6 +2,7 @@ html
     head
         meta(name="viewport" content="width=device-width, initial-scale=1")
         title psychic-ui
+        style!=style
         style
             include assets/prettify.css
         script(src="http://localhost:35729/livereload.js")
@@ -42,8 +43,6 @@ html
             body {
                 padding-bottom: 120px;
             }
-        style
-            include ../../dist/psychic.css
     body
         include ./intro.pug
         div.example

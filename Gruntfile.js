@@ -58,7 +58,9 @@ module.exports = function(grunt) {
                     pretty: true,
                     data: {
                         size: size,
-                        brands: brands
+                        title: 'Base',
+                        brands: brands,
+                        style: fs.readFileSync('./dist/psychic.css').toString('utf8')
                     }
                 },
                 files: {
@@ -71,11 +73,12 @@ module.exports = function(grunt) {
                     data: {
                         size: size,
                         title: 'Cosmo',
-                        brands: brands
+                        brands: brands,
+                        style: fs.readFileSync('./dist/psychic-cosmo-min.css').toString('utf8')
                     }
                 },
                 files: {
-                    'dist/pages/cosmo.html': 'src/examples/themes/cosmo.pug',
+                    'dist/pages/cosmo.html': 'src/examples/index.pug',
                 }
             },
             cyborg: {
@@ -84,11 +87,12 @@ module.exports = function(grunt) {
                     data: {
                         size: size,
                         title: 'Cyborg',
-                        brands: brands
+                        brands: brands,
+                        style: fs.readFileSync('./dist/psychic-cyborg-min.css').toString('utf8')
                     }
                 },
                 files: {
-                    'dist/pages/cyborg.html': 'src/examples/themes/cyborg.pug',
+                    'dist/pages/cyborg.html': 'src/examples/index.pug',
                 }
             },
             paper: {
@@ -97,11 +101,12 @@ module.exports = function(grunt) {
                     data: {
                         size: size,
                         title: 'Paper',
-                        brands: brands
+                        brands: brands,
+                        style: fs.readFileSync('./dist/psychic-paper-min.css').toString('utf8')
                     }
                 },
                 files: {
-                    'dist/pages/paper.html': 'src/examples/themes/paper.pug',
+                    'dist/pages/paper.html': 'src/examples/index.pug',
                 }
             }
         },
