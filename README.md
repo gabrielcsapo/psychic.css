@@ -14,7 +14,11 @@
 - minified-size: 46.44 KiB
 - gzipped-size: 9.38 KiB
 
-####
+# Usage
+
+> to include psychic-ui or themes in code references the `dist` directory
+
+> `node_modules/psychic-ui/dist/psychic.css`
 
 # Examples
 
