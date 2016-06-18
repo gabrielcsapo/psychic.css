@@ -36,6 +36,25 @@
     &.btn-block
         width: 100%
 
+    &.btn-loading
+        position: relative
+
+    &.btn-loading:before
+        height: 30px
+        width: 30px
+        margin: 0 auto;
+        opacity: 1
+        background-color: rgba(255, 255, 255, 0.701961);
+        -webkit-animation: rotation .7s infinite linear;
+        -moz-animation: rotation .7s infinite linear;
+        -o-animation: rotation .7s infinite linear;
+        animation: rotation .7s infinite linear;
+        border-left: 8px solid rgba(0, 0, 0, .20);
+        border-right: 8px solid rgba(0, 0, 0, .20);
+        border-bottom: 8px solid rgba(0, 0, 0, .20);
+        border-top: 8px solid rgba(33, 128, 192, 1);
+        border-radius: 100%;
+
     for radius in range(0, 100)
         &.border-radius-{radius}
             border-radius: unit(radius, 'px')
@@ -71,3 +90,12 @@
                 opacity: .5
                 border-color: darken(value, 15%)
                 color: lightness(value) < $bright-text-lightness ? #ffffff : #000000
+
+    @keyframes rotation {
+        from {
+            transform: rotate(0deg)
+        }
+        to {
+            transform: rotate(359deg)
+        }
+    }
