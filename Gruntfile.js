@@ -34,7 +34,8 @@ module.exports = function(grunt) {
                     'dist/psychic.css': 'src/psychic.styl',
                     'dist/psychic-cosmo.css': 'src/psychic-cosmo.styl',
                     'dist/psychic-cyborg.css': 'src/psychic-cyborg.styl',
-                    'dist/psychic-paper.css': 'src/psychic-paper.styl'
+                    'dist/psychic-paper.css': 'src/psychic-paper.styl',
+                    'dist/psychic-perisian.css': 'src/psychic-perisian.styl'
                 }
             }
         },
@@ -48,7 +49,8 @@ module.exports = function(grunt) {
                     'dist/psychic-min.css': ['dist/psychic.css'],
                     'dist/psychic-cosmo-min.css': ['dist/psychic-cosmo.css'],
                     'dist/psychic-cyborg-min.css': ['dist/psychic-cyborg.css'],
-                    'dist/psychic-paper-min.css': ['dist/psychic-paper.css']
+                    'dist/psychic-paper-min.css': ['dist/psychic-paper.css'],
+                    'dist/psychic-perisian-min.css': ['dist/psychic-perisian.css']
                 }
             }
         },
@@ -60,7 +62,9 @@ module.exports = function(grunt) {
                         size: size,
                         title: 'Base',
                         brands: brands,
-                        style: fs.readFileSync('./dist/psychic.css').toString('utf8')
+                        into_text: 'text-white',
+                        style: './dist/psychic.css',
+                        fs: fs
                     }
                 },
                 files: {
@@ -74,7 +78,9 @@ module.exports = function(grunt) {
                         size: size,
                         title: 'Cosmo',
                         brands: brands,
-                        style: fs.readFileSync('./dist/psychic-cosmo-min.css').toString('utf8')
+                        into_text: 'text-white',
+                        style: './dist/psychic-cosmo-min.css',
+                        fs: fs
                     }
                 },
                 files: {
@@ -88,7 +94,9 @@ module.exports = function(grunt) {
                         size: size,
                         title: 'Cyborg',
                         brands: brands,
-                        style: fs.readFileSync('./dist/psychic-cyborg-min.css').toString('utf8')
+                        into_text: 'text-info',
+                        style: './dist/psychic-cyborg-min.css',
+                        fs: fs
                     }
                 },
                 files: {
@@ -102,11 +110,29 @@ module.exports = function(grunt) {
                         size: size,
                         title: 'Paper',
                         brands: brands,
-                        style: fs.readFileSync('./dist/psychic-paper-min.css').toString('utf8')
+                        into_text: 'text-white',
+                        style: './dist/psychic-paper-min.css',
+                        fs: fs
                     }
                 },
                 files: {
                     'dist/pages/paper.html': 'src/examples/index.pug',
+                }
+            },
+            perisian: {
+                options: {
+                    pretty: true,
+                    data: {
+                        size: size,
+                        title: 'Perisian',
+                        brands: brands,
+                        into_text: 'text-black',
+                        style: './dist/psychic-perisian-min.css',
+                        fs: fs
+                    }
+                },
+                files: {
+                    'dist/pages/perisian.html': 'src/examples/index.pug',
                 }
             }
         },
