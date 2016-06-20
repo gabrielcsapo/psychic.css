@@ -2,7 +2,8 @@ html
     head
         meta(name="viewport" content="width=device-width, initial-scale=1")
         title psychic-ui
-        style!=style
+        - var s = fs.readFileSync(style).toString('utf8');
+        style!=s
         style
             include assets/prettify.css
         script(src="http://localhost:35729/livereload.js")
