@@ -10,7 +10,7 @@
     for key, value in $brands
         &.badge-{key}
             background-color: value
-            color: white
+            color: lightness(value) < $bright-text-lightness ? #ffffff : #000000
 
             &:hover
                 background-color:lighten(value, 50%)
@@ -26,7 +26,7 @@
 
         &.border-{key}
             border: 1px solid value
-            color: value
+            color: lightness(value) < $bright-text-lightness ? value : #000000
 
             &:hover
                 background-color:lighten(value, 50%)
