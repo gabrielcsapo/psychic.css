@@ -5,7 +5,9 @@ hr
 pre(class="prettyprint linenums lang-html")
     each val in brands
         div(class="panel panel-"+ val)
-            div(class="panel-body") #{val}
+            div(class="panel-header") header
+            div(class="panel-body") body
+            div(class="panel-footer") footer
 br
 each val in brands
     div(class="panel panel-"+ val)
