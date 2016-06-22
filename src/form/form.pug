@@ -1,0 +1,41 @@
+hr
+h3 Form
+hr
+
+pre(class="prettyprint linenums lang-html")
+    label Input
+    input(class="input-{brand}" type="text" placeholder="input")
+    br
+
+    label Textarea
+    textarea(class="input-{brand}" placeholder="this is a textarea")
+    br
+
+    label Select
+    select(class="input-{brand}")
+      option 1
+      option 2
+      option 3
+      option 4
+      option 5
+br
+
+div.grid
+    each val in brands
+        div.col-2-12
+            div(style="padding:10px;")
+                label Input
+                input(class="input-" + val type="text" placeholder="input")
+                br
+
+                label Textarea
+                textarea(class="input-" + val placeholder="this is a textarea")
+                br
+
+                label Select
+                select(class="input-" + val)
+                  option 1
+                  option 2
+                  option 3
+                  option 4
+                  option 5
