@@ -94,7 +94,7 @@ module.exports = function(grunt) {
                         size: size,
                         title: 'Cyborg',
                         brands: brands,
-                        into_text: 'text-info',
+                        into_text: 'text-white',
                         style: './dist/psychic-cyborg-min.css',
                         fs: fs
                     }
