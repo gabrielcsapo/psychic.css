@@ -13,21 +13,21 @@ ul(class="list")
 br
 pre(class="prettyprint linenums lang-html")
     ul(class="list")
-        each val, index in ['default', 'primary', 'success', 'info', 'warning', 'danger']
+        each val in brands
             li(class="list-item list-item-"+ val) Item #{index}
 br
 ul(class="list")
-    each val, index in ['default', 'primary', 'success', 'info', 'warning', 'danger']
+    each val in brands
         li(class="list-item list-item-"+ val) Item #{index}
 br
 pre(class="prettyprint linenums lang-html")
     ul(class="list")
-        each val, index in ['default', 'primary', 'success', 'info', 'warning', 'danger']
+        each val in brands
             li(class="list-item list-item-"+ val) Item
                 div(class="badge badge-"+ val) #{index}
 br
 ul(class="list")
-    each val, index in ['default', 'primary', 'success', 'info', 'warning', 'danger']
+    each val in brands
         li(class="list-item list-item-"+ val) Item
             div(class="badge badge-"+ val) #{index}
 
