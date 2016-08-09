@@ -26,6 +26,6 @@
     "grunt-contrib-pug": "^1.0.0",
     "grunt-contrib-stylus": "^1.2.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-screenshot": "^0.4.0"
+    "grunt-screenshot": "^0.6.0"
   }
 }
