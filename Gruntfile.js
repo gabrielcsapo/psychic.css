@@ -173,6 +173,7 @@ module.exports = function(grunt) {
             base: {
                 options: {
                     path: './screenshots',
+                    maxParallel: 5,
                     files: [{
                         parallel: true,
                         compress: true,
@@ -187,6 +188,7 @@ module.exports = function(grunt) {
             cosmo: {
                 options: {
                     path: './screenshots/themes/cosmo',
+                    maxParallel: 5,
                     files: [{
                         parallel: true,
                         compress: true,
@@ -201,6 +203,7 @@ module.exports = function(grunt) {
             cyborg: {
                 options: {
                     path: './screenshots/themes/cyborg',
+                    maxParallel: 5,
                     files: [{
                         parallel: true,
                         compress: true,
@@ -215,6 +218,7 @@ module.exports = function(grunt) {
             paper: {
                 options: {
                     path: './screenshots/themes/paper',
+                    maxParallel: 5,
                     files: [{
                         parallel: true,
                         compress: true,
