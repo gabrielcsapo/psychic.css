@@ -1,4 +1,4 @@
-var fs = require("fs");
+var fs = require('fs');
 var filesize = require('file-size');
 
 module.exports = function(grunt) {
@@ -12,9 +12,9 @@ module.exports = function(grunt) {
 
     try {
         var size = {
-            unminified: filesize(fs.statSync("dist/psychic.css")["size"]).human(),
-            minified: filesize(fs.statSync("dist/psychic-min.css")["size"]).human(),
-            gzipped: filesize(fs.statSync("dist/psychic-min.css.gz")["size"]).human()
+            unminified: filesize(fs.statSync('dist/psychic.css')['size']).human(),
+            minified: filesize(fs.statSync('dist/psychic-min.css')['size']).human(),
+            gzipped: filesize(fs.statSync('dist/psychic-min.css.gz')['size']).human()
         };
     } catch (ex) {
         var size = {
@@ -68,7 +68,7 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    'dist/pages/index.html': 'src/examples/index.pug',
+                    'docs/index.html': 'src/examples/index.pug',
                 }
             },
             cosmo: {
@@ -84,7 +84,7 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    'dist/pages/cosmo.html': 'src/examples/index.pug',
+                    'docs/cosmo.html': 'src/examples/index.pug',
                 }
             },
             cyborg: {
@@ -100,7 +100,7 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    'dist/pages/cyborg.html': 'src/examples/index.pug',
+                    'docs/cyborg.html': 'src/examples/index.pug',
                 }
             },
             paper: {
@@ -116,7 +116,7 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    'dist/pages/paper.html': 'src/examples/index.pug',
+                    'docs/paper.html': 'src/examples/index.pug',
                 }
             },
             perisian: {
@@ -132,7 +132,7 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    'dist/pages/perisian.html': 'src/examples/index.pug',
+                    'docs/perisian.html': 'src/examples/index.pug',
                 }
             }
         },
@@ -149,7 +149,7 @@ module.exports = function(grunt) {
             server: {
                 options: {
                     port: 8000,
-                    base: 'dist/pages',
+                    base: 'docs',
                     middleware: function(connect, options, middlewares) {
 
                         middlewares.unshift(function forward(req, res, next) {
@@ -178,8 +178,8 @@ module.exports = function(grunt) {
                         parallel: true,
                         compress: true,
                         type: 'remote',
-                        src: "http://localhost:8000",
-                        dest: "base.png",
+                        src: 'http://localhost:8000',
+                        dest: 'base.png',
                         delay: 2000
                     }],
                     viewport: ['1920x1080', '1024x768', '640x960', '320x480']
@@ -193,8 +193,8 @@ module.exports = function(grunt) {
                         parallel: true,
                         compress: true,
                         type: 'remote',
-                        src: "http://localhost:8000/cosmo.html",
-                        dest: "cosmo.png",
+                        src: 'http://localhost:8000/cosmo.html',
+                        dest: 'cosmo.png',
                         delay: 2000
                     }],
                     viewport: ['1920x1080', '1024x768', '640x960', '320x480']
@@ -208,8 +208,8 @@ module.exports = function(grunt) {
                         parallel: true,
                         compress: true,
                         type: 'remote',
-                        src: "http://localhost:8000/cyborg.html",
-                        dest: "cyborg.png",
+                        src: 'http://localhost:8000/cyborg.html',
+                        dest: 'cyborg.png',
                         delay: 2000
                     }],
                     viewport: ['1920x1080', '1024x768', '640x960', '320x480']
@@ -223,8 +223,8 @@ module.exports = function(grunt) {
                         parallel: true,
                         compress: true,
                         type: 'remote',
-                        src: "http://localhost:8000/paper.html",
-                        dest: "paper.png",
+                        src: 'http://localhost:8000/paper.html',
+                        dest: 'paper.png',
                         delay: 2000
                     }],
                     viewport: ['1920x1080', '1024x768', '640x960', '320x480']
@@ -246,10 +246,10 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('stats', function() {
-        var output = "";
-        output += "- unminified-size: " + filesize(fs.statSync("dist/psychic.css")["size"]).human() + '\n';
-        output += "- minified-size: " + filesize(fs.statSync("dist/psychic-min.css")["size"]).human() + '\n';
-        output += "- gzipped-size: " + filesize(fs.statSync("dist/psychic-min.css.gz")["size"]).human() + '\n';
+        var output = '';
+        output += '- unminified-size: ' + filesize(fs.statSync('dist/psychic.css')['size']).human() + '\n';
+        output += '- minified-size: ' + filesize(fs.statSync('dist/psychic-min.css')['size']).human() + '\n';
+        output += '- gzipped-size: ' + filesize(fs.statSync('dist/psychic-min.css.gz')['size']).human() + '\n';
         console.log(output);
     });
 
