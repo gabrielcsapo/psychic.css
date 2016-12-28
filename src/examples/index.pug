@@ -34,96 +34,95 @@ html
         script
             include assets/prettify.js
         style.
-            .example {
-                width: 65%;
-                margin: 0 auto;
-            }
             pre {
                 white-space: pre-wrap;
             }
             body {
-                padding-bottom: 120px;
+                padding-bottom: 25px;
             }
     body
         include ./intro.pug
-        div.example
-            div
-                include ./colors.pug
-            br
-            div
-                include ../grid/grid.pug
-            br
-            div
-                include ../typography/typography.pug
-            br
-            div
-                include ../helper/helper.pug
-            br
-            div
-                include ../table/table.pug
-            br
-            div
-                include ../navbar/navbar.pug
-            br
-            div
-                include ../nav/nav.pug
-            br
-            div
-                include ../nav-tab/nav-tab.pug
-            br
-            div
-                include ../spinner/spinner.pug
-            br
-            div
-                include ../button/button.pug
-            br
-            div
-                include ../form/form.pug
-            br
-            div
-                include ../popover/popover.pug
-            br
-            div
-                include ../progress/progress.pug
-            br
-            div
-                include ../treeview/treeview.pug
-            br
-            div
-                include ../dropdown/dropdown.pug
-            br
-            div
-                include ../modal/modal.pug
-            br
-            div
-                include ../alert/alert.pug
-            br
-            div
-                include ../list/list.pug
-            br
-            div
-                include ../badge/badge.pug
-            br
-            div
-                include ../panel/panel.pug
-            br
-            div
-                include ../callout/callout.pug
-            br
-            hr
-            h3 Examples
-            hr
-            br
-            br
-            br
-            include api-status.pug
-            br
-            include chat.pug
-            br
-            include cover.pug
-            br
-            br
-            div(class="navbar navbar-center")
-                div(class="container text-center")
-                    div(class="text-black") created with ♥ by
-                        a(class="text-black" href="https://github.com/gabrielcsapo") @gabrielcsapo
+        div.grid
+            div.col-2-12
+            div.col-8-12
+                div
+                    include ./colors.pug
+                br
+                div
+                    include ../grid/grid.pug
+                br
+                div
+                    include ../typography/typography.pug
+                br
+                div
+                    include ../helper/helper.pug
+                br
+                div
+                    include ../table/table.pug
+                br
+                div
+                    include ../navbar/navbar.pug
+                br
+                div
+                    include ../nav/nav.pug
+                br
+                div
+                    include ../nav-tab/nav-tab.pug
+                br
+                div
+                    include ../spinner/spinner.pug
+                br
+                div
+                    include ../button/button.pug
+                br
+                div
+                    include ../form/form.pug
+                br
+                div
+                    include ../popover/popover.pug
+                br
+                div
+                    include ../progress/progress.pug
+                br
+                div
+                    include ../treeview/treeview.pug
+                br
+                div
+                    include ../dropdown/dropdown.pug
+                br
+                div
+                    include ../modal/modal.pug
+                br
+                div
+                    include ../alert/alert.pug
+                br
+                div
+                    include ../list/list.pug
+                br
+                div
+                    include ../badge/badge.pug
+                br
+                div
+                    include ../panel/panel.pug
+                br
+                div
+                    include ../callout/callout.pug
+                br
+                hr
+                h3 Examples
+                hr
+                br
+                br
+                br
+                include api-status.pug
+                br
+                include chat.pug
+                br
+                include cover.pug
+                br
+                br
+                div(class="navbar navbar-center")
+                    div(class="container text-center")
+                        div(class="text-black") created with ♥ by
+                            a(class="text-black" href="https://github.com/gabrielcsapo") @gabrielcsapo
+            div.col-2-12

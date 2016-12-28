@@ -556,15 +556,11 @@ q=/^(?:pre|code|xmp)$/i,g={};f()}},H=E.define;"function"===typeof H&&H.amd&&H("g
 
     </script>
     <style>
-      .example {
-          width: 65%;
-          margin: 0 auto;
-      }
       pre {
           white-space: pre-wrap;
       }
       body {
-          padding-bottom: 120px;
+          padding-bottom: 25px;
       }
     </style>
   </head>
@@ -612,160 +608,171 @@ q=/^(?:pre|code|xmp)$/i,g={};f()}},H=E.define;"function"===typeof H&&H.amd&&H("g
       </div>
       <div class="navbar navbar-center" style="bottom:0;position:absolute">
         <div class="container text-center">
-          <div class="text-white">created with ♥ by<a class="text-white" href="https://github.com/gabrielcsapo">@gabrielcsapo</a></div>
+          <div class="text-white">created with ♥ by<a class="text-white" href="http://gabrielcsapo.com">@gabrielcsapo</a></div>
         </div>
       </div>
     </div>
-    <div class="example">
-      <div>
-        <h3>Colors</h3>
-        <hr/>
-        <ul class="list colors">
-          <li class="list-item list-item-default">default</li>
-          <li class="list-item list-item-primary">primary</li>
-          <li class="list-item list-item-success">success</li>
-          <li class="list-item list-item-info">info</li>
-          <li class="list-item list-item-warning">warning</li>
-          <li class="list-item list-item-danger">danger</li>
-          <li class="list-item list-item-white">white</li>
-          <li class="list-item list-item-black">black</li>
-        </ul>
-        <script>
-          var hexDigits = new Array
-              ("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f");
-          
-          function rgb2hex(rgb) {
-           rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-           return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
-          }
-          
-          function hex(x) {
-            return isNaN(x) ? "00" : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
-           }
-           var children = document.querySelectorAll('.colors .list-item');
-          [].forEach.call(children, function(div) {
-              var _color = document.createElement("div");
-              _color.classList.add('badge');
-              _color.innerHTML = rgb2hex(window.getComputedStyle(div, false).backgroundColor);
-              div.appendChild(_color);
-          });
-        </script>
-      </div><br/>
-      <div>
-        <h3>Grid</h3>
-        <hr/>
-        <style>
-          .cell {
-              background-color: #dddddd;
-              border: 1px solid white;
-              padding: 5px 0;
-              text-align: center;
-              width: 100%;
-          }
-          
-        </style>
-        <pre class="prettyprint linenums lang-html">
+    <div class="grid">
+      <div class="col-2-12"></div>
+      <div class="col-8-12">
+        <div>
+          <h3>Colors</h3>
+          <hr/>
+          <ul class="list colors">
+            <li class="list-item list-item-default">default</li>
+            <li class="list-item list-item-primary">primary</li>
+            <li class="list-item list-item-success">success</li>
+            <li class="list-item list-item-info">info</li>
+            <li class="list-item list-item-warning">warning</li>
+            <li class="list-item list-item-danger">danger</li>
+            <li class="list-item list-item-white">white</li>
+            <li class="list-item list-item-black">black</li>
+          </ul>
+          <script>
+            var hexDigits = new Array
+                ("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f");
+            
+            function rgb2hex(rgb) {
+             rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+             return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+            }
+            
+            function hex(x) {
+              return isNaN(x) ? "00" : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
+             }
+             var children = document.querySelectorAll('.colors .list-item');
+            [].forEach.call(children, function(div) {
+                var _color = document.createElement("div");
+                _color.classList.add('badge');
+                _color.innerHTML = rgb2hex(window.getComputedStyle(div, false).backgroundColor);
+                div.appendChild(_color);
+            });
+          </script>
+        </div><br/>
+        <div>
+          <h3>Grid</h3>
+          <hr/>
+          <style>
+            .cell {
+                background-color: #dddddd;
+                border: 1px solid white;
+                padding: 5px 0;
+                text-align: center;
+                width: 100%;
+            }
+            
+          </style>
+          <pre class="prettyprint linenums lang-html">
+            <div class="grid">
+              <div class="col-{column}-12">{column}</div>
+            </div></pre><br/>
           <div class="grid">
-            <div class="col-{column}-12">{column}</div>
-          </div></pre><br/>
-        <div class="grid">
-          <div class="col-0-12">
-            <div class="cell">0</div>
-          </div>
-          <div class="col-12-12">
-            <div class="cell">12</div>
-          </div>
-          <div class="col-1-12">
-            <div class="cell">1</div>
-          </div>
-          <div class="col-11-12">
-            <div class="cell">11</div>
-          </div>
-          <div class="col-2-12">
-            <div class="cell">2</div>
-          </div>
-          <div class="col-10-12">
-            <div class="cell">10</div>
-          </div>
-          <div class="col-3-12">
-            <div class="cell">3</div>
-          </div>
-          <div class="col-9-12">
-            <div class="cell">9</div>
-          </div>
-          <div class="col-4-12">
-            <div class="cell">4</div>
-          </div>
-          <div class="col-8-12">
-            <div class="cell">8</div>
-          </div>
-          <div class="col-5-12">
-            <div class="cell">5</div>
-          </div>
-          <div class="col-7-12">
-            <div class="cell">7</div>
-          </div>
-          <div class="col-6-12">
-            <div class="cell">6</div>
-          </div>
-          <div class="col-6-12">
-            <div class="cell">6</div>
-          </div>
-          <div class="col-7-12">
-            <div class="cell">7</div>
-          </div>
-          <div class="col-5-12">
-            <div class="cell">5</div>
-          </div>
-          <div class="col-8-12">
-            <div class="cell">8</div>
-          </div>
-          <div class="col-4-12">
-            <div class="cell">4</div>
-          </div>
-          <div class="col-9-12">
-            <div class="cell">9</div>
-          </div>
-          <div class="col-3-12">
-            <div class="cell">3</div>
-          </div>
-          <div class="col-10-12">
-            <div class="cell">10</div>
-          </div>
-          <div class="col-2-12">
-            <div class="cell">2</div>
-          </div>
-          <div class="col-11-12">
-            <div class="cell">11</div>
-          </div>
-          <div class="col-1-12">
-            <div class="cell">1</div>
-          </div>
-          <div class="col-12-12">
-            <div class="cell">12</div>
-          </div>
-          <div class="col-0-12">
-            <div class="cell">0</div>
-          </div>
-        </div><br/><br/>
-        <blockquote>the grid also has breakpoint options for<br/><br/><code>(xs, sm, md, lg, xl)</code></blockquote>
-        <blockquote>using these options can be done as follows<br/><br/><code>col-{size}-{column}-{width}</code></blockquote>
-      </div><br/>
-      <div>
-        <hr/>
-        <h3>Typography</h3>
-        <hr/><br/>
-        <pre class="prettyprint linenums lang-html">
-          <hr/></pre>
-        <hr/><br/>
-        <pre class="prettyprint linenums lang-html">
-          <hr class="ellipsis"/></pre>
-        <hr class="ellipsis"/><br/>
-        <pre class="prettyprint linenums lang-html"><code>function() {}</code></pre><code>function() {}</code><br/><br/>
-        <pre class="prettyprint linenums lang-html">
-          <pre>function() {}</pre></pre>
-        <pre>function() {}</pre><br/>
-        <pre class="prettyprint linenums lang-html">
+            <div class="col-0-12">
+              <div class="cell">0</div>
+            </div>
+            <div class="col-12-12">
+              <div class="cell">12</div>
+            </div>
+            <div class="col-1-12">
+              <div class="cell">1</div>
+            </div>
+            <div class="col-11-12">
+              <div class="cell">11</div>
+            </div>
+            <div class="col-2-12">
+              <div class="cell">2</div>
+            </div>
+            <div class="col-10-12">
+              <div class="cell">10</div>
+            </div>
+            <div class="col-3-12">
+              <div class="cell">3</div>
+            </div>
+            <div class="col-9-12">
+              <div class="cell">9</div>
+            </div>
+            <div class="col-4-12">
+              <div class="cell">4</div>
+            </div>
+            <div class="col-8-12">
+              <div class="cell">8</div>
+            </div>
+            <div class="col-5-12">
+              <div class="cell">5</div>
+            </div>
+            <div class="col-7-12">
+              <div class="cell">7</div>
+            </div>
+            <div class="col-6-12">
+              <div class="cell">6</div>
+            </div>
+            <div class="col-6-12">
+              <div class="cell">6</div>
+            </div>
+            <div class="col-7-12">
+              <div class="cell">7</div>
+            </div>
+            <div class="col-5-12">
+              <div class="cell">5</div>
+            </div>
+            <div class="col-8-12">
+              <div class="cell">8</div>
+            </div>
+            <div class="col-4-12">
+              <div class="cell">4</div>
+            </div>
+            <div class="col-9-12">
+              <div class="cell">9</div>
+            </div>
+            <div class="col-3-12">
+              <div class="cell">3</div>
+            </div>
+            <div class="col-10-12">
+              <div class="cell">10</div>
+            </div>
+            <div class="col-2-12">
+              <div class="cell">2</div>
+            </div>
+            <div class="col-11-12">
+              <div class="cell">11</div>
+            </div>
+            <div class="col-1-12">
+              <div class="cell">1</div>
+            </div>
+            <div class="col-12-12">
+              <div class="cell">12</div>
+            </div>
+            <div class="col-0-12">
+              <div class="cell">0</div>
+            </div>
+          </div><br/><br/>
+          <blockquote>the grid also has breakpoint options for<br/><br/><code>(xs, sm, md, lg, xl)</code></blockquote>
+          <blockquote>using these options can be done as follows<br/><br/><code>col-{size}-{column}-{width}</code></blockquote>
+        </div><br/>
+        <div>
+          <hr/>
+          <h3>Typography</h3>
+          <hr/><br/>
+          <pre class="prettyprint linenums lang-html">
+            <hr/></pre>
+          <hr/><br/>
+          <pre class="prettyprint linenums lang-html">
+            <hr class="ellipsis"/></pre>
+          <hr class="ellipsis"/><br/>
+          <pre class="prettyprint linenums lang-html"><code>function() {}</code></pre><code>function() {}</code><br/><br/>
+          <pre class="prettyprint linenums lang-html">
+            <pre>function() {}</pre></pre>
+          <pre>function() {}</pre><br/>
+          <pre class="prettyprint linenums lang-html">
+            <blockquote>Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
+            <blockquote class="text-default">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
+            <blockquote class="text-primary">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
+            <blockquote class="text-success">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
+            <blockquote class="text-info">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
+            <blockquote class="text-warning">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
+            <blockquote class="text-danger">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
+            <blockquote class="text-white">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
+            <blockquote class="text-black">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote></pre>
           <blockquote>Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
           <blockquote class="text-default">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
           <blockquote class="text-primary">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
@@ -774,59 +781,176 @@ q=/^(?:pre|code|xmp)$/i,g={};f()}},H=E.define;"function"===typeof H&&H.amd&&H("g
           <blockquote class="text-warning">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
           <blockquote class="text-danger">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
           <blockquote class="text-white">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
-          <blockquote class="text-black">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote></pre>
-        <blockquote>Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
-        <blockquote class="text-default">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
-        <blockquote class="text-primary">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
-        <blockquote class="text-success">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
-        <blockquote class="text-info">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
-        <blockquote class="text-warning">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
-        <blockquote class="text-danger">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
-        <blockquote class="text-white">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote>
-        <blockquote class="text-black">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote><br/>
-        <pre class"prettyprint="class"prettyprint" linenums="linenums" lang-html="lang-html">
+          <blockquote class="text-black">Science without religion is lame, religion without science is blind. - Albert Einstein</blockquote><br/>
+          <pre class"prettyprint="class"prettyprint" linenums="linenums" lang-html="lang-html">
+            <h1>h1<small>secondary text</small></h1>
+            <h2>h2<small>secondary text</small></h2>
+            <h3>h3<small>secondary text</small></h3>
+            <h4>h4<small>secondary text</small></h4>
+            <h5>h5<small>secondary text</small></h5></pre>
           <h1>h1<small>secondary text</small></h1>
           <h2>h2<small>secondary text</small></h2>
           <h3>h3<small>secondary text</small></h3>
           <h4>h4<small>secondary text</small></h4>
-          <h5>h5<small>secondary text</small></h5></pre>
-        <h1>h1<small>secondary text</small></h1>
-        <h2>h2<small>secondary text</small></h2>
-        <h3>h3<small>secondary text</small></h3>
-        <h4>h4<small>secondary text</small></h4>
-        <h5>h5<small>secondary text</small></h5>
-      </div><br/>
-      <div>
-        <hr/>
-        <h3>Helpers</h3>
-        <hr/>
-        <pre class="prettyprint linenums lang-html">
-          <div class="text-{brand}">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</div></pre><br/>
-        <div class="text-default">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</div>
-        <div class="text-primary">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</div>
-        <div class="text-success">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</div>
-        <div class="text-info">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</div>
-        <div class="text-warning">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</div>
-        <div class="text-danger">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</div>
-        <div class="text-white">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</div>
-        <div class="text-black">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</div>
-        <pre class="prettyprint linenums lang-html">
-          <div class="background-{brand}"></div></pre><br/>
-        <div class="background-default" style="padding:10px"></div><br/>
-        <div class="background-primary" style="padding:10px"></div><br/>
-        <div class="background-success" style="padding:10px"></div><br/>
-        <div class="background-info" style="padding:10px"></div><br/>
-        <div class="background-warning" style="padding:10px"></div><br/>
-        <div class="background-danger" style="padding:10px"></div><br/>
-        <div class="background-white" style="padding:10px"></div><br/>
-        <div class="background-black" style="padding:10px"></div><br/>
-        <pre class="prettyprint linenums lang-html"><img class="responsive" src="/psychic-ui/assets/travis.jpeg"/></pre><br/><img class="responsive" src="/psychic-ui/assets/travis.jpeg"/>
-      </div><br/>
-      <div>
-        <hr/>
-        <h3>Table</h3>
-        <hr/>
-        <pre class="prettyprint linenums lang-html">
+          <h5>h5<small>secondary text</small></h5>
+        </div><br/>
+        <div>
+          <hr/>
+          <h3>Helpers</h3>
+          <hr/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="text-{brand}">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</div></pre><br/>
+          <div class="text-default">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</div>
+          <div class="text-primary">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</div>
+          <div class="text-success">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</div>
+          <div class="text-info">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</div>
+          <div class="text-warning">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</div>
+          <div class="text-danger">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</div>
+          <div class="text-white">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</div>
+          <div class="text-black">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</div>
+          <pre class="prettyprint linenums lang-html">
+            <div class="background-{brand}"></div></pre><br/>
+          <div class="background-default" style="padding:10px"></div><br/>
+          <div class="background-primary" style="padding:10px"></div><br/>
+          <div class="background-success" style="padding:10px"></div><br/>
+          <div class="background-info" style="padding:10px"></div><br/>
+          <div class="background-warning" style="padding:10px"></div><br/>
+          <div class="background-danger" style="padding:10px"></div><br/>
+          <div class="background-white" style="padding:10px"></div><br/>
+          <div class="background-black" style="padding:10px"></div><br/>
+          <pre class="prettyprint linenums lang-html"><img class="responsive" src="/psychic-ui/assets/travis.jpeg"/></pre><br/><img class="responsive" src="/psychic-ui/assets/travis.jpeg"/>
+        </div><br/>
+        <div>
+          <hr/>
+          <h3>Table</h3>
+          <hr/>
+          <pre class="prettyprint linenums lang-html">
+            <table class="table responsive border-black">
+              <thead>
+                <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>John</th>
+                  <th>Doe</th>
+                </tr>
+              </tbody>
+            </table></pre><br/>
+          <table class="table responsive">
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>John</th>
+                <th>Doe</th>
+              </tr>
+            </tbody>
+          </table><br/>
+          <table class="table responsive border-default">
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>John</th>
+                <th>Doe</th>
+              </tr>
+            </tbody>
+          </table><br/>
+          <table class="table responsive border-primary">
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>John</th>
+                <th>Doe</th>
+              </tr>
+            </tbody>
+          </table><br/>
+          <table class="table responsive border-success">
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>John</th>
+                <th>Doe</th>
+              </tr>
+            </tbody>
+          </table><br/>
+          <table class="table responsive border-info">
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>John</th>
+                <th>Doe</th>
+              </tr>
+            </tbody>
+          </table><br/>
+          <table class="table responsive border-warning">
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>John</th>
+                <th>Doe</th>
+              </tr>
+            </tbody>
+          </table><br/>
+          <table class="table responsive border-danger">
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>John</th>
+                <th>Doe</th>
+              </tr>
+            </tbody>
+          </table><br/>
+          <table class="table responsive border-white">
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>John</th>
+                <th>Doe</th>
+              </tr>
+            </tbody>
+          </table><br/>
           <table class="table responsive border-black">
             <thead>
               <tr>
@@ -840,767 +964,654 @@ q=/^(?:pre|code|xmp)$/i,g={};f()}},H=E.define;"function"===typeof H&&H.amd&&H("g
                 <th>Doe</th>
               </tr>
             </tbody>
-          </table></pre><br/>
-        <table class="table responsive">
-          <thead>
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>John</th>
-              <th>Doe</th>
-            </tr>
-          </tbody>
-        </table><br/>
-        <table class="table responsive border-default">
-          <thead>
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>John</th>
-              <th>Doe</th>
-            </tr>
-          </tbody>
-        </table><br/>
-        <table class="table responsive border-primary">
-          <thead>
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>John</th>
-              <th>Doe</th>
-            </tr>
-          </tbody>
-        </table><br/>
-        <table class="table responsive border-success">
-          <thead>
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>John</th>
-              <th>Doe</th>
-            </tr>
-          </tbody>
-        </table><br/>
-        <table class="table responsive border-info">
-          <thead>
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>John</th>
-              <th>Doe</th>
-            </tr>
-          </tbody>
-        </table><br/>
-        <table class="table responsive border-warning">
-          <thead>
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>John</th>
-              <th>Doe</th>
-            </tr>
-          </tbody>
-        </table><br/>
-        <table class="table responsive border-danger">
-          <thead>
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>John</th>
-              <th>Doe</th>
-            </tr>
-          </tbody>
-        </table><br/>
-        <table class="table responsive border-white">
-          <thead>
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>John</th>
-              <th>Doe</th>
-            </tr>
-          </tbody>
-        </table><br/>
-        <table class="table responsive border-black">
-          <thead>
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>John</th>
-              <th>Doe</th>
-            </tr>
-          </tbody>
-        </table><br/>
-      </div><br/>
-      <div>
-        <hr/>
-        <h3>Navbar</h3>
-        <hr/>
-        <pre class="prettyprint linenums lang-html">
+          </table><br/>
+        </div><br/>
+        <div>
+          <hr/>
+          <h3>Navbar</h3>
+          <hr/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="navbar navbar-black">
+              <div class="container">
+                <div class="navbar-title"><span>Title</span></div>
+              </div>
+            </div></pre><br/>
+          <div class="navbar navbar-default">
+            <div class="container">
+              <div class="navbar-title"><span>Title</span></div>
+            </div>
+          </div><br/>
+          <div class="navbar navbar-primary">
+            <div class="container">
+              <div class="navbar-title"><span>Title</span></div>
+            </div>
+          </div><br/>
+          <div class="navbar navbar-success">
+            <div class="container">
+              <div class="navbar-title"><span>Title</span></div>
+            </div>
+          </div><br/>
+          <div class="navbar navbar-info">
+            <div class="container">
+              <div class="navbar-title"><span>Title</span></div>
+            </div>
+          </div><br/>
+          <div class="navbar navbar-warning">
+            <div class="container">
+              <div class="navbar-title"><span>Title</span></div>
+            </div>
+          </div><br/>
+          <div class="navbar navbar-danger">
+            <div class="container">
+              <div class="navbar-title"><span>Title</span></div>
+            </div>
+          </div><br/>
+          <div class="navbar navbar-white">
+            <div class="container">
+              <div class="navbar-title"><span>Title</span></div>
+            </div>
+          </div><br/>
           <div class="navbar navbar-black">
             <div class="container">
               <div class="navbar-title"><span>Title</span></div>
             </div>
-          </div></pre><br/>
-        <div class="navbar navbar-default">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-          </div>
-        </div><br/>
-        <div class="navbar navbar-primary">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-          </div>
-        </div><br/>
-        <div class="navbar navbar-success">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-          </div>
-        </div><br/>
-        <div class="navbar navbar-info">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-          </div>
-        </div><br/>
-        <div class="navbar navbar-warning">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-          </div>
-        </div><br/>
-        <div class="navbar navbar-danger">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-          </div>
-        </div><br/>
-        <div class="navbar navbar-white">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-          </div>
-        </div><br/>
-        <div class="navbar navbar-black">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-          </div>
-        </div><br/>
-        <pre class="prettyprint linenums lang-html">
+          </div><br/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="navbar navbar-black">
+              <div class="container">
+                <div class="navbar-title"><span>Title</span></div>
+                <div class="nav"><a href="#blog">Blog</a><a href="#about">About</a><a href="#store">Store</a></div>
+              </div>
+            </div></pre><br/>
+          <div class="navbar navbar-default">
+            <div class="container">
+              <div class="navbar-title"><span>Title</span></div>
+              <div class="nav"><a href="#blog-navdefault" id="blog-navdefault">Blog</a><a href="#about-navdefault" id="about-navdefault">About</a><a href="#store-navdefault" id="store-navdefault">Store</a></div>
+            </div>
+          </div><br/>
+          <div class="navbar navbar-primary">
+            <div class="container">
+              <div class="navbar-title"><span>Title</span></div>
+              <div class="nav"><a href="#blog-navprimary" id="blog-navprimary">Blog</a><a href="#about-navprimary" id="about-navprimary">About</a><a href="#store-navprimary" id="store-navprimary">Store</a></div>
+            </div>
+          </div><br/>
+          <div class="navbar navbar-success">
+            <div class="container">
+              <div class="navbar-title"><span>Title</span></div>
+              <div class="nav"><a href="#blog-navsuccess" id="blog-navsuccess">Blog</a><a href="#about-navsuccess" id="about-navsuccess">About</a><a href="#store-navsuccess" id="store-navsuccess">Store</a></div>
+            </div>
+          </div><br/>
+          <div class="navbar navbar-info">
+            <div class="container">
+              <div class="navbar-title"><span>Title</span></div>
+              <div class="nav"><a href="#blog-navinfo" id="blog-navinfo">Blog</a><a href="#about-navinfo" id="about-navinfo">About</a><a href="#store-navinfo" id="store-navinfo">Store</a></div>
+            </div>
+          </div><br/>
+          <div class="navbar navbar-warning">
+            <div class="container">
+              <div class="navbar-title"><span>Title</span></div>
+              <div class="nav"><a href="#blog-navwarning" id="blog-navwarning">Blog</a><a href="#about-navwarning" id="about-navwarning">About</a><a href="#store-navwarning" id="store-navwarning">Store</a></div>
+            </div>
+          </div><br/>
+          <div class="navbar navbar-danger">
+            <div class="container">
+              <div class="navbar-title"><span>Title</span></div>
+              <div class="nav"><a href="#blog-navdanger" id="blog-navdanger">Blog</a><a href="#about-navdanger" id="about-navdanger">About</a><a href="#store-navdanger" id="store-navdanger">Store</a></div>
+            </div>
+          </div><br/>
+          <div class="navbar navbar-white">
+            <div class="container">
+              <div class="navbar-title"><span>Title</span></div>
+              <div class="nav"><a href="#blog-navwhite" id="blog-navwhite">Blog</a><a href="#about-navwhite" id="about-navwhite">About</a><a href="#store-navwhite" id="store-navwhite">Store</a></div>
+            </div>
+          </div><br/>
           <div class="navbar navbar-black">
             <div class="container">
               <div class="navbar-title"><span>Title</span></div>
-              <div class="nav"><a href="#blog">Blog</a><a href="#about">About</a><a href="#store">Store</a></div>
+              <div class="nav"><a href="#blog-navblack" id="blog-navblack">Blog</a><a href="#about-navblack" id="about-navblack">About</a><a href="#store-navblack" id="store-navblack">Store</a></div>
             </div>
-          </div></pre><br/>
-        <div class="navbar navbar-default">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-            <div class="nav"><a href="#blog-navdefault" id="blog-navdefault">Blog</a><a href="#about-navdefault" id="about-navdefault">About</a><a href="#store-navdefault" id="store-navdefault">Store</a></div>
-          </div>
-        </div><br/>
-        <div class="navbar navbar-primary">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-            <div class="nav"><a href="#blog-navprimary" id="blog-navprimary">Blog</a><a href="#about-navprimary" id="about-navprimary">About</a><a href="#store-navprimary" id="store-navprimary">Store</a></div>
-          </div>
-        </div><br/>
-        <div class="navbar navbar-success">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-            <div class="nav"><a href="#blog-navsuccess" id="blog-navsuccess">Blog</a><a href="#about-navsuccess" id="about-navsuccess">About</a><a href="#store-navsuccess" id="store-navsuccess">Store</a></div>
-          </div>
-        </div><br/>
-        <div class="navbar navbar-info">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-            <div class="nav"><a href="#blog-navinfo" id="blog-navinfo">Blog</a><a href="#about-navinfo" id="about-navinfo">About</a><a href="#store-navinfo" id="store-navinfo">Store</a></div>
-          </div>
-        </div><br/>
-        <div class="navbar navbar-warning">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-            <div class="nav"><a href="#blog-navwarning" id="blog-navwarning">Blog</a><a href="#about-navwarning" id="about-navwarning">About</a><a href="#store-navwarning" id="store-navwarning">Store</a></div>
-          </div>
-        </div><br/>
-        <div class="navbar navbar-danger">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-            <div class="nav"><a href="#blog-navdanger" id="blog-navdanger">Blog</a><a href="#about-navdanger" id="about-navdanger">About</a><a href="#store-navdanger" id="store-navdanger">Store</a></div>
-          </div>
-        </div><br/>
-        <div class="navbar navbar-white">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-            <div class="nav"><a href="#blog-navwhite" id="blog-navwhite">Blog</a><a href="#about-navwhite" id="about-navwhite">About</a><a href="#store-navwhite" id="store-navwhite">Store</a></div>
-          </div>
-        </div><br/>
-        <div class="navbar navbar-black">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-            <div class="nav"><a href="#blog-navblack" id="blog-navblack">Blog</a><a href="#about-navblack" id="about-navblack">About</a><a href="#store-navblack" id="store-navblack">Store</a></div>
-          </div>
-        </div><br/>
-        <pre class="prettyprint linenums lang-html">
+          </div><br/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="navbar navbar-black">
+              <div class="container">
+                <div class="navbar-title"><span>Title</span></div>
+                <div class="nav nav-outline"><a href="#blog">Blog</a><a href="#about">About</a><a href="#store">Store</a></div>
+              </div>
+            </div></pre><br/>
+          <div class="navbar navbar-default">
+            <div class="container">
+              <div class="navbar-title"><span>Title</span></div>
+              <div class="nav nav-outline"><a href="#blog-outlinedefault" id="blog-outlinedefault">Blog</a><a href="#about-outlinedefault" id="about-outlinedefault">About</a><a href="#store-outlinedefault" id="store-outlinedefault">Store</a></div>
+            </div>
+          </div><br/>
+          <div class="navbar navbar-primary">
+            <div class="container">
+              <div class="navbar-title"><span>Title</span></div>
+              <div class="nav nav-outline"><a href="#blog-outlineprimary" id="blog-outlineprimary">Blog</a><a href="#about-outlineprimary" id="about-outlineprimary">About</a><a href="#store-outlineprimary" id="store-outlineprimary">Store</a></div>
+            </div>
+          </div><br/>
+          <div class="navbar navbar-success">
+            <div class="container">
+              <div class="navbar-title"><span>Title</span></div>
+              <div class="nav nav-outline"><a href="#blog-outlinesuccess" id="blog-outlinesuccess">Blog</a><a href="#about-outlinesuccess" id="about-outlinesuccess">About</a><a href="#store-outlinesuccess" id="store-outlinesuccess">Store</a></div>
+            </div>
+          </div><br/>
+          <div class="navbar navbar-info">
+            <div class="container">
+              <div class="navbar-title"><span>Title</span></div>
+              <div class="nav nav-outline"><a href="#blog-outlineinfo" id="blog-outlineinfo">Blog</a><a href="#about-outlineinfo" id="about-outlineinfo">About</a><a href="#store-outlineinfo" id="store-outlineinfo">Store</a></div>
+            </div>
+          </div><br/>
+          <div class="navbar navbar-warning">
+            <div class="container">
+              <div class="navbar-title"><span>Title</span></div>
+              <div class="nav nav-outline"><a href="#blog-outlinewarning" id="blog-outlinewarning">Blog</a><a href="#about-outlinewarning" id="about-outlinewarning">About</a><a href="#store-outlinewarning" id="store-outlinewarning">Store</a></div>
+            </div>
+          </div><br/>
+          <div class="navbar navbar-danger">
+            <div class="container">
+              <div class="navbar-title"><span>Title</span></div>
+              <div class="nav nav-outline"><a href="#blog-outlinedanger" id="blog-outlinedanger">Blog</a><a href="#about-outlinedanger" id="about-outlinedanger">About</a><a href="#store-outlinedanger" id="store-outlinedanger">Store</a></div>
+            </div>
+          </div><br/>
+          <div class="navbar navbar-white">
+            <div class="container">
+              <div class="navbar-title"><span>Title</span></div>
+              <div class="nav nav-outline"><a href="#blog-outlinewhite" id="blog-outlinewhite">Blog</a><a href="#about-outlinewhite" id="about-outlinewhite">About</a><a href="#store-outlinewhite" id="store-outlinewhite">Store</a></div>
+            </div>
+          </div><br/>
           <div class="navbar navbar-black">
             <div class="container">
               <div class="navbar-title"><span>Title</span></div>
-              <div class="nav nav-outline"><a href="#blog">Blog</a><a href="#about">About</a><a href="#store">Store</a></div>
+              <div class="nav nav-outline"><a href="#blog-outlineblack" id="blog-outlineblack">Blog</a><a href="#about-outlineblack" id="about-outlineblack">About</a><a href="#store-outlineblack" id="store-outlineblack">Store</a></div>
             </div>
-          </div></pre><br/>
-        <div class="navbar navbar-default">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-            <div class="nav nav-outline"><a href="#blog-outlinedefault" id="blog-outlinedefault">Blog</a><a href="#about-outlinedefault" id="about-outlinedefault">About</a><a href="#store-outlinedefault" id="store-outlinedefault">Store</a></div>
-          </div>
+          </div><br/>
         </div><br/>
-        <div class="navbar navbar-primary">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-            <div class="nav nav-outline"><a href="#blog-outlineprimary" id="blog-outlineprimary">Blog</a><a href="#about-outlineprimary" id="about-outlineprimary">About</a><a href="#store-outlineprimary" id="store-outlineprimary">Store</a></div>
-          </div>
+        <div>
+          <hr/>
+          <h3>Nav</h3>
+          <hr/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="nav"><a href="#contacts" id="contacts">Contacts</a><a href="#phone" id="phone">Phone</a></div></pre><br/>
+          <div class="nav"><a href="#contacts" id="contacts">Contacts</a><a href="#phone" id="phone">Phone</a></div><br/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="nav nav-stacked"><a href="#contacts1" id="contacts1">Contacts</a><a href="#phone1" id="phone1">Phone</a></div></pre><br/>
+          <div class="nav nav-stacked"><a href="#contacts1" id="contacts1">Contacts</a><a href="#phone1" id="phone1">Phone</a></div><br/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="nav"><a class="active" href="#contacts2">Contacts</a><a href="#phone2">Phone</a></div></pre><br/>
+          <div class="nav"><a class="active" href="#contacts2">Contacts</a><a href="#phone2">Phone</a></div><br/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="nav nav-stacked"><a class="active" href="#contacts3">Contacts</a><a href="#phone3">Phone</a></div></pre><br/>
+          <div class="nav nav-stacked"><a class="active" href="#contacts3">Contacts</a><a href="#phone3">Phone</a></div>
+          <pre class="prettyprint linenums lang-html">
+            <div class="nav nav-stacked nav-outline"><a href="#contacts4">Contacts</a><a href="#phone4">Phone</a></div></pre><br/>
+          <div class="nav nav-stacked nav-outline"><a href="#contacts4" id="contacts4">Contacts</a><a href="#phone4" id="phone4">Phone</a></div>
         </div><br/>
-        <div class="navbar navbar-success">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-            <div class="nav nav-outline"><a href="#blog-outlinesuccess" id="blog-outlinesuccess">Blog</a><a href="#about-outlinesuccess" id="about-outlinesuccess">About</a><a href="#store-outlinesuccess" id="store-outlinesuccess">Store</a></div>
-          </div>
-        </div><br/>
-        <div class="navbar navbar-info">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-            <div class="nav nav-outline"><a href="#blog-outlineinfo" id="blog-outlineinfo">Blog</a><a href="#about-outlineinfo" id="about-outlineinfo">About</a><a href="#store-outlineinfo" id="store-outlineinfo">Store</a></div>
-          </div>
-        </div><br/>
-        <div class="navbar navbar-warning">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-            <div class="nav nav-outline"><a href="#blog-outlinewarning" id="blog-outlinewarning">Blog</a><a href="#about-outlinewarning" id="about-outlinewarning">About</a><a href="#store-outlinewarning" id="store-outlinewarning">Store</a></div>
-          </div>
-        </div><br/>
-        <div class="navbar navbar-danger">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-            <div class="nav nav-outline"><a href="#blog-outlinedanger" id="blog-outlinedanger">Blog</a><a href="#about-outlinedanger" id="about-outlinedanger">About</a><a href="#store-outlinedanger" id="store-outlinedanger">Store</a></div>
-          </div>
-        </div><br/>
-        <div class="navbar navbar-white">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-            <div class="nav nav-outline"><a href="#blog-outlinewhite" id="blog-outlinewhite">Blog</a><a href="#about-outlinewhite" id="about-outlinewhite">About</a><a href="#store-outlinewhite" id="store-outlinewhite">Store</a></div>
-          </div>
-        </div><br/>
-        <div class="navbar navbar-black">
-          <div class="container">
-            <div class="navbar-title"><span>Title</span></div>
-            <div class="nav nav-outline"><a href="#blog-outlineblack" id="blog-outlineblack">Blog</a><a href="#about-outlineblack" id="about-outlineblack">About</a><a href="#store-outlineblack" id="store-outlineblack">Store</a></div>
-          </div>
-        </div><br/>
-      </div><br/>
-      <div>
-        <hr/>
-        <h3>Nav</h3>
-        <hr/>
-        <pre class="prettyprint linenums lang-html">
-          <div class="nav"><a href="#contacts" id="contacts">Contacts</a><a href="#phone" id="phone">Phone</a></div></pre><br/>
-        <div class="nav"><a href="#contacts" id="contacts">Contacts</a><a href="#phone" id="phone">Phone</a></div><br/>
-        <pre class="prettyprint linenums lang-html">
-          <div class="nav nav-stacked"><a href="#contacts1" id="contacts1">Contacts</a><a href="#phone1" id="phone1">Phone</a></div></pre><br/>
-        <div class="nav nav-stacked"><a href="#contacts1" id="contacts1">Contacts</a><a href="#phone1" id="phone1">Phone</a></div><br/>
-        <pre class="prettyprint linenums lang-html">
-          <div class="nav"><a class="active" href="#contacts2">Contacts</a><a href="#phone2">Phone</a></div></pre><br/>
-        <div class="nav"><a class="active" href="#contacts2">Contacts</a><a href="#phone2">Phone</a></div><br/>
-        <pre class="prettyprint linenums lang-html">
-          <div class="nav nav-stacked"><a class="active" href="#contacts3">Contacts</a><a href="#phone3">Phone</a></div></pre><br/>
-        <div class="nav nav-stacked"><a class="active" href="#contacts3">Contacts</a><a href="#phone3">Phone</a></div>
-        <pre class="prettyprint linenums lang-html">
-          <div class="nav nav-stacked nav-outline"><a href="#contacts4">Contacts</a><a href="#phone4">Phone</a></div></pre><br/>
-        <div class="nav nav-stacked nav-outline"><a href="#contacts4" id="contacts4">Contacts</a><a href="#phone4" id="phone4">Phone</a></div>
-      </div><br/>
-      <div>
-        <hr/>
-        <h3>Nav Tab</h3>
-        <hr/>
-        <pre class="prettyprint linenums lang-html">
-          <div class="nav-tab">
-            <ul>
-              <li>
-                <input type="radio" name="nav-tab-label" checked="checked" id="label-home"/>
-                <label for="label-home">Home</label>
-                <div>
-                  <h3>Home</h3>
-                  <p>Some home content</p>
-                </div>
-              </li>
-              <li>
-                <input type="radio" name="nav-tab-label" checked="checked" id="label-about"/>
-                <label for="label-about">About</label>
-                <div>
-                  <h3>About</h3>
-                  <p>Some about content</p>
-                </div>
-              </li>
-            </ul>
-          </div></pre><br/><br/>
-        <div style="height:200px;width:100%">
-          <div class="nav-tab">
-            <ul>
-              <li>
-                <input type="radio" name="nav-tab-label" checked="checked" id="label-home"/>
-                <label for="label-home">Home</label>
-                <div>
-                  <h3>Home</h3>
-                  <p>Some home content</p>
-                </div>
-              </li>
-              <li>
-                <input type="radio" name="nav-tab-label" checked="checked" id="label-about"/>
-                <label for="label-about">About</label>
-                <div>
-                  <h3>About</h3>
-                  <p>Some about content</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div><br/>
-      <div>
-        <hr/>
-        <h3>Spinner</h3>
-        <hr/>
-        <style>
-          .spinner-inline > .spinner-overlay {
-              height:100px;
-              display:inline-block;
-              width:auto;
-          }
-          .spinner-overlay > .spinner {
-              width: 30px;
-              height: 30px;
-          }
-          
-        </style>
-        <pre class="prettyprint linenums lang-html">
-          <div class="spinner-overlay">
-            <div class="spinner spinner-{brand}"></div>
-          </div></pre><br/>
-        <div class="spinner-inline" style="width:100%;text-align:center">
-          <div class="spinner-overlay">
-            <div class="spinner spinner-default"></div>
-          </div>
-          <div class="spinner-overlay">
-            <div class="spinner spinner-primary"></div>
-          </div>
-          <div class="spinner-overlay">
-            <div class="spinner spinner-success"></div>
-          </div>
-          <div class="spinner-overlay">
-            <div class="spinner spinner-info"></div>
-          </div>
-          <div class="spinner-overlay">
-            <div class="spinner spinner-warning"></div>
-          </div>
-          <div class="spinner-overlay">
-            <div class="spinner spinner-danger"></div>
-          </div>
-          <div class="spinner-overlay">
-            <div class="spinner spinner-white"></div>
-          </div>
-          <div class="spinner-overlay">
-            <div class="spinner spinner-black"></div>
-          </div>
-        </div><br/>
-        <pre class="prettyprint linenums lang-html">
-          <div class="spinner-overlay">
-            <div class="spinner spinner-{brand} spinner-done"></div>
-          </div></pre><br/>
-        <div class="spinner-inline" style="width:100%;text-align:center">
-          <div class="spinner-overlay">
-            <div class="spinner spinner-default spinner-done"></div>
-          </div>
-          <div class="spinner-overlay">
-            <div class="spinner spinner-primary spinner-done"></div>
-          </div>
-          <div class="spinner-overlay">
-            <div class="spinner spinner-success spinner-done"></div>
-          </div>
-          <div class="spinner-overlay">
-            <div class="spinner spinner-info spinner-done"></div>
-          </div>
-          <div class="spinner-overlay">
-            <div class="spinner spinner-warning spinner-done"></div>
-          </div>
-          <div class="spinner-overlay">
-            <div class="spinner spinner-danger spinner-done"></div>
-          </div>
-          <div class="spinner-overlay">
-            <div class="spinner spinner-white spinner-done"></div>
-          </div>
-          <div class="spinner-overlay">
-            <div class="spinner spinner-black spinner-done"></div>
-          </div>
-        </div><br/>
-        <pre class="prettyprint linenums lang-html">
-          <div class="spinner-overlay">
-            <div class="spinner-wrapper">
-              <div class="spinner spinner-{val}"></div>
+        <div>
+          <hr/>
+          <h3>Nav Tab</h3>
+          <hr/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="nav-tab">
+              <ul>
+                <li>
+                  <input type="radio" name="nav-tab-label" checked="checked" id="label-home"/>
+                  <label for="label-home">Home</label>
+                  <div>
+                    <h3>Home</h3>
+                    <p>Some home content</p>
+                  </div>
+                </li>
+                <li>
+                  <input type="radio" name="nav-tab-label" checked="checked" id="label-about"/>
+                  <label for="label-about">About</label>
+                  <div>
+                    <h3>About</h3>
+                    <p>Some about content</p>
+                  </div>
+                </li>
+              </ul>
+            </div></pre><br/><br/>
+          <div style="height:200px;width:100%">
+            <div class="nav-tab">
+              <ul>
+                <li>
+                  <input type="radio" name="nav-tab-label" checked="checked" id="label-home"/>
+                  <label for="label-home">Home</label>
+                  <div>
+                    <h3>Home</h3>
+                    <p>Some home content</p>
+                  </div>
+                </li>
+                <li>
+                  <input type="radio" name="nav-tab-label" checked="checked" id="label-about"/>
+                  <label for="label-about">About</label>
+                  <div>
+                    <h3>About</h3>
+                    <p>Some about content</p>
+                  </div>
+                </li>
+              </ul>
             </div>
-          </div></pre><br/>
-        <div style="width:100%;height:350px;border:1px solid #dedede;border-radius:5px">
-          <div class="spinner-overlay">
-            <div class="spinner-wrapper">
+          </div>
+        </div><br/>
+        <div>
+          <hr/>
+          <h3>Spinner</h3>
+          <hr/>
+          <style>
+            .spinner-inline > .spinner-overlay {
+                height:100px;
+                display:inline-block;
+                width:auto;
+            }
+            .spinner-overlay > .spinner {
+                width: 30px;
+                height: 30px;
+            }
+            
+          </style>
+          <pre class="prettyprint linenums lang-html">
+            <div class="spinner-overlay">
+              <div class="spinner spinner-{brand}"></div>
+            </div></pre><br/>
+          <div class="spinner-inline" style="width:100%;text-align:center">
+            <div class="spinner-overlay">
+              <div class="spinner spinner-default"></div>
+            </div>
+            <div class="spinner-overlay">
               <div class="spinner spinner-primary"></div>
             </div>
+            <div class="spinner-overlay">
+              <div class="spinner spinner-success"></div>
+            </div>
+            <div class="spinner-overlay">
+              <div class="spinner spinner-info"></div>
+            </div>
+            <div class="spinner-overlay">
+              <div class="spinner spinner-warning"></div>
+            </div>
+            <div class="spinner-overlay">
+              <div class="spinner spinner-danger"></div>
+            </div>
+            <div class="spinner-overlay">
+              <div class="spinner spinner-white"></div>
+            </div>
+            <div class="spinner-overlay">
+              <div class="spinner spinner-black"></div>
+            </div>
+          </div><br/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="spinner-overlay">
+              <div class="spinner spinner-{brand} spinner-done"></div>
+            </div></pre><br/>
+          <div class="spinner-inline" style="width:100%;text-align:center">
+            <div class="spinner-overlay">
+              <div class="spinner spinner-default spinner-done"></div>
+            </div>
+            <div class="spinner-overlay">
+              <div class="spinner spinner-primary spinner-done"></div>
+            </div>
+            <div class="spinner-overlay">
+              <div class="spinner spinner-success spinner-done"></div>
+            </div>
+            <div class="spinner-overlay">
+              <div class="spinner spinner-info spinner-done"></div>
+            </div>
+            <div class="spinner-overlay">
+              <div class="spinner spinner-warning spinner-done"></div>
+            </div>
+            <div class="spinner-overlay">
+              <div class="spinner spinner-danger spinner-done"></div>
+            </div>
+            <div class="spinner-overlay">
+              <div class="spinner spinner-white spinner-done"></div>
+            </div>
+            <div class="spinner-overlay">
+              <div class="spinner spinner-black spinner-done"></div>
+            </div>
+          </div><br/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="spinner-overlay">
+              <div class="spinner-wrapper">
+                <div class="spinner spinner-{val}"></div>
+              </div>
+            </div></pre><br/>
+          <div style="width:100%;height:350px;border:1px solid #dedede;border-radius:5px">
+            <div class="spinner-overlay">
+              <div class="spinner-wrapper">
+                <div class="spinner spinner-primary"></div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div><br/>
-      <div>
-        <hr/>
-        <h3>Button</h3>
-        <hr/>
-        <pre class="prettyprint linenums lang-html">
-          <button class="btn btn-{brand}">{val}</button></pre><br/>
-        <button class="btn btn-default">default</button>
-        <button class="btn btn-primary">primary</button>
-        <button class="btn btn-success">success</button>
-        <button class="btn btn-info">info</button>
-        <button class="btn btn-warning">warning</button>
-        <button class="btn btn-danger">danger</button>
-        <button class="btn btn-white">white</button>
-        <button class="btn btn-black">black</button><br/>
-        <pre class="prettyprint linenums lang-html">
+        </div><br/>
+        <div>
+          <hr/>
+          <h3>Button</h3>
+          <hr/>
+          <pre class="prettyprint linenums lang-html">
+            <button class="btn btn-{brand}">{val}</button></pre><br/>
+          <button class="btn btn-default">default</button>
+          <button class="btn btn-primary">primary</button>
+          <button class="btn btn-success">success</button>
+          <button class="btn btn-info">info</button>
+          <button class="btn btn-warning">warning</button>
+          <button class="btn btn-danger">danger</button>
+          <button class="btn btn-white">white</button>
+          <button class="btn btn-black">black</button><br/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="btn-group">
+              <button class="btn btn-{brand}">{val}</button>
+              <button class="btn btn-{brand}">{val}</button>
+              <button class="btn btn-{brand}">{val}</button>
+            </div></pre><br/>
           <div class="btn-group">
-            <button class="btn btn-{brand}">{val}</button>
-            <button class="btn btn-{brand}">{val}</button>
-            <button class="btn btn-{brand}">{val}</button>
-          </div></pre><br/>
-        <div class="btn-group">
-          <button class="btn btn-default">default</button>
-          <button class="btn btn-default">default</button>
-          <button class="btn btn-default">default</button>
-        </div>
-        <div class="btn-group">
-          <button class="btn btn-primary">primary</button>
-          <button class="btn btn-primary">primary</button>
-          <button class="btn btn-primary">primary</button>
-        </div>
-        <div class="btn-group">
-          <button class="btn btn-success">success</button>
-          <button class="btn btn-success">success</button>
-          <button class="btn btn-success">success</button>
-        </div>
-        <div class="btn-group">
-          <button class="btn btn-info">info</button>
-          <button class="btn btn-info">info</button>
-          <button class="btn btn-info">info</button>
-        </div>
-        <div class="btn-group">
-          <button class="btn btn-warning">warning</button>
-          <button class="btn btn-warning">warning</button>
-          <button class="btn btn-warning">warning</button>
-        </div>
-        <div class="btn-group">
-          <button class="btn btn-danger">danger</button>
-          <button class="btn btn-danger">danger</button>
-          <button class="btn btn-danger">danger</button>
-        </div>
-        <div class="btn-group">
-          <button class="btn btn-white">white</button>
-          <button class="btn btn-white">white</button>
-          <button class="btn btn-white">white</button>
-        </div>
-        <div class="btn-group">
-          <button class="btn btn-black">black</button>
-          <button class="btn btn-black">black</button>
-          <button class="btn btn-black">black</button>
+            <button class="btn btn-default">default</button>
+            <button class="btn btn-default">default</button>
+            <button class="btn btn-default">default</button>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-primary">primary</button>
+            <button class="btn btn-primary">primary</button>
+            <button class="btn btn-primary">primary</button>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-success">success</button>
+            <button class="btn btn-success">success</button>
+            <button class="btn btn-success">success</button>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-info">info</button>
+            <button class="btn btn-info">info</button>
+            <button class="btn btn-info">info</button>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-warning">warning</button>
+            <button class="btn btn-warning">warning</button>
+            <button class="btn btn-warning">warning</button>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-danger">danger</button>
+            <button class="btn btn-danger">danger</button>
+            <button class="btn btn-danger">danger</button>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-white">white</button>
+            <button class="btn btn-white">white</button>
+            <button class="btn btn-white">white</button>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-black">black</button>
+            <button class="btn btn-black">black</button>
+            <button class="btn btn-black">black</button>
+          </div><br/>
+          <pre class="prettyprint linenums lang-html">
+            <button class="btn btn-{brand} btn-block">{val}</button></pre><br/>
+          <button class="btn btn-default btn-block">default</button>
+          <button class="btn btn-primary btn-block">primary</button>
+          <button class="btn btn-success btn-block">success</button>
+          <button class="btn btn-info btn-block">info</button>
+          <button class="btn btn-warning btn-block">warning</button>
+          <button class="btn btn-danger btn-block">danger</button>
+          <button class="btn btn-white btn-block">white</button>
+          <button class="btn btn-black btn-block">black</button><br/>
+          <pre class="prettyprint linenums lang-html">
+            <button class="btn btn-{brand}"></button></pre><br/>
+          <button class="btn btn-default">
+            <div class="spinner spinner-default"></div>
+          </button>
+          <button class="btn btn-primary">
+            <div class="spinner spinner-primary"></div>
+          </button>
+          <button class="btn btn-success">
+            <div class="spinner spinner-success"></div>
+          </button>
+          <button class="btn btn-info">
+            <div class="spinner spinner-info"></div>
+          </button>
+          <button class="btn btn-warning">
+            <div class="spinner spinner-warning"></div>
+          </button>
+          <button class="btn btn-danger">
+            <div class="spinner spinner-danger"></div>
+          </button>
+          <button class="btn btn-white">
+            <div class="spinner spinner-white"></div>
+          </button>
+          <button class="btn btn-black">
+            <div class="spinner spinner-black"></div>
+          </button><br/>
+          <pre class="prettyprint linenums lang-html">
+            <button class="btn border-{brand}">{val}</button></pre><br/>
+          <button class="btn border-default">default</button>
+          <button class="btn border-primary">primary</button>
+          <button class="btn border-success">success</button>
+          <button class="btn border-info">info</button>
+          <button class="btn border-warning">warning</button>
+          <button class="btn border-danger">danger</button>
+          <button class="btn border-white">white</button>
+          <button class="btn border-black">black</button><br/>
+          <pre class="prettyprint linenums lang-html">
+            <button class="btn border-{brand} border-radius-5">{val}</button></pre><br/>
+          <button class="btn border-default border-radius-5">default</button>
+          <button class="btn border-primary border-radius-5">primary</button>
+          <button class="btn border-success border-radius-5">success</button>
+          <button class="btn border-info border-radius-5">info</button>
+          <button class="btn border-warning border-radius-5">warning</button>
+          <button class="btn border-danger border-radius-5">danger</button>
+          <button class="btn border-white border-radius-5">white</button>
+          <button class="btn border-black border-radius-5">black</button><br/>
         </div><br/>
-        <pre class="prettyprint linenums lang-html">
-          <button class="btn btn-{brand} btn-block">{val}</button></pre><br/>
-        <button class="btn btn-default btn-block">default</button>
-        <button class="btn btn-primary btn-block">primary</button>
-        <button class="btn btn-success btn-block">success</button>
-        <button class="btn btn-info btn-block">info</button>
-        <button class="btn btn-warning btn-block">warning</button>
-        <button class="btn btn-danger btn-block">danger</button>
-        <button class="btn btn-white btn-block">white</button>
-        <button class="btn btn-black btn-block">black</button><br/>
-        <pre class="prettyprint linenums lang-html">
-          <button class="btn btn-{brand}"></button></pre><br/>
-        <button class="btn btn-default">
-          <div class="spinner spinner-default"></div>
-        </button>
-        <button class="btn btn-primary">
-          <div class="spinner spinner-primary"></div>
-        </button>
-        <button class="btn btn-success">
-          <div class="spinner spinner-success"></div>
-        </button>
-        <button class="btn btn-info">
-          <div class="spinner spinner-info"></div>
-        </button>
-        <button class="btn btn-warning">
-          <div class="spinner spinner-warning"></div>
-        </button>
-        <button class="btn btn-danger">
-          <div class="spinner spinner-danger"></div>
-        </button>
-        <button class="btn btn-white">
-          <div class="spinner spinner-white"></div>
-        </button>
-        <button class="btn btn-black">
-          <div class="spinner spinner-black"></div>
-        </button><br/>
-        <pre class="prettyprint linenums lang-html">
-          <button class="btn border-{brand}">{val}</button></pre><br/>
-        <button class="btn border-default">default</button>
-        <button class="btn border-primary">primary</button>
-        <button class="btn border-success">success</button>
-        <button class="btn border-info">info</button>
-        <button class="btn border-warning">warning</button>
-        <button class="btn border-danger">danger</button>
-        <button class="btn border-white">white</button>
-        <button class="btn border-black">black</button><br/>
-        <pre class="prettyprint linenums lang-html">
-          <button class="btn border-{brand} border-radius-5">{val}</button></pre><br/>
-        <button class="btn border-default border-radius-5">default</button>
-        <button class="btn border-primary border-radius-5">primary</button>
-        <button class="btn border-success border-radius-5">success</button>
-        <button class="btn border-info border-radius-5">info</button>
-        <button class="btn border-warning border-radius-5">warning</button>
-        <button class="btn border-danger border-radius-5">danger</button>
-        <button class="btn border-white border-radius-5">white</button>
-        <button class="btn border-black border-radius-5">black</button><br/>
-      </div><br/>
-      <div>
-        <hr/>
-        <h3>Form</h3>
-        <hr/>
-        <pre class="prettyprint linenums lang-html">
-          <label>Input</label>
-          <input class="input-{brand}" type="text" placeholder="input"/><br/>
-          <label>Textarea</label>
-          <textarea class="input-{brand}" placeholder="this is a textarea"></textarea><br/>
-          <label>Select</label>
-          <select class="input-{brand}">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select></pre><br/>
-        <div class="grid">
-          <div class="col-2-12">
-            <div style="padding:10px">
-              <label>Input</label>
-              <input class="input-default" type="text" placeholder="input"/><br/>
-              <label>Textarea</label>
-              <textarea class="input-default" placeholder="this is a textarea"></textarea><br/>
-              <label>Select</label>
-              <select class="input-default">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
+        <div>
+          <hr/>
+          <h3>Form</h3>
+          <hr/>
+          <pre class="prettyprint linenums lang-html">
+            <label>Input</label>
+            <input class="input-{brand}" type="text" placeholder="input"/><br/>
+            <label>Textarea</label>
+            <textarea class="input-{brand}" placeholder="this is a textarea"></textarea><br/>
+            <label>Select</label>
+            <select class="input-{brand}">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select></pre><br/>
+          <div class="grid">
+            <div class="col-2-12">
+              <div style="padding:10px">
+                <label>Input</label>
+                <input class="input-default" type="text" placeholder="input"/><br/>
+                <label>Textarea</label>
+                <textarea class="input-default" placeholder="this is a textarea"></textarea><br/>
+                <label>Select</label>
+                <select class="input-default">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-2-12">
+              <div style="padding:10px">
+                <label>Input</label>
+                <input class="input-primary" type="text" placeholder="input"/><br/>
+                <label>Textarea</label>
+                <textarea class="input-primary" placeholder="this is a textarea"></textarea><br/>
+                <label>Select</label>
+                <select class="input-primary">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-2-12">
+              <div style="padding:10px">
+                <label>Input</label>
+                <input class="input-success" type="text" placeholder="input"/><br/>
+                <label>Textarea</label>
+                <textarea class="input-success" placeholder="this is a textarea"></textarea><br/>
+                <label>Select</label>
+                <select class="input-success">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-2-12">
+              <div style="padding:10px">
+                <label>Input</label>
+                <input class="input-info" type="text" placeholder="input"/><br/>
+                <label>Textarea</label>
+                <textarea class="input-info" placeholder="this is a textarea"></textarea><br/>
+                <label>Select</label>
+                <select class="input-info">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-2-12">
+              <div style="padding:10px">
+                <label>Input</label>
+                <input class="input-warning" type="text" placeholder="input"/><br/>
+                <label>Textarea</label>
+                <textarea class="input-warning" placeholder="this is a textarea"></textarea><br/>
+                <label>Select</label>
+                <select class="input-warning">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-2-12">
+              <div style="padding:10px">
+                <label>Input</label>
+                <input class="input-danger" type="text" placeholder="input"/><br/>
+                <label>Textarea</label>
+                <textarea class="input-danger" placeholder="this is a textarea"></textarea><br/>
+                <label>Select</label>
+                <select class="input-danger">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-2-12">
+              <div style="padding:10px">
+                <label>Input</label>
+                <input class="input-white" type="text" placeholder="input"/><br/>
+                <label>Textarea</label>
+                <textarea class="input-white" placeholder="this is a textarea"></textarea><br/>
+                <label>Select</label>
+                <select class="input-white">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-2-12">
+              <div style="padding:10px">
+                <label>Input</label>
+                <input class="input-black" type="text" placeholder="input"/><br/>
+                <label>Textarea</label>
+                <textarea class="input-black" placeholder="this is a textarea"></textarea><br/>
+                <label>Select</label>
+                <select class="input-black">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
             </div>
           </div>
-          <div class="col-2-12">
-            <div style="padding:10px">
-              <label>Input</label>
-              <input class="input-primary" type="text" placeholder="input"/><br/>
-              <label>Textarea</label>
-              <textarea class="input-primary" placeholder="this is a textarea"></textarea><br/>
-              <label>Select</label>
-              <select class="input-primary">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-2-12">
-            <div style="padding:10px">
-              <label>Input</label>
-              <input class="input-success" type="text" placeholder="input"/><br/>
-              <label>Textarea</label>
-              <textarea class="input-success" placeholder="this is a textarea"></textarea><br/>
-              <label>Select</label>
-              <select class="input-success">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-2-12">
-            <div style="padding:10px">
-              <label>Input</label>
-              <input class="input-info" type="text" placeholder="input"/><br/>
-              <label>Textarea</label>
-              <textarea class="input-info" placeholder="this is a textarea"></textarea><br/>
-              <label>Select</label>
-              <select class="input-info">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-2-12">
-            <div style="padding:10px">
-              <label>Input</label>
-              <input class="input-warning" type="text" placeholder="input"/><br/>
-              <label>Textarea</label>
-              <textarea class="input-warning" placeholder="this is a textarea"></textarea><br/>
-              <label>Select</label>
-              <select class="input-warning">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-2-12">
-            <div style="padding:10px">
-              <label>Input</label>
-              <input class="input-danger" type="text" placeholder="input"/><br/>
-              <label>Textarea</label>
-              <textarea class="input-danger" placeholder="this is a textarea"></textarea><br/>
-              <label>Select</label>
-              <select class="input-danger">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-2-12">
-            <div style="padding:10px">
-              <label>Input</label>
-              <input class="input-white" type="text" placeholder="input"/><br/>
-              <label>Textarea</label>
-              <textarea class="input-white" placeholder="this is a textarea"></textarea><br/>
-              <label>Select</label>
-              <select class="input-white">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-2-12">
-            <div style="padding:10px">
-              <label>Input</label>
-              <input class="input-black" type="text" placeholder="input"/><br/>
-              <label>Textarea</label>
-              <textarea class="input-black" placeholder="this is a textarea"></textarea><br/>
-              <label>Select</label>
-              <select class="input-black">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </div><br/>
-      <div>
-        <hr/>
-        <h3>Popover</h3>
-        <hr/>
-        <pre class="prettyprint linenums lang-html">
-          <div class="popover-container">top<span class="popover top">this is a popover</span></div></pre>
-        <div class="popover-container">top<span class="popover top">this is a popover</span></div><br/>
-        <div class="popover-container">bottom<span class="popover bottom">this is a popover</span></div><br/>
-        <div class="popover-container">left<span class="popover left">this is a popover</span></div><br/>
-        <div class="popover-container">right<span class="popover right">this is a popover</span></div>
-      </div><br/>
-      <div>
-        <hr/>
-        <h3>Progress</h3>
-        <hr/>
-        <pre class="prettyprint linenums lang-html">
+        </div><br/>
+        <div>
+          <hr/>
+          <h3>Popover</h3>
+          <hr/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="popover-container">top<span class="popover top">this is a popover</span></div></pre>
+          <div class="popover-container">top<span class="popover top">this is a popover</span></div><br/>
+          <div class="popover-container">bottom<span class="popover bottom">this is a popover</span></div><br/>
+          <div class="popover-container">left<span class="popover left">this is a popover</span></div><br/>
+          <div class="popover-container">right<span class="popover right">this is a popover</span></div>
+        </div><br/>
+        <div>
+          <hr/>
+          <h3>Progress</h3>
+          <hr/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="progress">
+              <div class="progress-fill progress-fill-{val}" style="width:50%"></div>
+            </div></pre><br/>
           <div class="progress">
-            <div class="progress-fill progress-fill-{val}" style="width:50%"></div>
-          </div></pre><br/>
-        <div class="progress">
-          <div class="progress-fill progress-fill-default" style="width:50%">50%</div>
+            <div class="progress-fill progress-fill-default" style="width:50%">50%</div>
+          </div><br/>
+          <div class="progress">
+            <div class="progress-fill progress-fill-primary" style="width:50%">50%</div>
+          </div><br/>
+          <div class="progress">
+            <div class="progress-fill progress-fill-success" style="width:50%">50%</div>
+          </div><br/>
+          <div class="progress">
+            <div class="progress-fill progress-fill-info" style="width:50%">50%</div>
+          </div><br/>
+          <div class="progress">
+            <div class="progress-fill progress-fill-warning" style="width:50%">50%</div>
+          </div><br/>
+          <div class="progress">
+            <div class="progress-fill progress-fill-danger" style="width:50%">50%</div>
+          </div><br/>
+          <div class="progress">
+            <div class="progress-fill progress-fill-white" style="width:50%">50%</div>
+          </div><br/>
+          <div class="progress">
+            <div class="progress-fill progress-fill-black" style="width:50%">50%</div>
+          </div><br/>
         </div><br/>
-        <div class="progress">
-          <div class="progress-fill progress-fill-primary" style="width:50%">50%</div>
-        </div><br/>
-        <div class="progress">
-          <div class="progress-fill progress-fill-success" style="width:50%">50%</div>
-        </div><br/>
-        <div class="progress">
-          <div class="progress-fill progress-fill-info" style="width:50%">50%</div>
-        </div><br/>
-        <div class="progress">
-          <div class="progress-fill progress-fill-warning" style="width:50%">50%</div>
-        </div><br/>
-        <div class="progress">
-          <div class="progress-fill progress-fill-danger" style="width:50%">50%</div>
-        </div><br/>
-        <div class="progress">
-          <div class="progress-fill progress-fill-white" style="width:50%">50%</div>
-        </div><br/>
-        <div class="progress">
-          <div class="progress-fill progress-fill-black" style="width:50%">50%</div>
-        </div><br/>
-      </div><br/>
-      <div>
-        <hr/>
-        <h3>Treeview</h3>
-        <hr/>
-        <pre class="prettyprint linenums lang-html">
+        <div>
+          <hr/>
+          <h3>Treeview</h3>
+          <hr/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="treeview">
+              <ul>
+                <li>
+                  <input type="checkbox" id="people-list"/>
+                  <label for="people-list">People (3)</label>
+                  <ul>
+                    <li><a>John Doe</a></li>
+                    <li><a>Eric Fields</a></li>
+                    <li><a>Thomas Jefferson</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div></pre><br/>
           <div class="treeview">
             <ul>
               <li>
@@ -1613,26 +1624,40 @@ q=/^(?:pre|code|xmp)$/i,g={};f()}},H=E.define;"function"===typeof H&&H.amd&&H("g
                 </ul>
               </li>
             </ul>
-          </div></pre><br/>
-        <div class="treeview">
-          <ul>
-            <li>
-              <input type="checkbox" id="people-list"/>
-              <label for="people-list">People (3)</label>
+          </div><br/><br/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="treeview">
               <ul>
-                <li><a>John Doe</a></li>
-                <li><a>Eric Fields</a></li>
-                <li><a>Thomas Jefferson</a></li>
+                <li>
+                  <input type="checkbox" id="people-list"/>
+                  <label for="people-list">People (6)</label>
+                  <ul>
+                    <li>
+                      <div class="treeview">
+                        <ul>
+                          <li>
+                            <input type="checkbox" id="john-doe"/>
+                            <label for="john-doe">John Doe</label>
+                            <ul>
+                              <li><a>Elen Doe</a></li>
+                              <li><a>Frank Doe</a></li>
+                              <li><a>Brand Doe</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li><a>Eric Fields</a></li>
+                    <li><a>Thomas Jefferson</a></li>
+                  </ul>
+                </li>
               </ul>
-            </li>
-          </ul>
-        </div><br/><br/>
-        <pre class="prettyprint linenums lang-html">
+            </div></pre><br/>
           <div class="treeview">
             <ul>
               <li>
-                <input type="checkbox" id="people-list"/>
-                <label for="people-list">People (6)</label>
+                <input type="checkbox" id="people-list-extended"/>
+                <label for="people-list-extended">People (6)</label>
                 <ul>
                   <li>
                     <div class="treeview">
@@ -1654,40 +1679,101 @@ q=/^(?:pre|code|xmp)$/i,g={};f()}},H=E.define;"function"===typeof H&&H.amd&&H("g
                 </ul>
               </li>
             </ul>
-          </div></pre><br/>
-        <div class="treeview">
-          <ul>
-            <li>
-              <input type="checkbox" id="people-list-extended"/>
-              <label for="people-list-extended">People (6)</label>
+          </div><br/><br/>
+        </div><br/>
+        <div>
+          <hr/>
+          <h3>Dropdown</h3>
+          <hr/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="dropdown btn btn-black">
+              <div class="dropdown-title">DropDown</div>
+              <div class="dropdown-content">
+                <ul>
+                  <li><a href="#">Item 1</a></li>
+                  <li><a href="#">Item 2</a></li>
+                  <li><a href="#">Item 3</a></li>
+                  <li><a href="#">Item 4</a></li>
+                </ul>
+              </div>
+            </div></pre>
+          <div class="dropdown btn btn-default">
+            <div class="dropdown-title">DropDown</div>
+            <div class="dropdown-content">
               <ul>
-                <li>
-                  <div class="treeview">
-                    <ul>
-                      <li>
-                        <input type="checkbox" id="john-doe"/>
-                        <label for="john-doe">John Doe</label>
-                        <ul>
-                          <li><a>Elen Doe</a></li>
-                          <li><a>Frank Doe</a></li>
-                          <li><a>Brand Doe</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li><a>Eric Fields</a></li>
-                <li><a>Thomas Jefferson</a></li>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
               </ul>
-            </li>
-          </ul>
-        </div><br/><br/>
-      </div><br/>
-      <div>
-        <hr/>
-        <h3>Dropdown</h3>
-        <hr/>
-        <pre class="prettyprint linenums lang-html">
+            </div>
+          </div>
+          <div class="dropdown btn btn-primary">
+            <div class="dropdown-title">DropDown</div>
+            <div class="dropdown-content">
+              <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="dropdown btn btn-success">
+            <div class="dropdown-title">DropDown</div>
+            <div class="dropdown-content">
+              <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="dropdown btn btn-info">
+            <div class="dropdown-title">DropDown</div>
+            <div class="dropdown-content">
+              <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="dropdown btn btn-warning">
+            <div class="dropdown-title">DropDown</div>
+            <div class="dropdown-content">
+              <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="dropdown btn btn-danger">
+            <div class="dropdown-title">DropDown</div>
+            <div class="dropdown-content">
+              <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="dropdown btn btn-white">
+            <div class="dropdown-title">DropDown</div>
+            <div class="dropdown-content">
+              <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+              </ul>
+            </div>
+          </div>
           <div class="dropdown btn btn-black">
             <div class="dropdown-title">DropDown</div>
             <div class="dropdown-content">
@@ -1698,96 +1784,96 @@ q=/^(?:pre|code|xmp)$/i,g={};f()}},H=E.define;"function"===typeof H&&H.amd&&H("g
                 <li><a href="#">Item 4</a></li>
               </ul>
             </div>
-          </div></pre>
-        <div class="dropdown btn btn-default">
-          <div class="dropdown-title">DropDown</div>
-          <div class="dropdown-content">
-            <ul>
-              <li><a href="#">Item 1</a></li>
-              <li><a href="#">Item 2</a></li>
-              <li><a href="#">Item 3</a></li>
-              <li><a href="#">Item 4</a></li>
-            </ul>
           </div>
-        </div>
-        <div class="dropdown btn btn-primary">
-          <div class="dropdown-title">DropDown</div>
-          <div class="dropdown-content">
-            <ul>
-              <li><a href="#">Item 1</a></li>
-              <li><a href="#">Item 2</a></li>
-              <li><a href="#">Item 3</a></li>
-              <li><a href="#">Item 4</a></li>
-            </ul>
+          <pre class="prettyprint linenums lang-html">
+            <div class="dropdown btn btn-black">
+              <div class="dropdown-title">DropDown</div>
+              <div class="dropdown-content dropdown-content-right">
+                <ul>
+                  <li><a href="#">Item 1</a></li>
+                  <li><a href="#">Item 2</a></li>
+                  <li><a href="#">Item 3</a></li>
+                  <li><a href="#">Item 4</a></li>
+                </ul>
+              </div>
+            </div></pre>
+          <div class="dropdown btn btn-default">
+            <div class="dropdown-title">DropDown</div>
+            <div class="dropdown-content dropdown-content-right">
+              <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="dropdown btn btn-success">
-          <div class="dropdown-title">DropDown</div>
-          <div class="dropdown-content">
-            <ul>
-              <li><a href="#">Item 1</a></li>
-              <li><a href="#">Item 2</a></li>
-              <li><a href="#">Item 3</a></li>
-              <li><a href="#">Item 4</a></li>
-            </ul>
+          <div class="dropdown btn btn-primary">
+            <div class="dropdown-title">DropDown</div>
+            <div class="dropdown-content dropdown-content-right">
+              <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="dropdown btn btn-info">
-          <div class="dropdown-title">DropDown</div>
-          <div class="dropdown-content">
-            <ul>
-              <li><a href="#">Item 1</a></li>
-              <li><a href="#">Item 2</a></li>
-              <li><a href="#">Item 3</a></li>
-              <li><a href="#">Item 4</a></li>
-            </ul>
+          <div class="dropdown btn btn-success">
+            <div class="dropdown-title">DropDown</div>
+            <div class="dropdown-content dropdown-content-right">
+              <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="dropdown btn btn-warning">
-          <div class="dropdown-title">DropDown</div>
-          <div class="dropdown-content">
-            <ul>
-              <li><a href="#">Item 1</a></li>
-              <li><a href="#">Item 2</a></li>
-              <li><a href="#">Item 3</a></li>
-              <li><a href="#">Item 4</a></li>
-            </ul>
+          <div class="dropdown btn btn-info">
+            <div class="dropdown-title">DropDown</div>
+            <div class="dropdown-content dropdown-content-right">
+              <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="dropdown btn btn-danger">
-          <div class="dropdown-title">DropDown</div>
-          <div class="dropdown-content">
-            <ul>
-              <li><a href="#">Item 1</a></li>
-              <li><a href="#">Item 2</a></li>
-              <li><a href="#">Item 3</a></li>
-              <li><a href="#">Item 4</a></li>
-            </ul>
+          <div class="dropdown btn btn-warning">
+            <div class="dropdown-title">DropDown</div>
+            <div class="dropdown-content dropdown-content-right">
+              <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="dropdown btn btn-white">
-          <div class="dropdown-title">DropDown</div>
-          <div class="dropdown-content">
-            <ul>
-              <li><a href="#">Item 1</a></li>
-              <li><a href="#">Item 2</a></li>
-              <li><a href="#">Item 3</a></li>
-              <li><a href="#">Item 4</a></li>
-            </ul>
+          <div class="dropdown btn btn-danger">
+            <div class="dropdown-title">DropDown</div>
+            <div class="dropdown-content dropdown-content-right">
+              <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="dropdown btn btn-black">
-          <div class="dropdown-title">DropDown</div>
-          <div class="dropdown-content">
-            <ul>
-              <li><a href="#">Item 1</a></li>
-              <li><a href="#">Item 2</a></li>
-              <li><a href="#">Item 3</a></li>
-              <li><a href="#">Item 4</a></li>
-            </ul>
+          <div class="dropdown btn btn-white">
+            <div class="dropdown-title">DropDown</div>
+            <div class="dropdown-content dropdown-content-right">
+              <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <pre class="prettyprint linenums lang-html">
           <div class="dropdown btn btn-black">
             <div class="dropdown-title">DropDown</div>
             <div class="dropdown-content dropdown-content-right">
@@ -1798,165 +1884,85 @@ q=/^(?:pre|code|xmp)$/i,g={};f()}},H=E.define;"function"===typeof H&&H.amd&&H("g
                 <li><a href="#">Item 4</a></li>
               </ul>
             </div>
-          </div></pre>
-        <div class="dropdown btn btn-default">
-          <div class="dropdown-title">DropDown</div>
-          <div class="dropdown-content dropdown-content-right">
-            <ul>
-              <li><a href="#">Item 1</a></li>
-              <li><a href="#">Item 2</a></li>
-              <li><a href="#">Item 3</a></li>
-              <li><a href="#">Item 4</a></li>
-            </ul>
           </div>
-        </div>
-        <div class="dropdown btn btn-primary">
-          <div class="dropdown-title">DropDown</div>
-          <div class="dropdown-content dropdown-content-right">
-            <ul>
-              <li><a href="#">Item 1</a></li>
-              <li><a href="#">Item 2</a></li>
-              <li><a href="#">Item 3</a></li>
-              <li><a href="#">Item 4</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="dropdown btn btn-success">
-          <div class="dropdown-title">DropDown</div>
-          <div class="dropdown-content dropdown-content-right">
-            <ul>
-              <li><a href="#">Item 1</a></li>
-              <li><a href="#">Item 2</a></li>
-              <li><a href="#">Item 3</a></li>
-              <li><a href="#">Item 4</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="dropdown btn btn-info">
-          <div class="dropdown-title">DropDown</div>
-          <div class="dropdown-content dropdown-content-right">
-            <ul>
-              <li><a href="#">Item 1</a></li>
-              <li><a href="#">Item 2</a></li>
-              <li><a href="#">Item 3</a></li>
-              <li><a href="#">Item 4</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="dropdown btn btn-warning">
-          <div class="dropdown-title">DropDown</div>
-          <div class="dropdown-content dropdown-content-right">
-            <ul>
-              <li><a href="#">Item 1</a></li>
-              <li><a href="#">Item 2</a></li>
-              <li><a href="#">Item 3</a></li>
-              <li><a href="#">Item 4</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="dropdown btn btn-danger">
-          <div class="dropdown-title">DropDown</div>
-          <div class="dropdown-content dropdown-content-right">
-            <ul>
-              <li><a href="#">Item 1</a></li>
-              <li><a href="#">Item 2</a></li>
-              <li><a href="#">Item 3</a></li>
-              <li><a href="#">Item 4</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="dropdown btn btn-white">
-          <div class="dropdown-title">DropDown</div>
-          <div class="dropdown-content dropdown-content-right">
-            <ul>
-              <li><a href="#">Item 1</a></li>
-              <li><a href="#">Item 2</a></li>
-              <li><a href="#">Item 3</a></li>
-              <li><a href="#">Item 4</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="dropdown btn btn-black">
-          <div class="dropdown-title">DropDown</div>
-          <div class="dropdown-content dropdown-content-right">
-            <ul>
-              <li><a href="#">Item 1</a></li>
-              <li><a href="#">Item 2</a></li>
-              <li><a href="#">Item 3</a></li>
-              <li><a href="#">Item 4</a></li>
-            </ul>
-          </div>
-        </div>
-      </div><br/>
-      <div>
-        <hr/>
-        <h3>Modal</h3>
-        <hr/>
-        <pre class="prettyprint linenums lang-html">
-          <button class="btn btn-{brand}" onclick="location.href='#modalExample{brand}'">modal</button>
-          <div class="modal modal-{brand}" id="modalExample{val}">
+        </div><br/>
+        <div>
+          <hr/>
+          <h3>Modal</h3>
+          <hr/>
+          <pre class="prettyprint linenums lang-html">
+            <button class="btn btn-{brand}" onclick="location.href='#modalExample{brand}'">modal</button>
+            <div class="modal modal-{brand}" id="modalExample{val}">
+              <div><a class="modal-close" href="#close" title="Close">X</a>
+                <h1>Hello</h1>
+                <hr/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed enim vel arcu finibus vehicula a vel nisi. Maecenas a ligula et ipsum consequat hendrerit id ac nibh. Donec vel augue dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
+              </div>
+            </div></pre><br/>
+          <button class="btn btn-default" onclick="location.href='#modalExampledefault'">modal</button>
+          <div class="modal modal-default" id="modalExampledefault">
             <div><a class="modal-close" href="#close" title="Close">X</a>
               <h1>Hello</h1>
               <hr/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed enim vel arcu finibus vehicula a vel nisi. Maecenas a ligula et ipsum consequat hendrerit id ac nibh. Donec vel augue dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
             </div>
-          </div></pre><br/>
-        <button class="btn btn-default" onclick="location.href='#modalExampledefault'">modal</button>
-        <div class="modal modal-default" id="modalExampledefault">
-          <div><a class="modal-close" href="#close" title="Close">X</a>
-            <h1>Hello</h1>
-            <hr/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed enim vel arcu finibus vehicula a vel nisi. Maecenas a ligula et ipsum consequat hendrerit id ac nibh. Donec vel augue dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
           </div>
-        </div>
-        <button class="btn btn-primary" onclick="location.href='#modalExampleprimary'">modal</button>
-        <div class="modal modal-primary" id="modalExampleprimary">
-          <div><a class="modal-close" href="#close" title="Close">X</a>
-            <h1>Hello</h1>
-            <hr/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed enim vel arcu finibus vehicula a vel nisi. Maecenas a ligula et ipsum consequat hendrerit id ac nibh. Donec vel augue dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
+          <button class="btn btn-primary" onclick="location.href='#modalExampleprimary'">modal</button>
+          <div class="modal modal-primary" id="modalExampleprimary">
+            <div><a class="modal-close" href="#close" title="Close">X</a>
+              <h1>Hello</h1>
+              <hr/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed enim vel arcu finibus vehicula a vel nisi. Maecenas a ligula et ipsum consequat hendrerit id ac nibh. Donec vel augue dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
+            </div>
           </div>
-        </div>
-        <button class="btn btn-success" onclick="location.href='#modalExamplesuccess'">modal</button>
-        <div class="modal modal-success" id="modalExamplesuccess">
-          <div><a class="modal-close" href="#close" title="Close">X</a>
-            <h1>Hello</h1>
-            <hr/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed enim vel arcu finibus vehicula a vel nisi. Maecenas a ligula et ipsum consequat hendrerit id ac nibh. Donec vel augue dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
+          <button class="btn btn-success" onclick="location.href='#modalExamplesuccess'">modal</button>
+          <div class="modal modal-success" id="modalExamplesuccess">
+            <div><a class="modal-close" href="#close" title="Close">X</a>
+              <h1>Hello</h1>
+              <hr/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed enim vel arcu finibus vehicula a vel nisi. Maecenas a ligula et ipsum consequat hendrerit id ac nibh. Donec vel augue dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
+            </div>
           </div>
-        </div>
-        <button class="btn btn-info" onclick="location.href='#modalExampleinfo'">modal</button>
-        <div class="modal modal-info" id="modalExampleinfo">
-          <div><a class="modal-close" href="#close" title="Close">X</a>
-            <h1>Hello</h1>
-            <hr/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed enim vel arcu finibus vehicula a vel nisi. Maecenas a ligula et ipsum consequat hendrerit id ac nibh. Donec vel augue dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
+          <button class="btn btn-info" onclick="location.href='#modalExampleinfo'">modal</button>
+          <div class="modal modal-info" id="modalExampleinfo">
+            <div><a class="modal-close" href="#close" title="Close">X</a>
+              <h1>Hello</h1>
+              <hr/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed enim vel arcu finibus vehicula a vel nisi. Maecenas a ligula et ipsum consequat hendrerit id ac nibh. Donec vel augue dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
+            </div>
           </div>
-        </div>
-        <button class="btn btn-warning" onclick="location.href='#modalExamplewarning'">modal</button>
-        <div class="modal modal-warning" id="modalExamplewarning">
-          <div><a class="modal-close" href="#close" title="Close">X</a>
-            <h1>Hello</h1>
-            <hr/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed enim vel arcu finibus vehicula a vel nisi. Maecenas a ligula et ipsum consequat hendrerit id ac nibh. Donec vel augue dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
+          <button class="btn btn-warning" onclick="location.href='#modalExamplewarning'">modal</button>
+          <div class="modal modal-warning" id="modalExamplewarning">
+            <div><a class="modal-close" href="#close" title="Close">X</a>
+              <h1>Hello</h1>
+              <hr/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed enim vel arcu finibus vehicula a vel nisi. Maecenas a ligula et ipsum consequat hendrerit id ac nibh. Donec vel augue dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
+            </div>
           </div>
-        </div>
-        <button class="btn btn-danger" onclick="location.href='#modalExampledanger'">modal</button>
-        <div class="modal modal-danger" id="modalExampledanger">
-          <div><a class="modal-close" href="#close" title="Close">X</a>
-            <h1>Hello</h1>
-            <hr/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed enim vel arcu finibus vehicula a vel nisi. Maecenas a ligula et ipsum consequat hendrerit id ac nibh. Donec vel augue dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
+          <button class="btn btn-danger" onclick="location.href='#modalExampledanger'">modal</button>
+          <div class="modal modal-danger" id="modalExampledanger">
+            <div><a class="modal-close" href="#close" title="Close">X</a>
+              <h1>Hello</h1>
+              <hr/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed enim vel arcu finibus vehicula a vel nisi. Maecenas a ligula et ipsum consequat hendrerit id ac nibh. Donec vel augue dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
+            </div>
           </div>
-        </div>
-        <button class="btn btn-white" onclick="location.href='#modalExamplewhite'">modal</button>
-        <div class="modal modal-white" id="modalExamplewhite">
-          <div><a class="modal-close" href="#close" title="Close">X</a>
-            <h1>Hello</h1>
-            <hr/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed enim vel arcu finibus vehicula a vel nisi. Maecenas a ligula et ipsum consequat hendrerit id ac nibh. Donec vel augue dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
+          <button class="btn btn-white" onclick="location.href='#modalExamplewhite'">modal</button>
+          <div class="modal modal-white" id="modalExamplewhite">
+            <div><a class="modal-close" href="#close" title="Close">X</a>
+              <h1>Hello</h1>
+              <hr/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed enim vel arcu finibus vehicula a vel nisi. Maecenas a ligula et ipsum consequat hendrerit id ac nibh. Donec vel augue dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
+            </div>
           </div>
-        </div>
-        <button class="btn btn-black" onclick="location.href='#modalExampleblack'">modal</button>
-        <div class="modal modal-black" id="modalExampleblack">
-          <div><a class="modal-close" href="#close" title="Close">X</a>
-            <h1>Hello</h1>
-            <hr/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed enim vel arcu finibus vehicula a vel nisi. Maecenas a ligula et ipsum consequat hendrerit id ac nibh. Donec vel augue dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
+          <button class="btn btn-black" onclick="location.href='#modalExampleblack'">modal</button>
+          <div class="modal modal-black" id="modalExampleblack">
+            <div><a class="modal-close" href="#close" title="Close">X</a>
+              <h1>Hello</h1>
+              <hr/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed enim vel arcu finibus vehicula a vel nisi. Maecenas a ligula et ipsum consequat hendrerit id ac nibh. Donec vel augue dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
+            </div>
           </div>
-        </div>
-        <pre class="prettyprint linenums lang-html">
+          <pre class="prettyprint linenums lang-html">
+            <div style="position:relative;width:100%;height:500px">
+              <div class="modal modal-black modal-active modal-absolute">
+                <div><a class="modal-close" href="#close" title="Close">X</a>
+                  <h1>Hello</h1>
+                  <hr/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed enim vel arcu finibus vehicula a vel nisi. Maecenas a ligula et ipsum consequat hendrerit id ac nibh. Donec vel augue dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
+                </div>
+              </div>
+            </div></pre><br/>
           <div style="position:relative;width:100%;height:500px">
             <div class="modal modal-black modal-active modal-absolute">
               <div><a class="modal-close" href="#close" title="Close">X</a>
@@ -1964,21 +1970,45 @@ q=/^(?:pre|code|xmp)$/i,g={};f()}},H=E.define;"function"===typeof H&&H.amd&&H("g
                 <hr/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed enim vel arcu finibus vehicula a vel nisi. Maecenas a ligula et ipsum consequat hendrerit id ac nibh. Donec vel augue dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
               </div>
             </div>
-          </div></pre><br/>
-        <div style="position:relative;width:100%;height:500px">
-          <div class="modal modal-black modal-active modal-absolute">
-            <div><a class="modal-close" href="#close" title="Close">X</a>
-              <h1>Hello</h1>
-              <hr/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed enim vel arcu finibus vehicula a vel nisi. Maecenas a ligula et ipsum consequat hendrerit id ac nibh. Donec vel augue dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
-            </div>
           </div>
-        </div>
-      </div><br/>
-      <div>
-        <hr/>
-        <h3>Alert</h3>
-        <hr/>
-        <pre class="prettyprint linenums lang-html">
+        </div><br/>
+        <div>
+          <hr/>
+          <h3>Alert</h3>
+          <hr/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="alert alert-default">
+              <div>I am an alert</div>
+              <div class="alert-close">&#215</div>
+            </div><br/>
+            <div class="alert alert-primary">
+              <div>I am an alert</div>
+              <div class="alert-close">&#215</div>
+            </div><br/>
+            <div class="alert alert-success">
+              <div>I am an alert</div>
+              <div class="alert-close">&#215</div>
+            </div><br/>
+            <div class="alert alert-info">
+              <div>I am an alert</div>
+              <div class="alert-close">&#215</div>
+            </div><br/>
+            <div class="alert alert-warning">
+              <div>I am an alert</div>
+              <div class="alert-close">&#215</div>
+            </div><br/>
+            <div class="alert alert-danger">
+              <div>I am an alert</div>
+              <div class="alert-close">&#215</div>
+            </div><br/>
+            <div class="alert alert-white">
+              <div>I am an alert</div>
+              <div class="alert-close">&#215</div>
+            </div><br/>
+            <div class="alert alert-black">
+              <div>I am an alert</div>
+              <div class="alert-close">&#215</div>
+            </div><br/></pre><br/>
           <div class="alert alert-default">
             <div>I am an alert</div>
             <div class="alert-close">&#215</div>
@@ -2010,54 +2040,32 @@ q=/^(?:pre|code|xmp)$/i,g={};f()}},H=E.define;"function"===typeof H&&H.amd&&H("g
           <div class="alert alert-black">
             <div>I am an alert</div>
             <div class="alert-close">&#215</div>
-          </div><br/></pre><br/>
-        <div class="alert alert-default">
-          <div>I am an alert</div>
-          <div class="alert-close">&#215</div>
+          </div><br/>
         </div><br/>
-        <div class="alert alert-primary">
-          <div>I am an alert</div>
-          <div class="alert-close">&#215</div>
-        </div><br/>
-        <div class="alert alert-success">
-          <div>I am an alert</div>
-          <div class="alert-close">&#215</div>
-        </div><br/>
-        <div class="alert alert-info">
-          <div>I am an alert</div>
-          <div class="alert-close">&#215</div>
-        </div><br/>
-        <div class="alert alert-warning">
-          <div>I am an alert</div>
-          <div class="alert-close">&#215</div>
-        </div><br/>
-        <div class="alert alert-danger">
-          <div>I am an alert</div>
-          <div class="alert-close">&#215</div>
-        </div><br/>
-        <div class="alert alert-white">
-          <div>I am an alert</div>
-          <div class="alert-close">&#215</div>
-        </div><br/>
-        <div class="alert alert-black">
-          <div>I am an alert</div>
-          <div class="alert-close">&#215</div>
-        </div><br/>
-      </div><br/>
-      <div>
-        <hr/>
-        <h3>List</h3>
-        <hr/>
-        <pre class="prettyprint linenums lang-html">
+        <div>
+          <hr/>
+          <h3>List</h3>
+          <hr/>
+          <pre class="prettyprint linenums lang-html">
+            <ul class="list">
+              <li class="list-item">Item 1</li>
+              <li class="list-item">Item 2</li>
+            </ul></pre><br/>
           <ul class="list">
             <li class="list-item">Item 1</li>
             <li class="list-item">Item 2</li>
-          </ul></pre><br/>
-        <ul class="list">
-          <li class="list-item">Item 1</li>
-          <li class="list-item">Item 2</li>
-        </ul><br/>
-        <pre class="prettyprint linenums lang-html">
+          </ul><br/>
+          <pre class="prettyprint linenums lang-html">
+            <ul class="list">
+              <li class="list-item list-item-default">Item </li>
+              <li class="list-item list-item-primary">Item </li>
+              <li class="list-item list-item-success">Item </li>
+              <li class="list-item list-item-info">Item </li>
+              <li class="list-item list-item-warning">Item </li>
+              <li class="list-item list-item-danger">Item </li>
+              <li class="list-item list-item-white">Item </li>
+              <li class="list-item list-item-black">Item </li>
+            </ul></pre><br/>
           <ul class="list">
             <li class="list-item list-item-default">Item </li>
             <li class="list-item list-item-primary">Item </li>
@@ -2067,18 +2075,34 @@ q=/^(?:pre|code|xmp)$/i,g={};f()}},H=E.define;"function"===typeof H&&H.amd&&H("g
             <li class="list-item list-item-danger">Item </li>
             <li class="list-item list-item-white">Item </li>
             <li class="list-item list-item-black">Item </li>
-          </ul></pre><br/>
-        <ul class="list">
-          <li class="list-item list-item-default">Item </li>
-          <li class="list-item list-item-primary">Item </li>
-          <li class="list-item list-item-success">Item </li>
-          <li class="list-item list-item-info">Item </li>
-          <li class="list-item list-item-warning">Item </li>
-          <li class="list-item list-item-danger">Item </li>
-          <li class="list-item list-item-white">Item </li>
-          <li class="list-item list-item-black">Item </li>
-        </ul><br/>
-        <pre class="prettyprint linenums lang-html">
+          </ul><br/>
+          <pre class="prettyprint linenums lang-html">
+            <ul class="list">
+              <li class="list-item list-item-default">Item
+                <div class="badge badge-default"></div>
+              </li>
+              <li class="list-item list-item-primary">Item
+                <div class="badge badge-primary"></div>
+              </li>
+              <li class="list-item list-item-success">Item
+                <div class="badge badge-success"></div>
+              </li>
+              <li class="list-item list-item-info">Item
+                <div class="badge badge-info"></div>
+              </li>
+              <li class="list-item list-item-warning">Item
+                <div class="badge badge-warning"></div>
+              </li>
+              <li class="list-item list-item-danger">Item
+                <div class="badge badge-danger"></div>
+              </li>
+              <li class="list-item list-item-white">Item
+                <div class="badge badge-white"></div>
+              </li>
+              <li class="list-item list-item-black">Item
+                <div class="badge badge-black"></div>
+              </li>
+            </ul></pre><br/>
           <ul class="list">
             <li class="list-item list-item-default">Item
               <div class="badge badge-default"></div>
@@ -2104,34 +2128,16 @@ q=/^(?:pre|code|xmp)$/i,g={};f()}},H=E.define;"function"===typeof H&&H.amd&&H("g
             <li class="list-item list-item-black">Item
               <div class="badge badge-black"></div>
             </li>
-          </ul></pre><br/>
-        <ul class="list">
-          <li class="list-item list-item-default">Item
-            <div class="badge badge-default"></div>
-          </li>
-          <li class="list-item list-item-primary">Item
-            <div class="badge badge-primary"></div>
-          </li>
-          <li class="list-item list-item-success">Item
-            <div class="badge badge-success"></div>
-          </li>
-          <li class="list-item list-item-info">Item
-            <div class="badge badge-info"></div>
-          </li>
-          <li class="list-item list-item-warning">Item
-            <div class="badge badge-warning"></div>
-          </li>
-          <li class="list-item list-item-danger">Item
-            <div class="badge badge-danger"></div>
-          </li>
-          <li class="list-item list-item-white">Item
-            <div class="badge badge-white"></div>
-          </li>
-          <li class="list-item list-item-black">Item
-            <div class="badge badge-black"></div>
-          </li>
-        </ul><br/>
-        <pre class="prettyprint linenums lang-html">
+          </ul><br/>
+          <pre class="prettyprint linenums lang-html">
+            <ul class="list">
+              <li class="list-item">Item 1
+                <div class="badge badge-default">14</div>
+              </li>
+              <li class="list-item">Item 2
+                <div class="badge badge-default">3</div>
+              </li>
+            </ul></pre><br/>
           <ul class="list">
             <li class="list-item">Item 1
               <div class="badge badge-default">14</div>
@@ -2139,34 +2145,34 @@ q=/^(?:pre|code|xmp)$/i,g={};f()}},H=E.define;"function"===typeof H&&H.amd&&H("g
             <li class="list-item">Item 2
               <div class="badge badge-default">3</div>
             </li>
-          </ul></pre><br/>
-        <ul class="list">
-          <li class="list-item">Item 1
-            <div class="badge badge-default">14</div>
-          </li>
-          <li class="list-item">Item 2
-            <div class="badge badge-default">3</div>
-          </li>
-        </ul><br/>
-        <pre class="prettyprint linenums lang-html">
+          </ul><br/>
+          <pre class="prettyprint linenums lang-html">
+            <ul class="list">
+              <li class="list-item">
+                <div class="list-item-left">Left</div>
+                <div class="list-item-right">Right</div>
+              </li>
+            </ul></pre><br/>
           <ul class="list">
             <li class="list-item">
               <div class="list-item-left">Left</div>
               <div class="list-item-right">Right</div>
             </li>
-          </ul></pre><br/>
-        <ul class="list">
-          <li class="list-item">
-            <div class="list-item-left">Left</div>
-            <div class="list-item-right">Right</div>
-          </li>
-        </ul>
-      </div><br/>
-      <div>
-        <hr/>
-        <h3>Badge</h3>
-        <hr/>
-        <pre class="prettyprint linenums lang-html">
+          </ul>
+        </div><br/>
+        <div>
+          <hr/>
+          <h3>Badge</h3>
+          <hr/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="badge badge-default">default</div>
+            <div class="badge badge-primary">primary</div>
+            <div class="badge badge-success">success</div>
+            <div class="badge badge-info">info</div>
+            <div class="badge badge-warning">warning</div>
+            <div class="badge badge-danger">danger</div>
+            <div class="badge badge-white">white</div>
+            <div class="badge badge-black">black</div></pre><br/>
           <div class="badge badge-default">default</div>
           <div class="badge badge-primary">primary</div>
           <div class="badge badge-success">success</div>
@@ -2174,124 +2180,124 @@ q=/^(?:pre|code|xmp)$/i,g={};f()}},H=E.define;"function"===typeof H&&H.amd&&H("g
           <div class="badge badge-warning">warning</div>
           <div class="badge badge-danger">danger</div>
           <div class="badge badge-white">white</div>
-          <div class="badge badge-black">black</div></pre><br/>
-        <div class="badge badge-default">default</div>
-        <div class="badge badge-primary">primary</div>
-        <div class="badge badge-success">success</div>
-        <div class="badge badge-info">info</div>
-        <div class="badge badge-warning">warning</div>
-        <div class="badge badge-danger">danger</div>
-        <div class="badge badge-white">white</div>
-        <div class="badge badge-black">black</div><br/>
-        <pre class="prettyprint linenums lang-html">
-          <div class="badge border-default">default</div>
-          <div class="badge border-primary">primary</div>
-          <div class="badge border-success">success</div>
-          <div class="badge border-info">info</div>
-          <div class="badge border-warning">warning</div>
-          <div class="badge border-danger">danger</div>
-          <div class="badge border-white">white</div>
-          <div class="badge border-black">black</div></pre><br/>
-        <div class="badge border-default">default     </div>
-        <div class="badge border-primary">primary     </div>
-        <div class="badge border-success">success     </div>
-        <div class="badge border-info">info     </div>
-        <div class="badge border-warning">warning     </div>
-        <div class="badge border-danger">danger     </div>
-        <div class="badge border-white">white     </div>
-        <div class="badge border-black">black     </div>
-      </div><br/>
-      <div>
-        <hr/>
-        <h3>Panel</h3>
-        <hr/>
-        <pre class="prettyprint linenums lang-html">
+          <div class="badge badge-black">black</div><br/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="badge border-default">default</div>
+            <div class="badge border-primary">primary</div>
+            <div class="badge border-success">success</div>
+            <div class="badge border-info">info</div>
+            <div class="badge border-warning">warning</div>
+            <div class="badge border-danger">danger</div>
+            <div class="badge border-white">white</div>
+            <div class="badge border-black">black</div></pre><br/>
+          <div class="badge border-default">default     </div>
+          <div class="badge border-primary">primary     </div>
+          <div class="badge border-success">success     </div>
+          <div class="badge border-info">info     </div>
+          <div class="badge border-warning">warning     </div>
+          <div class="badge border-danger">danger     </div>
+          <div class="badge border-white">white     </div>
+          <div class="badge border-black">black     </div>
+        </div><br/>
+        <div>
+          <hr/>
+          <h3>Panel</h3>
+          <hr/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="panel panel-default">
+              <div class="panel-header">header</div>
+              <div class="panel-body">body</div>
+              <div class="panel-footer">footer</div>
+            </div>
+            <div class="panel panel-primary">
+              <div class="panel-header">header</div>
+              <div class="panel-body">body</div>
+              <div class="panel-footer">footer</div>
+            </div>
+            <div class="panel panel-success">
+              <div class="panel-header">header</div>
+              <div class="panel-body">body</div>
+              <div class="panel-footer">footer</div>
+            </div>
+            <div class="panel panel-info">
+              <div class="panel-header">header</div>
+              <div class="panel-body">body</div>
+              <div class="panel-footer">footer</div>
+            </div>
+            <div class="panel panel-warning">
+              <div class="panel-header">header</div>
+              <div class="panel-body">body</div>
+              <div class="panel-footer">footer</div>
+            </div>
+            <div class="panel panel-danger">
+              <div class="panel-header">header</div>
+              <div class="panel-body">body</div>
+              <div class="panel-footer">footer</div>
+            </div>
+            <div class="panel panel-white">
+              <div class="panel-header">header</div>
+              <div class="panel-body">body</div>
+              <div class="panel-footer">footer</div>
+            </div>
+            <div class="panel panel-black">
+              <div class="panel-header">header</div>
+              <div class="panel-body">body</div>
+              <div class="panel-footer">footer</div>
+            </div></pre><br/>
           <div class="panel panel-default">
             <div class="panel-header">header</div>
             <div class="panel-body">body</div>
             <div class="panel-footer">footer</div>
-          </div>
+          </div><br/>
           <div class="panel panel-primary">
             <div class="panel-header">header</div>
             <div class="panel-body">body</div>
             <div class="panel-footer">footer</div>
-          </div>
+          </div><br/>
           <div class="panel panel-success">
             <div class="panel-header">header</div>
             <div class="panel-body">body</div>
             <div class="panel-footer">footer</div>
-          </div>
+          </div><br/>
           <div class="panel panel-info">
             <div class="panel-header">header</div>
             <div class="panel-body">body</div>
             <div class="panel-footer">footer</div>
-          </div>
+          </div><br/>
           <div class="panel panel-warning">
             <div class="panel-header">header</div>
             <div class="panel-body">body</div>
             <div class="panel-footer">footer</div>
-          </div>
+          </div><br/>
           <div class="panel panel-danger">
             <div class="panel-header">header</div>
             <div class="panel-body">body</div>
             <div class="panel-footer">footer</div>
-          </div>
+          </div><br/>
           <div class="panel panel-white">
             <div class="panel-header">header</div>
             <div class="panel-body">body</div>
             <div class="panel-footer">footer</div>
-          </div>
+          </div><br/>
           <div class="panel panel-black">
             <div class="panel-header">header</div>
             <div class="panel-body">body</div>
             <div class="panel-footer">footer</div>
-          </div></pre><br/>
-        <div class="panel panel-default">
-          <div class="panel-header">header</div>
-          <div class="panel-body">body</div>
-          <div class="panel-footer">footer</div>
+          </div><br/>
         </div><br/>
-        <div class="panel panel-primary">
-          <div class="panel-header">header</div>
-          <div class="panel-body">body</div>
-          <div class="panel-footer">footer</div>
-        </div><br/>
-        <div class="panel panel-success">
-          <div class="panel-header">header</div>
-          <div class="panel-body">body</div>
-          <div class="panel-footer">footer</div>
-        </div><br/>
-        <div class="panel panel-info">
-          <div class="panel-header">header</div>
-          <div class="panel-body">body</div>
-          <div class="panel-footer">footer</div>
-        </div><br/>
-        <div class="panel panel-warning">
-          <div class="panel-header">header</div>
-          <div class="panel-body">body</div>
-          <div class="panel-footer">footer</div>
-        </div><br/>
-        <div class="panel panel-danger">
-          <div class="panel-header">header</div>
-          <div class="panel-body">body</div>
-          <div class="panel-footer">footer</div>
-        </div><br/>
-        <div class="panel panel-white">
-          <div class="panel-header">header</div>
-          <div class="panel-body">body</div>
-          <div class="panel-footer">footer</div>
-        </div><br/>
-        <div class="panel panel-black">
-          <div class="panel-header">header</div>
-          <div class="panel-body">body</div>
-          <div class="panel-footer">footer</div>
-        </div><br/>
-      </div><br/>
-      <div>
-        <hr/>
-        <h3>Callouts</h3>
-        <hr/>
-        <pre class="prettyprint linenums lang-html">
+        <div>
+          <hr/>
+          <h3>Callouts</h3>
+          <hr/>
+          <pre class="prettyprint linenums lang-html">
+            <div class="callout callout-default">I am a callout</div><br/>
+            <div class="callout callout-primary">I am a callout</div><br/>
+            <div class="callout callout-success">I am a callout</div><br/>
+            <div class="callout callout-info">I am a callout</div><br/>
+            <div class="callout callout-warning">I am a callout</div><br/>
+            <div class="callout callout-danger">I am a callout</div><br/>
+            <div class="callout callout-white">I am a callout</div><br/>
+            <div class="callout callout-black">I am a callout</div><br/></pre>
           <div class="callout callout-default">I am a callout</div><br/>
           <div class="callout callout-primary">I am a callout</div><br/>
           <div class="callout callout-success">I am a callout</div><br/>
@@ -2299,27 +2305,43 @@ q=/^(?:pre|code|xmp)$/i,g={};f()}},H=E.define;"function"===typeof H&&H.amd&&H("g
           <div class="callout callout-warning">I am a callout</div><br/>
           <div class="callout callout-danger">I am a callout</div><br/>
           <div class="callout callout-white">I am a callout</div><br/>
-          <div class="callout callout-black">I am a callout</div><br/></pre>
-        <div class="callout callout-default">I am a callout</div><br/>
-        <div class="callout callout-primary">I am a callout</div><br/>
-        <div class="callout callout-success">I am a callout</div><br/>
-        <div class="callout callout-info">I am a callout</div><br/>
-        <div class="callout callout-warning">I am a callout</div><br/>
-        <div class="callout callout-danger">I am a callout</div><br/>
-        <div class="callout callout-white">I am a callout</div><br/>
-        <div class="callout callout-black">I am a callout</div><br/>
-      </div><br/>
-      <hr/>
-      <h3>Examples</h3>
-      <hr/><br/><br/><br/>
-      <hr/>
-      <h3>API Status</h3>
-      <hr/>
-      <pre class="prettyprint linenums lang-html">
+          <div class="callout callout-black">I am a callout</div><br/>
+        </div><br/>
+        <hr/>
+        <h3>Examples</h3>
+        <hr/><br/><br/><br/>
+        <hr/>
+        <h3>API Status</h3>
+        <hr/>
+        <pre class="prettyprint linenums lang-html">
+          <div style="position:relative;overflow:hidden"><img class="responsive" src="/psychic-ui/assets/travis.jpeg"/>
+            <div class="panel panel-black" style="position:absolute;bottom:0;height:40px;width:100%">
+              <h3 style="line-height:0px;display:inline-block">Travis CI</h3>
+              <button class="btn btn-primary" style="float:right;margin:0px;margin-right:30px">Subscribe to Updates</button>
+            </div>
+          </div><br/><br/>
+          <ul class="list">
+            <li class="list-item list-item-success">
+              <div class="list-item-left">All Systems Operational</div>
+              <div class="list-item-right"><small>Refreshed 45 minutes ago</small></div>
+            </li>
+          </ul><br/><br/>
+          <ul class="list">
+            <li class="list-item">
+              <div class="list-item-left">API</div>
+              <div class="list-item-right"><small class="text-success">Operational</small></div>
+            </li>
+            <li class="list-item">
+              <div class="list-item-left">Web App</div>
+              <div class="list-item-right"><small class="text-success">Operational</small></div>
+            </li>
+          </ul></pre><br/>
         <div style="position:relative;overflow:hidden"><img class="responsive" src="/psychic-ui/assets/travis.jpeg"/>
-          <div class="panel panel-black" style="position:absolute;bottom:0;height:40px;width:100%">
-            <h3 style="line-height:0px;display:inline-block">Travis CI</h3>
-            <button class="btn btn-primary" style="float:right;margin:0px;margin-right:30px">Subscribe to Updates</button>
+          <div class="panel panel-black" style="position:absolute;bottom:0;height:60px;width:100%">
+            <div class="panel-header">
+              <h3 style="line-height:0px;display:inline-block">Travis CI</h3>
+              <button class="btn btn-primary" style="float:right;margin:0px;margin-top: -5px">Subscribe to Updates</button>
+            </div>
           </div>
         </div><br/><br/>
         <ul class="list">
@@ -2337,35 +2359,65 @@ q=/^(?:pre|code|xmp)$/i,g={};f()}},H=E.define;"function"===typeof H&&H.amd&&H("g
             <div class="list-item-left">Web App</div>
             <div class="list-item-right"><small class="text-success">Operational</small></div>
           </li>
-        </ul></pre><br/>
-      <div style="position:relative;overflow:hidden"><img class="responsive" src="/psychic-ui/assets/travis.jpeg"/>
-        <div class="panel panel-black" style="position:absolute;bottom:0;height:60px;width:100%">
-          <div class="panel-header">
-            <h3 style="line-height:0px;display:inline-block">Travis CI</h3>
-            <button class="btn btn-primary" style="float:right;margin:0px;margin-top: -5px">Subscribe to Updates</button>
-          </div>
-        </div>
-      </div><br/><br/>
-      <ul class="list">
-        <li class="list-item list-item-success">
-          <div class="list-item-left">All Systems Operational</div>
-          <div class="list-item-right"><small>Refreshed 45 minutes ago</small></div>
-        </li>
-      </ul><br/><br/>
-      <ul class="list">
-        <li class="list-item">
-          <div class="list-item-left">API</div>
-          <div class="list-item-right"><small class="text-success">Operational</small></div>
-        </li>
-        <li class="list-item">
-          <div class="list-item-left">Web App</div>
-          <div class="list-item-right"><small class="text-success">Operational</small></div>
-        </li>
-      </ul><br/>
-      <hr/>
-      <h3>Chat</h3>
-      <hr/>
-      <pre class="prettyprint linenums lang-html">
+        </ul><br/>
+        <hr/>
+        <h3>Chat</h3>
+        <hr/>
+        <pre class="prettyprint linenums lang-html">
+          <div class="panel">
+            <div class="panel-header">
+              <div class="grid">
+                <div class="col-1-12">
+                  <div style="height:50px;width:50px;background-color:blue;display:inline-block"></div>
+                </div>
+                <div class="col-11-12">
+                  <h3>gabrielcsapo/Chatter <small>A simple chat server</small></h3>
+                </div>
+              </div>
+            </div>
+            <div class="panel-body">
+              <ul class="list">
+                <li class="list-item no-border">
+                  <div class="grid">
+                    <div class="col-1-12">
+                      <div style="height:50px;width:50px;background-color:blue;display:inline-block"></div>
+                    </div>
+                    <div class="col-11-12"> 
+                      <div class="grid">
+                        <div class="col-4-12 text-default">Gabriel Csapo @gabrielcsapo</div>
+                        <div class="col-8-12 text-right text-default">Apr 23 08:38</div>
+                      </div>
+                      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget urna eget ex pellentesque auctor. Fusce bibendum volutpat nunc, vitae mattis dolor viverra nec. Praesent mollis et nunc condimentum euismod. Suspendisse aliquam ut tellus at porta.</div>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-item no-border">
+                  <div class="grid">
+                    <div class="col-1-12">
+                      <div style="height:50px;width:50px;background-color:blue;display:inline-block"></div>
+                    </div>
+                    <div class="col-11-12"> 
+                      <div class="grid">
+                        <div class="col-4-12 text-default">Gabriel Csapo @gabrielcsapo</div>
+                        <div class="col-8-12 text-right text-default">Apr 23 08:38</div>
+                      </div>
+                      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget urna eget ex pellentesque auctor. Fusce bibendum volutpat nunc, vitae mattis dolor viverra nec. Praesent mollis et nunc condimentum euismod. Suspendisse aliquam ut tellus at porta.</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="panel-footer">
+              <div class="grid">
+                <div class="col-1-12">
+                  <div style="height:50px;width:50px;background-color:blue;display:inline-block"></div>
+                </div>
+                <div class="col-11-12">
+                  <input style="width:100%;height:50px" type="text" placeholder="Click here to type a chat message."/>
+                </div>
+              </div>
+            </div>
+          </div></pre><br/>
         <div class="panel">
           <div class="panel-header">
             <div class="grid">
@@ -2419,65 +2471,31 @@ q=/^(?:pre|code|xmp)$/i,g={};f()}},H=E.define;"function"===typeof H&&H.amd&&H("g
               </div>
             </div>
           </div>
-        </div></pre><br/>
-      <div class="panel">
-        <div class="panel-header">
-          <div class="grid">
-            <div class="col-1-12">
-              <div style="height:50px;width:50px;background-color:blue;display:inline-block"></div>
-            </div>
-            <div class="col-11-12">
-              <h3>gabrielcsapo/Chatter <small>A simple chat server</small></h3>
-            </div>
-          </div>
-        </div>
-        <div class="panel-body">
-          <ul class="list">
-            <li class="list-item no-border">
-              <div class="grid">
-                <div class="col-1-12">
-                  <div style="height:50px;width:50px;background-color:blue;display:inline-block"></div>
-                </div>
-                <div class="col-11-12"> 
-                  <div class="grid">
-                    <div class="col-4-12 text-default">Gabriel Csapo @gabrielcsapo</div>
-                    <div class="col-8-12 text-right text-default">Apr 23 08:38</div>
-                  </div>
-                  <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget urna eget ex pellentesque auctor. Fusce bibendum volutpat nunc, vitae mattis dolor viverra nec. Praesent mollis et nunc condimentum euismod. Suspendisse aliquam ut tellus at porta.</div>
+        </div><br/>
+        <hr/>
+        <h3>Cover</h3>
+        <hr/>
+        <pre class="prettyprint linenums lang-html">
+          <!-- this emulates the dom-->
+          <div style="height:500px;width:100%;background-color: #333;position:relative">
+            <div class="navbar navbar-center">
+              <div class="container">
+                <div class="navbar-title"><span class="text-white">Cover</span></div>
+                <div class="navbar-content">
+                  <div class="nav"><a class="text-white" href="#home" id="home">Home</a><a class="text-white" href="#blog" id="blog">Blog</a><a class="text-white" href="#contact" id="contact">Contact</a></div>
                 </div>
               </div>
-            </li>
-            <li class="list-item no-border">
-              <div class="grid">
-                <div class="col-1-12">
-                  <div style="height:50px;width:50px;background-color:blue;display:inline-block"></div>
-                </div>
-                <div class="col-11-12"> 
-                  <div class="grid">
-                    <div class="col-4-12 text-default">Gabriel Csapo @gabrielcsapo</div>
-                    <div class="col-8-12 text-right text-default">Apr 23 08:38</div>
-                  </div>
-                  <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget urna eget ex pellentesque auctor. Fusce bibendum volutpat nunc, vitae mattis dolor viverra nec. Praesent mollis et nunc condimentum euismod. Suspendisse aliquam ut tellus at porta.</div>
-                </div>
+            </div>
+            <div class="text-center" style="width:100%;position: absolute;top: 50%;transform: translateY(-50%)">
+              <h3 class="text-white">Hello</h3>
+              <div class="text-white">This is a cover template for psychic</div><br/><small class="text-white">Enjoy!</small>
+            </div>
+            <div class="navbar navbar-center" style="bottom:0;position:absolute">
+              <div class="container text-center">
+                <div class="text-white">Cover template for Psychic, by @gabrielcsapo</div>
               </div>
-            </li>
-          </ul>
-        </div>
-        <div class="panel-footer">
-          <div class="grid">
-            <div class="col-1-12">
-              <div style="height:50px;width:50px;background-color:blue;display:inline-block"></div>
             </div>
-            <div class="col-11-12">
-              <input style="width:100%;height:50px" type="text" placeholder="Click here to type a chat message."/>
-            </div>
-          </div>
-        </div>
-      </div><br/>
-      <hr/>
-      <h3>Cover</h3>
-      <hr/>
-      <pre class="prettyprint linenums lang-html">
+          </div></pre>
         <!-- this emulates the dom-->
         <div style="height:500px;width:100%;background-color: #333;position:relative">
           <div class="navbar navbar-center">
@@ -2497,32 +2515,14 @@ q=/^(?:pre|code|xmp)$/i,g={};f()}},H=E.define;"function"===typeof H&&H.amd&&H("g
               <div class="text-white">Cover template for Psychic, by @gabrielcsapo</div>
             </div>
           </div>
-        </div></pre>
-      <!-- this emulates the dom-->
-      <div style="height:500px;width:100%;background-color: #333;position:relative">
+        </div><br/><br/>
         <div class="navbar navbar-center">
-          <div class="container">
-            <div class="navbar-title"><span class="text-white">Cover</span></div>
-            <div class="navbar-content">
-              <div class="nav"><a class="text-white" href="#home" id="home">Home</a><a class="text-white" href="#blog" id="blog">Blog</a><a class="text-white" href="#contact" id="contact">Contact</a></div>
-            </div>
-          </div>
-        </div>
-        <div class="text-center" style="width:100%;position: absolute;top: 50%;transform: translateY(-50%)">
-          <h3 class="text-white">Hello</h3>
-          <div class="text-white">This is a cover template for psychic</div><br/><small class="text-white">Enjoy!</small>
-        </div>
-        <div class="navbar navbar-center" style="bottom:0;position:absolute">
           <div class="container text-center">
-            <div class="text-white">Cover template for Psychic, by @gabrielcsapo</div>
+            <div class="text-black">created with ♥ by<a class="text-black" href="https://github.com/gabrielcsapo">@gabrielcsapo</a></div>
           </div>
-        </div>
-      </div><br/><br/>
-      <div class="navbar navbar-center">
-        <div class="container text-center">
-          <div class="text-black">created with ♥ by<a class="text-black" href="https://github.com/gabrielcsapo">@gabrielcsapo</a></div>
         </div>
       </div>
+      <div class="col-2-12"></div>
     </div>
   </body>
 </html>
