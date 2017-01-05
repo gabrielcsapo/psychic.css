@@ -68,7 +68,7 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    'docs/index.html': 'src/examples/index.pug',
+                    'docs/index.html': 'src/docs/index.pug',
                 }
             },
             cosmo: {
@@ -84,7 +84,7 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    'docs/cosmo.html': 'src/examples/index.pug',
+                    'docs/cosmo.html': 'src/docs/index.pug',
                 }
             },
             cyborg: {
@@ -100,7 +100,7 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    'docs/cyborg.html': 'src/examples/index.pug',
+                    'docs/cyborg.html': 'src/docs/index.pug',
                 }
             },
             paper: {
@@ -116,7 +116,7 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    'docs/paper.html': 'src/examples/index.pug',
+                    'docs/paper.html': 'src/docs/index.pug',
                 }
             },
             perisian: {
@@ -132,7 +132,7 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    'docs/perisian.html': 'src/examples/index.pug',
+                    'docs/perisian.html': 'src/docs/index.pug',
                 }
             }
         },

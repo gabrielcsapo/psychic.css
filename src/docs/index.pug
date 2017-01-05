@@ -23,6 +23,14 @@ html
                });
              }
              document.onreadystatechange = function () {
+                 if (/PhantomJS/.test(window.navigator.userAgent)) {
+                     var popovers = document.querySelectorAll('.popover');
+
+                     [].forEach.call(popovers, function(popover) {
+                       // do whatever
+                       popover.className += ' active';
+                     });
+                 }
                  if (document.readyState == "complete") {
                     var code = document.querySelectorAll('pre');
                     for (var i = code.length; i--;) {
