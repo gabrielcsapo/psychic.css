@@ -3,7 +3,9 @@
     position: relative
 
     &:hover .popover
-        display: block
+        visibility: visible;
+        -webkit-animation: fade-in .1s both;
+        animation: fade-in .1s both;
 
     &:hover .popover.right
         display: inline-block
@@ -12,80 +14,67 @@
         display: inline-block
 
   .popover
-    position: absolute
-    font-size: 12px
-    display: none
-    padding: 7px 10px
-    color: #fff
-    background-color: rgba(0,0,0,0.85)
-    border-radius: $popover['border-radius']
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        padding: 5px;
+        border-radius: 6px;
+
+        position: absolute;
+        z-index: 1;
+        border-radius: $popover['border-radius']
+
+        &:after
+            content: " ";
+            position: absolute;
+            border-width: 5px;
+            border-style: solid;
 
     &.top
-        bottom: 10px
-        width: 200px
-        z-index: 4
-        left: 50%
-        margin-right: -50%
-        transform: translate(-50%, -50%)
+        width: 120px;
+        bottom: 120%;
+        left: 50%;
+        margin-left: -60px;
 
-        &:before
-            border-top: 7px solid rgba(0,0,0,0.85)
-            border-right: 7px solid transparent
-            border-left: 7px solid transparent
-            bottom: -7px
-            content: ''
-            display: block
-            left: 50%
-            margin-left: -7px
-            position: absolute
+        &:after
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-color: black transparent transparent transparent;
 
     &.bottom
-        bottom: -50px
-        width: 200px
-        z-index: 4
-        left: 50%
-        margin-right: -50%
-        transform: translate(-50%, -50%)
+        width: 120px;
+        top: 120%;
+        left: 50%;
+        margin-left: -60px;
 
-        &:before
-            border-bottom: 7px solid rgba(0,0,0,0.85)
-            border-right: 7px solid transparent
-            border-left: 7px solid transparent
-            top: -7px
-            content: ''
-            display: block
-            left: 50%
-            margin-left: -7px
-            position: absolute
+        &:after
+            bottom: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-color: transparent transparent black transparent;
 
     &.right
-        margin-left: 10px
-        margin-top: -10px
+        top: -5px;
+        left: 130%;
 
-        &:before
-            border-right: 7px solid rgba(0,0,0,0.85)
-            border-top: 7px solid transparent
-            border-bottom: 7px solid transparent
-            content: ''
-            display: inline-block
-            left: -7px
-            margin-top: 7px
-            position: absolute
+        &:after
+            top: 50%;
+            right: 100%;
+            margin-top: -5px;
+            border-color: transparent black transparent transparent;
 
     &.left
-        margin-top: -10px
-        right: 115%
+        top: -5px;
+        right: 130%;
 
-        &:before
-            border-left: 7px solid rgba(0,0,0,0.85)
-            border-top: 7px solid transparent
-            border-bottom: 7px solid transparent
-            content: ''
-            display: inline-block
-            margin-top: 7px
-            right: -10%
-            position: absolute
-
+        &:after
+            top: 50%;
+            left: 100%;
+            margin-top: -5px;
+            border-color: transparent transparent transparent black;
 
 @-webkit-keyframes fade-in {
     from   { opacity: 0 }
@@ -99,16 +88,3 @@
     from   { opacity: 0 }
     to { opacity: 1 }
 }
-@-webkit-keyframes move-up {
-    from   { bottom: 30px }
-    to { bottom: 42px }
-}
-@-moz-keyframes move-up {
-    from   { bottom: 30px }
-    to { bottom: 42px }
-}
-@-ms-keyframes move-up {
-    from { bottom: 30px }
-    to { bottom: 42px }
-}
-

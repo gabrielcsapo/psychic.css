@@ -8,9 +8,9 @@
 
 
 > the working man's css framework
-- unminified-size: 56.11 KiB
-- minified-size: 47.83 KiB
-- gzipped-size: 9.61 KiB
+- unminified-size: 55.56 KiB
+- minified-size: 47.36 KiB
+- gzipped-size: 9.53 KiB
 
 # Usage
 
