@@ -7,7 +7,7 @@
 [![npm](https://img.shields.io/npm/dm/psychic-ui.svg)]()
 
 
-> the working man's css framework
+> the working person's css framework
 - unminified-size: 58.74 KiB
 - minified-size: 50.38 KiB
 - gzipped-size: 9.89 KiB
