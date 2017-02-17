@@ -31,13 +31,11 @@
 
                         > a
                             &:hover
-                              border: 0 !important
                               background-color: lighten($brands[$brand], 75%)
                               color: lightness($brands[$brand]) < $bright-border-lightness ? $brands[$brand] : darken(#ffffff, 25%)
 
                             &:target,
                             &.active
-                              border: 0 !important
                               background-color: darken($brands[$brand], 75%)
                               color: lightness($brands[$brand]) < $bright-border-lightness ? lighten($brands[$brand], 75%) : darken(#ffffff, 25%)
 
@@ -66,6 +64,9 @@
                     padding-right: 10px
                     padding-left: 10px
 
+                    &:hover, &:target, &:active
+                      border: 0 !important
+
     .navbar-title
         float: left
         display: inline-block
@@ -81,4 +82,3 @@
         float: right
         margin-left: 20px
         margin-top: 20px
-
