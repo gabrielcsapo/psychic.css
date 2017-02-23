@@ -1,0 +1,20 @@
+.panel
+    border: $panel['border-width'] solid $panel['border-color']
+    border-radius: $border-radius
+
+    for key, value in $brands
+        &.panel-{key}
+            border: $panel['border-width'] solid value
+
+            > .panel-heading, .panel-footer
+                background-color: value
+                color: lightness(value) < $bright-text-lightness ? #ffffff : #000000
+
+    > .panel-body, .panel-heading, .panel-footer
+        padding: $panel['padding']
+
+    > .panel-heading
+        top: 0
+
+    > .panel-footer
+        bottom: 0

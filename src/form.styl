@@ -1,0 +1,113 @@
+label
+    display: inline-block
+    margin-bottom: .5rem
+
+input, textarea, select
+  display: block
+  padding: .375rem 1% .375rem 1%
+  line-height: 1.5
+
+select
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50px' height='50px' fill='#adadad'><polyline points='46.139,15.518 25.166,36.49 4.193,15.519'/></svg>");
+  background-color: $brands['white']
+  border: 1px solid $brands['default']
+  background-repeat: no-repeat;
+  background-position: right 10px top 10px;
+  background-size: 16px 16px;
+  padding: 5px 30px 5px 15px;
+  width: auto;
+  text-align:center;
+  border-radius: $border-radius
+  appearance: none
+  -webkit-appearance: none
+  outline: 0
+
+  &:focus, &:active
+    outline:0
+
+  for $brand, value in $brands
+    &.input-{$brand}
+      border-color: lighten(value, 65%)
+
+input, textarea
+    width: 98%
+    margin: 0
+    padding: .375rem 1% .375rem 1%
+    background-color: $brands['white']
+    background-image: none
+    border: 1px solid $brands['default']
+    border-radius: .25rem
+
+    &:focus
+        border-color: $brands['primary']
+        outline: 0
+
+    for $brand, value in $brands
+        &.input-{$brand}
+            border-color: lighten(value, 65%)
+
+            &:focus
+                border-color: darken(value, 25%)
+
+.btn-group
+    margin: 10px
+    display: inline-block
+
+    > .btn
+        margin: -3px
+        border-radius: 0px
+
+        &:first-child
+            border-radius: $border-radius 0 0 $border-radius
+
+        &:last-child
+            border-radius: 0 $border-radius $border-radius 0
+
+.btn
+    padding: 12px 18px
+    margin: 10px
+    cursor: pointer
+    display: inline-block
+    text-align: center
+    background-color: white
+    border-radius: $border-radius
+    border: 1px solid $brands['default']
+    color: $colors['text']
+
+    &:hover
+      border-color:lighten($brands['default'], 15%)
+
+    &:active
+        opacity: .5
+
+    &:focus
+        outline: none
+
+    &.btn-block
+        width: 100%
+
+    for key, value in $brands
+        &.border-{key}
+            color: value
+
+            &:hover, &:active
+                border-color:lighten(value, 15%)
+
+            &:active
+                border-color: darken(value, 15%)
+                opacity: .5
+
+        &.btn-{key}
+            color: lightness(value) < $bright-text-lightness ? #ffffff : #000000
+            border: 1px solid darken(value, 15%)
+            background-color: value
+
+            &:hover, &:active
+                border-color:darken(value, 15%)
+
+            &:hover
+                background-color:lighten(value, 15%)
+
+            &:active
+                background-color: darken(value, 15%)
+                opacity: .5
