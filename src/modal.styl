@@ -1,0 +1,50 @@
+.modal
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background: rgba(50, 50, 50, 0.6)
+    z-index: 99999
+    opacity: 0
+    pointer-events: none
+
+    &.modal-active,
+    &.active,
+    &:target
+        opacity:1
+        pointer-events: auto
+
+    &.modal-absolute
+        position: absolute
+        z-index: 1
+
+        > div
+            position: absolute
+
+    > div
+        min-width: 400px
+        max-width: 90%
+        position: fixed
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        padding: 5px 20px 13px 20px
+        border-radius: 0
+        background: #fff
+
+    for $brand in $brands
+        &.modal-{$brand}
+
+            > div
+                border-left: 10px solid $brands[$brand]
+                color: lightness($brands[$brand]) < 50% ? darken($brands[$brand], 80%) : #000000
+
+.modal-close
+    line-height: 25px
+    position: absolute
+    right: 5px
+    text-align: center
+    top: 5px
+    width: 24px
+    text-decoration: none

@@ -6,34 +6,20 @@
 [![npm](https://img.shields.io/npm/dt/psychic-ui.svg)]()
 [![npm](https://img.shields.io/npm/dm/psychic-ui.svg)]()
 
+> A nuts and bolts approach to styling the web
 
-> the working person's css framework
-- unminified-size: 58.74 KiB
-- minified-size: 50.38 KiB
-- gzipped-size: 9.89 KiB
+| type | size |
+|------|------|
+| unminified| 40.72 KiB |
+| minified | 34.33 KiB |
+| gzipped | 7.33 KiB |
 
 # Usage
 
-> to include psychic-ui or themes in code references the `dist` directory
-
-> `node_modules/psychic-ui/dist/psychic.css`
-
-# Examples
-
-[Screenshots](/screenshots)
+> `require('psychic-ui/dist/psychic.css')`
 
 # Development
 
 ```
-grunt dev;
-open http://localhost:8000
-```
-
-# Contribution
-
-```
-grunt build;
-// to get new screenshot of docs
-// replace stats output in readme
-// commit like normal
+npm run dev
 ```
