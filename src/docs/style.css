@@ -1,0 +1,17 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.prettyprint .tag {
+    color: #779ECB
+}
+
+.prettyprint .pln {
+    color: #000
+}
+
+p[class^='background-'] {
+    min-height: 50px;
+    border-radius: 5px;
+    margin: 0;
+}

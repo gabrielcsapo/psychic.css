@@ -1,0 +1,33 @@
+.table
+    text-align: center
+    word-break: break-all
+
+    for $brand in $brands
+        &.table-{$brand}
+            border: none
+
+            thead > tr > th
+                color: $brands[$brand]
+
+            th, td
+                color: lighten($brands[$brand], 5%)
+                border-bottom: .1rem solid $brands[$brand]
+
+    thead > tr > th
+      font-weight: bold
+
+    tbody tr:last-child > th
+        border-bottom: 0;
+
+    tfoot td:empty
+        padding: 0
+
+    th, td
+        border-bottom: .1rem solid #e1e1e1;
+        text-align: left
+        padding: $table['padding']
+
+    &.responsive
+        border-collapse: collapse
+        border-spacing: 0
+        display: table

@@ -1,0 +1,43 @@
+.list
+    list-style: none
+    margin: 0
+    padding: 0
+
+    > .list-item
+        clear: both
+        min-height: 30px
+        height: auto
+        line-height: 30px
+        overflow: auto
+        padding: 10px
+        border: $list['border-width'] solid $list['border-color']
+        border-bottom: 0px solid transparent
+
+        > .badge
+            float: right
+            line-height: 20px;
+
+        for $brand in $brands
+            &.list-item-{$brand}
+                color: lightness($brands[$brand]) < $bright-text-lightness ? #ffffff : #000000
+                border-color: lighten($brands[$brand], 20%)
+                background-color: $brands[$brand]
+
+                & *
+                    color: lightness($brands[$brand]) < $bright-text-lightness ? #ffffff : #000000
+
+        &:only-child
+            border-radius: $list['border-radius'] !important
+
+        &:first-child
+            border-radius: $list['border-radius'] $list['border-radius'] 0px 0px
+
+        &:last-child
+            border-bottom: $list['border-width'] solid $list['border-color']
+            border-radius: 0px 0px $list['border-radius'] $list['border-radius']
+
+        > .list-item-right
+            float: right
+
+        > .list-item-left
+            float: left
