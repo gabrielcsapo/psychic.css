@@ -1,0 +1,20 @@
+.alert
+    padding: $alert['padding']
+    border-radius: $alert['border-radius']
+    border: $alert['border-width'] solid $alert['border-color']
+    position: relative
+
+    >.alert-close
+        font-size: 25px
+        line-height: 15px
+        position: absolute
+        right: 10px
+        top: 10px
+
+    for $brand in $brands
+        &.alert-{$brand}
+            background-color: $brands[$brand]
+            border: $alert['border-width'] solid darken($brands[$brand], 10%)
+
+            & *
+                color: lightness($brands[$brand]) < $bright-text-lightness ? #ffffff : #000000
