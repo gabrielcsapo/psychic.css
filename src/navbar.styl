@@ -1,8 +1,15 @@
+.navbar *
+    font-weight: 300
+
 .navbar
     position: relative
     min-height: 50px
     width: 100%
     display: table
+
+    &.navbar-fixed
+        position: fixed
+        z-index: 100000
 
     &.navbar-center
 
@@ -15,9 +22,14 @@
                 margin: 0
 
     for $brand in $brands
+        &.border-{$brand}
+            border-color: lighten($brands[$brand], 75%)
+
+
         &.navbar-{$brand},
         &.navbar-{$brand} *
             color: lightness($brands[$brand]) < $bright-text-lightness ? #ffffff : #000000
+            background-color: transparent
 
             > .container
                 background-color: $brands[$brand]
@@ -44,11 +56,12 @@
             margin-right: 20px;
             display: inline-block;
             margin-top: 0px
-            padding-top: 20px
-            padding-bottom: 20px
+
+            > *
+                display: inline-block;
+                text-decoration: none
 
             > a
-                text-decoration: none
                 padding-bottom: 22px
                 padding-top: 20px
                 padding-right: 10px
@@ -67,8 +80,3 @@
         > * > a
             color: black
             text-decoration: none
-
-    .navbar-content
-        float: right
-        margin-left: 20px
-        margin-top: 20px
