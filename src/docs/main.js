@@ -17,8 +17,6 @@ import Alert from './pages/alert';
 import Form from './pages/form';
 import Examples from './pages/examples';
 
-import Switcher from './components/switcher';
-
 class Main extends React.Component {
   constructor(props) {
     super(props);
@@ -38,8 +36,7 @@ class Main extends React.Component {
 
     return (
       <div>
-        <Switcher selected={this.changeBrand.bind(this)} brands={ brands } brand={ brand }/>
-        <Intro brand={ brand }/>
+        <Intro onChangeBrand={ this.changeBrand.bind(this) } brands={ brands } brand={ brand }/>
         <Colors brands={ brands } />
         <Typography brands={ brands } brand={ brand }/>
         <Grid brand={ brand }/>

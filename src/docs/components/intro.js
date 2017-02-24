@@ -1,16 +1,25 @@
 import React from 'react';
 
+import Switcher from './switcher';
+
 class Intro extends React.Component {
   render() {
-    const { brand } = this.props;
+    const { brand, brands, onChangeBrand } = this.props;
     const height = window.innerHeight;
+    const color = brand === 'white' ? 'black' : 'white';
 
     return (
-      <div className={ `background-${brand}` } style={{ "height": height,"width":"100%", "position":"relative" }}>
-        <div className="navbar navbar-center">
+      <div className={ `background-${brand}` } style={{ "height": height, "width":"100%", "position":"relative" }}>
+        <div className={ `navbar navbar-fixed navbar-${brand}` }>
           <div className="container">
-            <div className="navbar-title"><span className="text-white">psychic-ui</span></div>
-            <div className="navbar-content"></div>
+            <div className="navbar-title">
+                <span className={ `text-${color}` }>psychic-ui</span>
+            </div>
+            <div className="nav">
+                <div style={{ marginTop: '12.5px' }}>
+                    <Switcher selected={ onChangeBrand } brands={ brands } brand={ brand }/>
+                </div>
+            </div>
           </div>
         </div>
         <div className="text-center" style={{ "width":"100%", "position": "absolute", "top":"50%", "transform": "translateY(-50%)" }}>

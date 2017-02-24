@@ -47,6 +47,28 @@ class Navbar extends React.Component {
                 </div>
             </Example>
 
+            <Example summary={"Navbar with select"}>
+                <div className={ `navbar navbar-${brand}` }>
+                  <div className="container">
+                    <div className="navbar-title"><span>Title</span></div>
+                    <div className="nav">
+                        <a className="active" href="#blog">Blog</a>
+                        <a href="#about">About</a>
+                        <select>
+                            <option value="default"> default </option>
+                            <option value="primary"> primary </option>
+                            <option value="success"> success </option>
+                            <option value="info"> info </option>
+                            <option value="warning"> warning </option>
+                            <option value="danger"> danger </option>
+                            <option value="white"> white </option>
+                            <option value="black"> black </option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+            </Example>
+
           </div>
 
         </div>
