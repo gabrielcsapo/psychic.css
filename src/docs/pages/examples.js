@@ -18,7 +18,7 @@ class Examples extends React.Component {
                 <div style={{"position":"relative","overflow":"hidden"}}>
                     <div className="panel">
                         <div className="panel-body" style={{padding: 0}}>
-                          <img className="responsive" src="/assets/travis.jpeg"/>
+                          <img className="responsive" src="assets/travis.jpeg"/>
                         </div>
                         <div className="panel-footer" style={{"clear": "both", "display": "table", "width": "100%", "padding": "0px"}}>
                           <h3 style={{"float":"left", "paddingLeft": "10px"}}>Travis CI</h3>
