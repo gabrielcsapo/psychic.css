@@ -28,7 +28,6 @@
 
         &.navbar-{$brand},
         &.navbar-{$brand} *
-            color: lightness($brands[$brand]) < $bright-text-lightness ? #ffffff : #000000
             background-color: transparent
 
             > .container
@@ -41,7 +40,6 @@
                       &.active,
                       &:hover
                         background-color: lighten($brands[$brand], 75%)
-                        color: lightness($brands[$brand]) < $bright-border-lightness ? $brands[$brand] : darken(#ffffff, 25%)
 
     > .container
         clear: both
@@ -78,5 +76,4 @@
         font-weight: bold
 
         > * > a
-            color: black
             text-decoration: none

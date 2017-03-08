@@ -3,7 +3,7 @@ import Example from '../components/example';
 
 class Examples extends React.Component {
   render() {
-    const { brand } = this.props;
+    const { brand, alternate } = this.props;
     const height = window.innerHeight;
 
     return (
@@ -53,23 +53,23 @@ class Examples extends React.Component {
               <div className={ `background-${brand}` } style={{"height":"500px","width":"100%", "position":"relative"}}>
                   <div className="navbar navbar-center">
                       <div className="container">
-                          <div className="navbar-title"><span className="text-white">Cover</span></div>
+                          <div className="navbar-title"><span className={ `text-${alternate}` }>Cover</span></div>
                           <div className="nav">
-                            <a className="text-white" href="#home" id="home">Home</a>
-                            <a className="text-white" href="#blog" id="blog">Blog</a>
-                            <a className="text-white" href="#contact" id="contact">Contact</a>
+                            <a className={ `text-${alternate}` } href="#home" id="home">Home</a>
+                            <a className={ `text-${alternate}` } href="#blog" id="blog">Blog</a>
+                            <a className={ `text-${alternate}` } href="#contact" id="contact">Contact</a>
                           </div>
                       </div>
                   </div>
                   <div className="text-center" style={{"width":"100%","position":"absolute","top":"50%","transform":"translateY(-50%)"}}>
-                      <h3 className="text-white">Hello</h3>
-                      <div className="text-white">This is a cover template for psychic-ui</div>
+                      <h3 className={ `text-${alternate}` }>Hello</h3>
+                      <div className={ `text-${alternate}` }>This is a cover template for psychic-ui</div>
                       <br/>
-                      <small className="text-white">Enjoy!</small>
+                      <small className={ `text-${alternate}` }>Enjoy!</small>
                   </div>
                   <div className="navbar navbar-center" style={{"bottom":"0","position":"absolute"}}>
                       <div className="container text-center">
-                          <div className="text-white">Made with 🐒 by @gabrielcsapo</div>
+                          <div className={ `text-${alternate}` }>Made with 🐒 by @gabrielcsapo</div>
                       </div>
                   </div>
               </div>
