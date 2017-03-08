@@ -25,6 +25,9 @@ class Intro extends React.Component {
         <div className="text-center" style={{ "width":"100%", "position": "absolute", "top":"50%", "transform": "translateY(-50%)" }}>
           <h3 className="text-white">psychic-ui</h3>
           <br/>
+          <img style={{ "width": "50px", "height":"50px", "borderRadius": "50px"}} src="assets/psychic-ui.png"/>
+          <br/>
+          <br/>
           <div className="text-white">Lightweight and easy to use</div>
           <br/>
           <small className="text-white">A nuts and bolts approach to styling the web</small>
