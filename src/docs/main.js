@@ -24,7 +24,7 @@ class Main extends React.Component {
       brand: 'primary'
     }
   }
-  changeBrand(brand) {
+  changeBrand(brand, alternate) {
     this.setState({
       brand
     });
@@ -32,12 +32,23 @@ class Main extends React.Component {
 
   render() {
     const brands = ['white', 'black', 'default', 'primary', 'success', 'info', 'warning', 'danger'];
+    const alternates = {
+      'white': 'black',
+      'black': 'white',
+      'default': 'white',
+      'primary': 'white',
+      'success': 'white',
+      'info': 'white',
+      'warning': 'white',
+      'danger': 'white'
+    };
     const { brand } = this.state;
+    const alternate = alternates[brand];
 
     return (
       <div>
-        <Intro onChangeBrand={ this.changeBrand.bind(this) } brands={ brands } brand={ brand }/>
-        <Colors brands={ brands } />
+        <Intro onChangeBrand={ this.changeBrand.bind(this) } brands={ brands } brand={ brand } alternate={ alternate }/>
+        <Colors brands={ brands }/>
         <Typography brands={ brands } brand={ brand }/>
         <Grid brand={ brand }/>
         <Table brands={ brands } brand={ brand }/>
@@ -51,7 +62,7 @@ class Main extends React.Component {
         <Badge brands={ brands } brand={ brand }/>
         <Alert brands={ brands } brand={ brand }/>
         <Form brands={ brands } brand={ brand }/>
-        <Examples brand={ brand }/>
+        <Examples brand={ brand } alternate={ alternate }/>
       </div>
     );
   }
