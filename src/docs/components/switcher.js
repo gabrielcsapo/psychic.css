@@ -16,7 +16,7 @@ class Switcher extends React.Component {
     });
 
     return (
-        <select className={`border-${alternate} text-${alternate}`} style={{'display': 'inline-block' }} onChange={this.changeBrand.bind(this)}>
+        <select onChange={this.changeBrand.bind(this)}>
           { options }
         </select>
     );

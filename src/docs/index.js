@@ -1,7 +1,11 @@
 import { render } from 'react-dom';
+import React from 'react';
 
-import routes from './router';
+import Main from './main.js';
+import Layout from './layout.js';
 
 const mountNode = document.querySelector('#root');
 
-render(routes, mountNode);
+render(<Layout>
+  <Main/>
+</Layout>, mountNode);

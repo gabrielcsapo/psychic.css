@@ -49,19 +49,19 @@ class Main extends React.Component {
       <div>
         <Intro onChangeBrand={ this.changeBrand.bind(this) } brands={ brands } brand={ brand } alternate={ alternate }/>
         <Colors brands={ brands }/>
-        <Typography brands={ brands } brand={ brand }/>
-        <Grid brand={ brand }/>
-        <Table brands={ brands } brand={ brand }/>
-        <Spinner brands={ brands } brand={ brand }/>
-        <Progress brands={ brands } brand={ brand }/>
-        <Tooltip brands={ brands } brand={ brand }/>
-        <Panel brands={ brands } brand={ brand }/>
-        <Navbar brands={ brands } brand={ brand }/>
-        <Modal brands={ brands } brand={ brand }/>
-        <List brands={ brands } brand={ brand }/>
-        <Badge brands={ brands } brand={ brand }/>
-        <Alert brands={ brands } brand={ brand }/>
-        <Form brands={ brands } brand={ brand }/>
+        <Typography brands={ brands } brand={ brand } alternate={ alternate }/>
+        <Grid brand={ brand } alternate={ alternate }/>
+        <Table brands={ brands } brand={ brand } alternate={ alternate }/>
+        <Spinner brands={ brands } brand={ brand } alternate={ alternate }/>
+        <Progress brands={ brands } brand={ brand } alternate={ alternate }/>
+        <Tooltip brands={ brands } brand={ brand } alternate={ alternate }/>
+        <Panel brands={ brands } brand={ brand } alternate={ alternate }/>
+        <Navbar brands={ brands } brand={ brand } alternate={ alternate }/>
+        <Modal brands={ brands } brand={ brand } alternate={ alternate }/>
+        <List brands={ brands } brand={ brand } alternate={ alternate }/>
+        <Badge brands={ brands } brand={ brand } alternate={ alternate }/>
+        <Alert brands={ brands } brand={ brand } alternate={ alternate }/>
+        <Form brands={ brands } brand={ brand } alternate={ alternate }/>
         <Examples brand={ brand } alternate={ alternate }/>
       </div>
     );
