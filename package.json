@@ -1,6 +1,6 @@
 {
   "name": "psychic-ui",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A nuts and bolts approach to styling the web",
   "main": "index.js",
   "scripts": {
