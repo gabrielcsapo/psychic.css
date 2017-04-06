@@ -8,6 +8,8 @@
 
 > A nuts and bolts approach to styling the web
 
+<img src="./docs/assets/psychic-ui-logo.png" width="250"/>
+
 | type | size |
 |------|------|
 | unminified| 38.46 KiB |
