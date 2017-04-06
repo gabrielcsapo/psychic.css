@@ -10,9 +10,9 @@
 
 | type | size |
 |------|------|
-| unminified| 40.62 KiB |
-| minified | 34.69 KiB |
-| gzipped | 7.37 KiB |
+| unminified| 38.46 KiB |
+| minified | 32.60 KiB |
+| gzipped | 7.03 KiB |
 
 # Usage
 

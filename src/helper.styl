@@ -2,18 +2,18 @@ body
     margin: 0
 
 for $brand in $brands
-    .text-{$brand}
-        color: $brands[$brand]
+    .text-{$brand}, .text-{$brand} > *
+        color: $brands[$brand] !important
 
     .background-{$brand}
-        background-color: $brands[$brand]
+        background-color: $brands[$brand] !important
 
     .border-{$brand}
         border-color: $brands[$brand] !important
 
 .responsive
-    width:100%
-    height:auto
+    width: 100%
+    height: auto
 
 .text-right
     text-align: right
