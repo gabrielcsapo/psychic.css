@@ -3,7 +3,7 @@ import Example from '../components/example';
 
 class Navbar extends React.Component {
   render() {
-    const { brand } = this.props;
+    const { brand, alternate } = this.props;
     const height = window.innerHeight;
 
     return (
@@ -13,7 +13,7 @@ class Navbar extends React.Component {
           <h3> Navbar </h3>
           <div style={{ width: '50%', margin: '0 auto' }}>
             <Example summary={"Basic navbar"}>
-                <div className={ `navbar navbar-${brand}` }>
+                <div className={ `navbar navbar-${brand} text-${alternate}` }>
                   <div className="container">
                     <div className="navbar-title"><span>Title</span></div>
                   </div>
@@ -21,37 +21,59 @@ class Navbar extends React.Component {
             </Example>
 
             <Example summary={"Navbar with sub-navigation"}>
-                <div className={ `navbar navbar-${brand}` }>
+                <div className={ `navbar navbar-${brand} text-${alternate}` }>
                   <div className="container">
                     <div className="navbar-title"><span>Title</span></div>
-                    <div className="nav"><a href="#blog">Blog</a><a href="#about">About</a><a href="#store">Store</a></div>
+                    <div className={ `nav text-${alternate}` }><a href="#blog">Blog</a><a href="#about">About</a><a href="#store">Store</a></div>
                   </div>
                 </div>
             </Example>
 
             <Example summary={"Navbar with sub-navigation active"}>
-                <div className={ `navbar navbar-${brand}` }>
+                <div className={ `navbar navbar-${brand} text-${alternate}` }>
                   <div className="container">
                     <div className="navbar-title"><span>Title</span></div>
-                    <div className="nav"><a className="active" href="#blog">Blog</a><a href="#about">About</a><a href="#store">Store</a></div>
+                    <div className={ `nav text-${alternate}` }><a className="active" href="#blog">Blog</a><a href="#about">About</a><a href="#store">Store</a></div>
                   </div>
                 </div>
             </Example>
 
             <Example summary={"Navbar centered"}>
-                <div className={ `navbar navbar-center navbar-${brand}` }>
+                <div className={ `navbar navbar-center navbar-${brand} text-${alternate}` }>
                   <div className="container">
                     <div className="navbar-title"><span>Title</span></div>
-                    <div className="nav"><a href="#blog">Blog</a><a href="#about">About</a><a href="#store">Store</a></div>
+                    <div className={ `nav text-${alternate}` }><a href="#blog">Blog</a><a href="#about">About</a><a href="#store">Store</a></div>
+                  </div>
+                </div>
+            </Example>
+
+            <Example summary={"Navbar with border"}>
+                <div style={{ backgroundColor: '#909090', width: '100%', height: '200px' }}>
+                  <div className={ `navbar navbar-${brand} text-${alternate} border-${alternate}` }>
+                    <div className="container">
+                      <div className="navbar-title"><span>Title</span></div>
+                      <div className={ `nav text-${alternate}` }><a href="#blog">Blog</a><a href="#about">About</a><a href="#store">Store</a></div>
+                    </div>
+                  </div>
+                </div>
+            </Example>
+
+            <Example summary={"Navbar centered, with border"}>
+                <div style={{ backgroundColor: '#909090', width: '100%', height: '200px' }}>
+                  <div className={ `navbar navbar-center navbar-${brand} text-${alternate} border-${alternate}` }>
+                    <div className="container">
+                      <div className="navbar-title"><span>Title</span></div>
+                      <div className={ `nav text-${alternate}` }><a href="#blog">Blog</a><a href="#about">About</a><a href="#store">Store</a></div>
+                    </div>
                   </div>
                 </div>
             </Example>
 
             <Example summary={"Navbar with select"}>
-                <div className={ `navbar navbar-${brand}` }>
+                <div className={ `navbar navbar-${brand} text-${alternate}` }>
                   <div className="container">
                     <div className="navbar-title"><span>Title</span></div>
-                    <div className="nav">
+                    <div className={ `nav text-${alternate}` }>
                         <a className="active" href="#blog">Blog</a>
                         <a href="#about">About</a>
                         <select>

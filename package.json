@@ -1,11 +1,11 @@
 {
   "name": "psychic-ui",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "A nuts and bolts approach to styling the web",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "grunt && webpack"
+    "build": "grunt && webpack -p --progress"
   },
   "repository": {
     "type": "git",

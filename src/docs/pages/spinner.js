@@ -3,7 +3,7 @@ import Example from '../components/example';
 
 class Spinner extends React.Component {
   render() {
-    const { brand } = this.props;
+    const { brand, alternate } = this.props;
     const height = window.innerHeight;
 
     return (
@@ -29,7 +29,7 @@ class Spinner extends React.Component {
             <br/>
 
             <Example summary={"Spinner positioned absolutely"}>
-              <div className="spinner-overlay">
+              <div className={ `spinner-overlay background-${alternate}` } style={{ padding: '10px 0px 10px 0px' }}>
                 <div className="spinner-wrapper">
                   <div className={`spinner spinner-${brand}`}></div>
                 </div>
