@@ -1,13 +1,15 @@
 import React from 'react';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, BrowserRouter } from 'react-router-dom';
 
 import Main from './main.js';
 import Layout from './layout.js';
 
 export default (
-  <Router history={browserHistory}>
-    <Route component={Layout}>
-      <Route path="*" component={Main} />
-    </Route>
-  </Router>
+  <BrowserRouter>
+    <Route path="*" render={props => (
+        <Layout>
+            <Main/>
+        </Layout>
+    )}/>
+  </BrowserRouter>
 );
