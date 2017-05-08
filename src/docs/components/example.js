@@ -10,7 +10,7 @@ class Example extends React.Component {
 
   render() {
     const { children, summary } = this.props;
-    const escape = (h) => beautify_html(h).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const escape = (h) => beautify_html(h).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/ /g, '&nbsp;');
     const content = escape(ReactDOMServer.renderToStaticMarkup(children));
 
     return (
@@ -19,7 +19,7 @@ class Example extends React.Component {
         <small style={{ "display": "block", "paddingBottom": "10px", "marginBottom": "5px" }}>{ summary ? summary : ''}</small>
         { children }
         <br/>
-        <pre className="border-primary prettyprint lang-html" dangerouslySetInnerHTML={{ __html: content }} />
+        <pre style={{ 'white-space': 'pre-line' }} className="border-primary prettyprint lang-html" dangerouslySetInnerHTML={{ __html: content }} />
         <br/>
       </div>
     );
