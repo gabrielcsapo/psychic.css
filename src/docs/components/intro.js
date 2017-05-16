@@ -14,6 +14,7 @@ class Intro extends React.Component {
             <div className="navbar-title"><span>psychic-ui</span></div>
             <div className={ `nav text-${alternate}` }>
                 <Switcher selected={ onChangeBrand } alternate={ alternate } brands={ brands } brand={ brand }/>
+                <p style={{ marginLeft: "20px", marginRight: "5px" }}>|</p>
                 <a href="https://github.com/gabrielcsapo/psychic-ui"> Source </a>
             </div>
           </div>
