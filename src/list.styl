@@ -26,15 +26,15 @@
                 & *
                     color: lightness($brands[$brand]) < $bright-text-lightness ? #ffffff : #000000
 
-        &:only-child
-            border-radius: $list['border-radius'] !important
-
         &:first-child
             border-radius: $list['border-radius'] $list['border-radius'] 0px 0px
 
         &:last-child
             border-bottom: $list['border-width'] solid $list['border-color']
             border-radius: 0px 0px $list['border-radius'] $list['border-radius']
+
+        &:only-child
+            border-radius: $list['border-radius']
 
         > .list-item-right
             float: right
