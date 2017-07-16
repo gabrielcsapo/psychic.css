@@ -1,5 +1,7 @@
 # psychic-ui
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/gabrielcsapo/psychic-ui.svg)](https://greenkeeper.io/)
+
 [![Npm Version](https://img.shields.io/npm/v/psychic-ui.svg)](https://www.npmjs.com/package/psychic-ui)
 [![Dependency Status](https://david-dm.org/gabrielcsapo/psychic-ui.svg)](https://david-dm.org/gabrielcsapo/psychic-ui)
 [![devDependency Status](https://david-dm.org/gabrielcsapo/psychic-ui/dev-status.svg)](https://david-dm.org/gabrielcsapo/psychic-ui#info=devDependencies)
