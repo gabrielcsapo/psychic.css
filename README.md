@@ -6,22 +6,12 @@
 [![npm](https://img.shields.io/npm/dt/psychic-ui.svg)]()
 [![npm](https://img.shields.io/npm/dm/psychic-ui.svg)]()
 
-> A nuts and bolts approach to styling the web
+> ❓ A nuts and bolts approach to styling the web
 
-<img src="./docs/assets/psychic-ui-logo.png" width="250"/>
+<p align="center">
+  <img src="./docs/assets/psychic-ui-logo.png" width="250"/>
+</p>
 
-| type | size |
-|------|------|
-| unminified| 38.78 KiB |
-| minified | 32.70 KiB |
-| gzipped | 7.07 KiB |
+# Learn more
 
-# Usage
-
-> `require('psychic-ui/dist/psychic.css')`
-
-# Development
-
-```
-npm run dev
-```
+http://www.gabrielcsapo.com/psychic-ui/

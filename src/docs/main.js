@@ -44,7 +44,7 @@ class Main extends React.Component {
     };
     const { brand } = this.state;
     const alternate = alternates[brand];
-
+    console.log(alternate);
     return (
       <div>
         <Intro onChangeBrand={ this.changeBrand.bind(this) } brands={ brands } brand={ brand } alternate={ alternate }/>

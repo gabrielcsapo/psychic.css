@@ -28,6 +28,13 @@ class Intro extends React.Component {
           <div>Lightweight and easy to use</div>
           <br/>
           <small>A nuts and bolts approach to styling the web</small>
+          <br/>
+          <br/>
+          <small>gzipped&nbsp;&nbsp;&nbsp;&nbsp;| 7.07 KiB </small>
+          <br/>
+          <small>minified&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 32.71 KiB</small>
+          <br/>
+          <small>unminified | 38.79 KiB</small>
         </div>
         <div className="navbar navbar-center" style={{ "bottom":"0", "position":"absolute" }}>
           <div className="container text-center">

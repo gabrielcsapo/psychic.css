@@ -57,6 +57,12 @@ class Typography extends React.Component {
                 </pre>
             </Example>
 
+            <Example summary="Code tag with word-wrap">
+                <pre className={`border-${brand}`}>
+                    <code> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rhoncus volutpat sapien, eget eleifend ipsum ornare eu. Suspendisse nec imperdiet mauris. Pellentesque congue porta arcu.</code>
+                </pre>
+            </Example>
+
             <Example summary="Basic pre tag">
               <pre className={`border-${brand}`}>Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</pre>
             </Example>
