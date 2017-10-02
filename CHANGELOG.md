@@ -1,3 +1,9 @@
+# Unreleased
+
+- bumps devDependencies
+- fixes bugs on doc page
+- fixes naming convention of dist assets
+
 # 1.0.8 (09/07/2017)
 
 - updates dev dependencies

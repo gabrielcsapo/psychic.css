@@ -13,23 +13,23 @@ module.exports = {
         path: path.resolve(__dirname + '/docs')
     },
     module: {
-        loaders: [{
-                test: /\.css$/,
-                loaders: ['style-loader', 'css-loader']
-            },
-            {
-                test: /\.styl$/,
-                loaders: ['style-loader', 'css-loader', 'stylus-loader']
-            },
-            {
-                test: /.jsx?$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/,
-                query: {
-                    presets: ['es2015', 'react']
-                }
-            }
-        ]
+      loaders: [{
+          test: /\.css$/,
+          loaders: ['style-loader', 'css-loader']
+        },
+        {
+          test: /\.styl$/,
+          loaders: ['style-loader', 'css-loader', 'stylus-loader']
+        },
+        {
+          test: /.jsx?$/,
+          loader: 'babel-loader',
+          exclude: /node_modules(?!\/tryitout)/,
+          query: {
+            presets: ['es2015', 'react']
+          }
+        }
+      ]
     },
     plugins: [
         new webpack.DefinePlugin({
@@ -38,13 +38,6 @@ module.exports = {
             }
         }),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.optimize.AggressiveMergingPlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            },
-            comments: false,
-            minimize: true
-        })
+        new webpack.optimize.AggressiveMergingPlugin()
     ]
 }

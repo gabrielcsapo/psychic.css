@@ -39,12 +39,12 @@ class Panel extends React.Component {
                       </thead>
                       <tbody>
                         <tr>
-                          <th>John</th>
-                          <th>Doe</th>
+                          <td>John</td>
+                          <td>Doe</td>
                         </tr>
                         <tr>
-                          <th>Jane</th>
-                          <th>Doe</th>
+                          <td>Jane</td>
+                          <td>Doe</td>
                         </tr>
                       </tbody>
                     </table>

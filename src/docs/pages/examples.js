@@ -55,9 +55,9 @@ class Examples extends React.Component {
                       <div className="container">
                           <div className="navbar-title"><span className={ `text-${alternate}` }>Cover</span></div>
                           <div className="nav">
-                            <a className={ `text-${alternate}` } href="#home" id="home">Home</a>
-                            <a className={ `text-${alternate}` } href="#blog" id="blog">Blog</a>
-                            <a className={ `text-${alternate}` } href="#contact" id="contact">Contact</a>
+                            <a className={ `text-${alternate} tooltip-bottom text-center` } data-tooltip="🏡" href="#home" id="home">Home</a>
+                            <a className={ `text-${alternate} tooltip-bottom text-center` } data-tooltip="📖" href="#blog" id="blog">Blog</a>
+                            <a className={ `text-${alternate} tooltip-bottom text-center` } data-tooltip="📞" href="#contact" id="contact">Contact</a>
                           </div>
                       </div>
                   </div>
@@ -65,7 +65,7 @@ class Examples extends React.Component {
                       <h3 className={ `text-${alternate}` }>Hello</h3>
                       <div className={ `text-${alternate}` }>This is a cover template for psychic-ui</div>
                       <br/>
-                      <small className={ `text-${alternate}` }>Enjoy!</small>
+                      <small className={ `text-${alternate} text-center` } data-tooltip="👋">Enjoy!</small>
                   </div>
                   <div className="navbar navbar-center" style={{"bottom":"0","position":"absolute"}}>
                       <div className="container text-center">

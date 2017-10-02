@@ -7,7 +7,6 @@ import 'code-prettify/src/prettify.js';
 
 class Layout extends React.Component {
   render () {
-    console.log(this);
     const { children } = this.props;
 
     return (
@@ -17,9 +16,5 @@ class Layout extends React.Component {
     );
   }
 }
-
-Layout.propTypes = {
-  children: React.PropTypes.object
-};
 
 export default Layout;

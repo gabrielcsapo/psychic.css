@@ -24,7 +24,7 @@ module.exports = function(grunt) {
             },
             target: {
                 files: {
-                    'dist/psychic-min.css': ['dist/psychic.css'],
+                    'dist/psychic.min.css': ['dist/psychic.css'],
                 }
             }
         },
@@ -35,8 +35,8 @@ module.exports = function(grunt) {
                 },
                 files: [{
                     expand: true,
-                    src: ['dist/psychic-min.css'],
-                    ext: '.css.gz'
+                    src: ['dist/psychic.min.css'],
+                    ext: '.min.css.gz'
                 }]
             }
         }
@@ -45,8 +45,8 @@ module.exports = function(grunt) {
     grunt.registerTask('stats', function() {
         var output = '| type | size |\n|------|------|\n'
         output += `| unminified| ${filesize(fs.statSync('dist/psychic.css')['size']).human()} |\n`;
-        output += `| minified | ${filesize(fs.statSync('dist/psychic-min.css')['size']).human()} |\n`;
-        output += `| gzipped | ${filesize(fs.statSync('dist/psychic-min.css.gz')['size']).human()} |\n`;
+        output += `| minified | ${filesize(fs.statSync('dist/psychic.min.css')['size']).human()} |\n`;
+        output += `| gzipped | ${filesize(fs.statSync('dist/psychic.min.css.gz')['size']).human()} |\n`;
         console.log(output);
     });
 
