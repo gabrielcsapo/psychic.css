@@ -11,7 +11,7 @@ class Modal extends React.Component {
         <div style={{padding: "50px"}}>
 
           <h3> Modal </h3>
-          <div style={{ width: '50%', margin: '0 auto' }}>
+          <div style={{  margin: '0 auto' }}>
 
             <Example summary={"Open a modal with a button click"}>
                 <div>

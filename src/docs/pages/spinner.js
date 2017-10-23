@@ -11,7 +11,7 @@ class Spinner extends React.Component {
         <div style={{padding: "50px"}}>
 
           <h3> Spinner </h3>
-          <div style={{ width: '50%', margin: '0 auto' }}>
+          <div style={{  margin: '0 auto' }}>
             <Example summary={"Spinner that is spinning"}>
               <div className="spinner-overlay">
                 <div className={`spinner spinner-${brand}`}></div>

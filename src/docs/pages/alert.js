@@ -11,7 +11,7 @@ class Alert extends React.Component {
         <div style={{padding: "50px"}}>
 
           <h3> Alert </h3>
-          <div style={{ width: '50%', margin: '0 auto' }}>
+          <div style={{  margin: '0 auto' }}>
 
             <Example summary={"Basic alert"}>
                 <div className={ `alert alert-${brand}` }>

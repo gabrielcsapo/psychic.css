@@ -11,7 +11,7 @@ class Navbar extends React.Component {
         <div style={{padding: "50px"}}>
 
           <h3> Navbar </h3>
-          <div style={{ width: '50%', margin: '0 auto' }}>
+          <div style={{  margin: '0 auto' }}>
             <Example summary={"Basic navbar"}>
                 <div className={ `navbar navbar-${brand} text-${alternate}` }>
                   <div className="container">

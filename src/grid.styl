@@ -1,39 +1,50 @@
-.grid
-    width: 100%
+.grid {
+	width: 100%;
 
-    &:after
-        clear: both
-        visibility: hidden
-        display: block
-        font-size: 0
-        content: ' '
-        height: 0
+	&:after {
+		clear: both;
+		visibility: hidden;
+		display: block;
+		font-size: 0;
+		content: ' ';
+		height: 0;
+	}
 
-    > * > *
-        word-wrap: break-word
-        
-    > div
-        float: left
-        box-sizing: border-box
-        min-height: 1px
+	> * > * {
+		word-wrap: break-word;
+	}
 
-    for $i in (0..$grid-columns)
-        > .col-{$i}-{$grid-columns}
-            if($i == 0)
-                display: none
-            else
-                width unit(($i / $grid-columns - $grid-gutter / 100 * 2) * 100, '%')
-                margin-left: unit($grid-gutter, '%')
-                margin-right: unit($grid-gutter, '%')
+	> div {
+		float: left;
+		box-sizing: border-box;
+		min-height: 1px;
+	}
 
-     for $name, $width in $breakpoints
-        @media screen and (min-width: $width)
-            for $i in (0..$grid-columns)
-                > .col-{$name}-{$i}-{$grid-columns}
-                    if($i == 0)
-                        display: none
-                    else
-                        width: floor((100% / $grid-columns) * $i, 4)
-                        margin-left: unit($grid-gutter, '%')
-                        margin-right: unit($grid-gutter, '%')
+	for $i in 0 .. $grid-columns {
+		> .col-{$i}-{$grid-columns} {
+			if ($i == 0) {
+				display: none;
+			} else {
+				width: unit((($i / $grid-columns) - ($grid-gutter / 100) * 2) * 100, '%');
+				margin-left: unit($grid-gutter, '%');
+				margin-right: unit($grid-gutter, '%');
+			}
+		}
+	}
 
+	for $name, $width in $breakpoints {
+		@media screen and (min-width: $width) {
+			for $i in 0 .. $grid-columns {
+				> .col-{$name}-{$i}-{$grid-columns} {
+					if ($i == 0) {
+						display: none;
+					} else {
+						width: floor(((100% / $grid-columns)) * $i, 4);
+						margin-left: unit($grid-gutter, '%');
+						margin-right: unit($grid-gutter, '%');
+					}
+				}
+			}
+		}
+	}
+}

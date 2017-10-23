@@ -11,7 +11,7 @@ class Table extends React.Component {
         <div style={{padding: "50px"}}>
 
           <h3> Table </h3>
-          <div style={{ width: '50%', margin: '0 auto' }}>
+          <div style={{  margin: '0 auto' }}>
             <Example>
                 <table className={ `table table-${brand} responsive` }>
                   <thead>

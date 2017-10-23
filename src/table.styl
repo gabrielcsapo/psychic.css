@@ -1,33 +1,34 @@
-.table
-    text-align: center
-    word-break: break-all
+.table {
+	text-align: center;
+	word-break: break-all;
+	border-collapse: collapse;
+	border-spacing: 0;
 
-    for $brand in $brands
-        &.table-{$brand}
-            border: none
+	for $brand in $brands {
+		&.table-{$brand} {
+			thead > tr > th {
+				color: $brands[$brand];
+			}
+		}
+	}
 
-            thead > tr > th
-                color: $brands[$brand]
+	thead > tr > th {
+		font-weight: 500;
+	}
 
-            th, td
-                color: lighten($brands[$brand], 5%)
-                border-bottom: .1rem solid $brands[$brand]
+	tfoot td:empty {
+		padding: 0;
+		border-bottom: 0;
+	}
 
-    thead > tr > th
-      font-weight: bold
+	th, td {
+		text-align: left;
+		font-weight: 100;
+		border: $table['border'];
+		padding: $table['padding'];
+	}
 
-    tbody tr:last-child > th
-        border-bottom: 0;
-
-    tfoot td:empty
-        padding: 0
-
-    th, td
-        border-bottom: .1rem solid #e1e1e1;
-        text-align: left
-        padding: $table['padding']
-
-    &.responsive
-        border-collapse: collapse
-        border-spacing: 0
-        display: table
+	&.responsive {
+		display: table;
+	}
+}

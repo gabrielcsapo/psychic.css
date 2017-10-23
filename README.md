@@ -1,17 +1,13 @@
-# psychic-ui
+# psychic.css
 
-[![Npm Version](https://img.shields.io/npm/v/psychic-ui.svg)](https://www.npmjs.com/package/psychic-ui)
-[![Dependency Status](https://david-dm.org/gabrielcsapo/psychic-ui.svg)](https://david-dm.org/gabrielcsapo/psychic-ui)
-[![devDependency Status](https://david-dm.org/gabrielcsapo/psychic-ui/dev-status.svg)](https://david-dm.org/gabrielcsapo/psychic-ui#info=devDependencies)
-[![npm](https://img.shields.io/npm/dt/psychic-ui.svg)]()
-[![npm](https://img.shields.io/npm/dm/psychic-ui.svg)]()
+> 🔮 already styled before you know it
 
-> ❓ A nuts and bolts approach to styling the web
+[![Npm Version](https://img.shields.io/npm/v/psychic.css.svg)](https://www.npmjs.com/package/psychic.css)
+[![Dependency Status](https://starbuck.gabrielcsapo.com/badge/github/gabrielcsapo/psychic.css/status.svg)](https://starbuck.gabrielcsapo.com/github/gabrielcsapo/psychic.css)
+[![devDependency Status](https://starbuck.gabrielcsapo.com/badge/github/gabrielcsapo/psychic.css/dev-status.svg)](https://starbuck.gabrielcsapo.com/github/gabrielcsapo/psychic.css#info=devDependencies)
+[![npm](https://img.shields.io/npm/dt/psychic.css.svg)]()
+[![npm](https://img.shields.io/npm/dm/psychic.css.svg)]()
 
 <p align="center">
-  <img src="./docs/assets/psychic-ui-logo.png" width="250"/>
+  <a style="font-size:10vh" href="https://www.gabrielcsapo.com/psychic.css/">🔮</a>
 </p>
-
-# Learn more
-
-http://www.gabrielcsapo.com/psychic-ui/

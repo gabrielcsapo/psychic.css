@@ -2,31 +2,33 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-    entry: __dirname + '/src/docs/index.js',
+    entry: {
+  		app: __dirname + '/src/docs/index.js',
+  		vendor: ['react', 'react-dom', 'react-router-dom'],
+  	},
     devServer: {
         contentBase: 'docs',
         hot: true,
         inline: true
     },
     output: {
-        filename: 'build.js',
+        filename: 'bundle.js',
         path: path.resolve(__dirname + '/docs')
     },
     module: {
-      loaders: [{
+      rules: [{
           test: /\.css$/,
-          loaders: ['style-loader', 'css-loader']
-        },
-        {
-          test: /\.styl$/,
-          loaders: ['style-loader', 'css-loader', 'stylus-loader']
+          use: [
+            'style-loader',
+            'css-loader'
+          ]
         },
         {
           test: /.jsx?$/,
           loader: 'babel-loader',
-          exclude: /node_modules(?!\/tryitout)/,
+          exclude: /node_modules/,
           query: {
-            presets: ['es2015', 'react']
+            presets: ['env', 'react']
           }
         }
       ]
@@ -38,6 +40,7 @@ module.exports = {
             }
         }),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.optimize.AggressiveMergingPlugin()
+        new webpack.optimize.AggressiveMergingPlugin(),
+        new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js' })
     ]
-}
+};

@@ -11,7 +11,7 @@ class List extends React.Component {
         <div style={{padding: "50px"}}>
 
           <h3> List </h3>
-          <div style={{ width: '50%', margin: '0 auto' }}>
+          <div style={{  margin: '0 auto' }}>
 
             <Example summary={"Basic list"}>
                 <ul className="list">

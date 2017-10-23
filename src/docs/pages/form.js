@@ -11,7 +11,7 @@ class Form extends React.Component {
         <div style={{padding: "50px"}}>
 
           <h3> Form </h3>
-          <div style={{ width: '50%', margin: '0 auto' }}>
+          <div style={{  margin: '0 auto' }}>
 
             <Example summary={"Text input"}>
                 <input className={ `input-${brand}` } type="text" placeholder="input"/>

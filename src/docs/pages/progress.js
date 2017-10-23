@@ -29,7 +29,7 @@ class Progress extends React.Component {
         <div style={{padding: "50px"}}>
 
           <h3> Progress </h3>
-          <div style={{ width: '50%', margin: '0 auto' }}>
+          <div style={{  margin: '0 auto' }}>
 
             <Example summary={"Progress bar that half-way filled"}>
                 <div className="progress">

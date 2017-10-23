@@ -21,7 +21,7 @@ class Grid extends React.Component {
         <div style={{padding: "50px"}}>
 
           <h3> Grid </h3>
-          <div style={{ width: '50%', margin: '0 auto' }}>
+          <div style={{  margin: '0 auto' }}>
             <div className="grid">
                 <div className="col-0-12">
                     <div className={ `background-${brand}` } style={ styles.cell }>0</div>

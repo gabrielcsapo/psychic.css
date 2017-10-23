@@ -1,20 +1,8 @@
-# Unreleased
+# 0.0.1 (10/23/2017)
 
-- bumps devDependencies
-- fixes bugs on doc page
-- fixes naming convention of dist assets
-
-# 1.0.8 (09/07/2017)
-
-- updates dev dependencies
-- fixes `code` tag to break contents instead of overflow
-
-# 1.0.7 (06/07/2017)
-
-- fixes ordering for `.list-item` class and removes the need for `!important`
-
-# 1.0.6
-
-- upgrades normalize
-- reduces the size of the bundle
-- fixes issue with select elements dropdown being mispositioned
+- renames psychic-ui to psychic.css
+- removes dependency on grunt
+- fixes table last th value to have a border, but no border on the tfoot
+- formats all styl files
+- sets a default font-size for navbar
+- reduces bundle size by 3KB 

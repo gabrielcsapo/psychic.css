@@ -11,7 +11,7 @@ class Panel extends React.Component {
         <div style={{padding: "50px"}}>
 
           <h3> Panel </h3>
-          <div style={{ width: '50%', margin: '0 auto' }}>
+          <div style={{  margin: '0 auto' }}>
             <Example summary={"Basic panel definition"}>
                 <div className={ `panel panel-${brand}` }>
                     <div className="panel-heading">Panel heading</div>

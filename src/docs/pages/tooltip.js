@@ -11,7 +11,7 @@ class Tooltip extends React.Component {
         <div style={{padding: "50px"}}>
 
           <h3> Tooltip </h3>
-          <div style={{ width: '50%', margin: '0 auto' }}>
+          <div style={{  margin: '0 auto' }}>
 
             <Example summary={"Tooltip basic directions"}>
                 <div>

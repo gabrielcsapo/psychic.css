@@ -1,5 +1,6 @@
 import React from 'react';
 
+import pkg from '../../../package.json';
 import Switcher from './switcher';
 
 class Intro extends React.Component {
@@ -11,38 +12,38 @@ class Intro extends React.Component {
       <div className={ `background-${brand} text-${alternate}` } style={{ "height": height, "width":"100%", "position":"relative" }}>
         <div className={ `navbar navbar-${brand} navbar-fixed text-${alternate}` }>
           <div className="container">
-            <div className="navbar-title"><span>psychic-ui</span></div>
+            <div className="navbar-title"><span>psychic.css</span></div>
             <div className={ `nav text-${alternate}` }>
                 <Switcher selected={ onChangeBrand } alternate={ alternate } brands={ brands } brand={ brand }/>
                 <p style={{ marginLeft: "20px", marginRight: "5px" }}>|</p>
-                <a href="https://github.com/gabrielcsapo/psychic-ui"> Source </a>
+                <a href="https://github.com/gabrielcsapo/psychic.css"> Source </a>
             </div>
           </div>
         </div>
         <div className="text-center" style={{ "width":"100%", "position": "absolute", "top":"50%", "transform": "translateY(-50%)" }}>
-          <h3>psychic-ui</h3>
-          <br/>
-          <img style={{ "backgroundColor": "rgb(77, 77, 77)", "width": "50px", "height":"50px", "borderRadius": "50px"}} src="assets/psychic-ui.png"/>
-          <br/>
-          <br/>
-          <div>Lightweight and easy to use</div>
-          <br/>
-          <small>A nuts and bolts approach to styling the web</small>
+          <h3> {pkg.name} </h3>
+          <small>{pkg.description}</small>
           <br/>
           <br/>
           <table className={ `table` } style={{ margin: "0 auto" }}>
+            <thead>
+              <tr>
+                <th>type</th>
+                <th>size</th>
+              </tr>
+            </thead>
             <tbody>
               <tr>
                 <td>gzipped</td>
-                <td>7.07 KiB</td>
+                <td>5.0K</td>
               </tr>
               <tr>
                 <td>minified</td>
-                <td>32.71 KiB</td>
+                <td>28K</td>
               </tr>
               <tr>
                 <td>unminified</td>
-                <td>38.79 KiB</td>
+                <td>35K</td>
               </tr>
             </tbody>
           </table>

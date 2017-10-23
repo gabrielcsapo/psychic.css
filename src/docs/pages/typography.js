@@ -22,8 +22,8 @@ class Typography extends React.Component {
 
           <h3> Text </h3>
           <br/>
-          <div style={{ width: "50%", "margin": "0 auto", "textAlign": "left"}}>
-            <h1 style={{ 'fontWeight': '100' }}> <i> Headings </i> </h1>
+          <div style={{ margin: "0 auto", textAlign: "left"}}>
+            <h1 style={{ fontWeight: '100' }}> <i> Headings </i> </h1>
 
             <span style={ styles.block }> <h1 style={ styles.inline }> Heading </h1> <small> h1 </small> </span>
             <span style={ styles.block }> <h2 style={ styles.inline }> Heading </h2> <small> h2 </small> </span>

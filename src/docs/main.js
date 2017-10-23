@@ -44,25 +44,32 @@ class Main extends React.Component {
     };
     const { brand } = this.state;
     const alternate = alternates[brand];
-    console.log(alternate);
+
+    const options = {
+      brands,
+      brand,
+      alternate,
+      width: '90%'
+    }
+
     return (
       <div>
-        <Intro onChangeBrand={ this.changeBrand.bind(this) } brands={ brands } brand={ brand } alternate={ alternate }/>
+        <Intro onChangeBrand={ this.changeBrand.bind(this) } {...options}/>
         <Colors brands={ brands }/>
-        <Typography brands={ brands } brand={ brand } alternate={ alternate }/>
-        <Grid brand={ brand } alternate={ alternate }/>
-        <Table brands={ brands } brand={ brand } alternate={ alternate }/>
-        <Spinner brands={ brands } brand={ brand } alternate={ alternate }/>
-        <Progress brands={ brands } brand={ brand } alternate={ alternate }/>
-        <Tooltip brands={ brands } brand={ brand } alternate={ alternate }/>
-        <Panel brands={ brands } brand={ brand } alternate={ alternate }/>
-        <Navbar brands={ brands } brand={ brand } alternate={ alternate }/>
-        <Modal brands={ brands } brand={ brand } alternate={ alternate }/>
-        <List brands={ brands } brand={ brand } alternate={ alternate }/>
-        <Badge brands={ brands } brand={ brand } alternate={ alternate }/>
-        <Alert brands={ brands } brand={ brand } alternate={ alternate }/>
-        <Form brands={ brands } brand={ brand } alternate={ alternate }/>
-        <Examples brand={ brand } alternate={ alternate }/>
+        <Typography {...options}/>
+        <Grid {...options}/>
+        <Table {...options}/>
+        <Spinner {...options}/>
+        <Progress {...options}/>
+        <Tooltip {...options}/>
+        <Panel {...options}/>
+        <Navbar {...options}/>
+        <Modal {...options}/>
+        <List {...options}/>
+        <Badge {...options}/>
+        <Alert {...options}/>
+        <Form {...options}/>
+        <Examples {...options}/>
       </div>
     );
   }

@@ -1,15 +1,19 @@
-.badge
-    display: table-cell
-    padding: $badge['padding']
-    border-radius: $badge['border-radius']
-    border: 1px solid $brands['default']
-    text-align: center
-    vertical-align: middle
+.badge {
+	display: table-cell;
+	padding: $badge['padding'];
+	border-radius: $badge['border-radius'];
+	border: 1px solid $brands['default'];
+	text-align: center;
+	vertical-align: middle;
 
-    for key, value in $brands
-        &.badge-{key}
-            background-color: value
-            color: lightness(value) < $bright-text-lightness ? #ffffff : #000000
+	for key, value in $brands {
+		&.badge-{key} {
+			background-color: value;
+			color: lightness(value) < $bright-text-lightness ? #ffffff : #000000;
+		}
 
-        &.border-{key}
-            color: lightness(value) < $bright-text-lightness ? value : #000000
+		&.border-{key} {
+			color: lightness(value) < $bright-text-lightness ? value : #000000;
+		}
+	}
+}

@@ -11,7 +11,7 @@ class Examples extends React.Component {
         <div style={{padding: "50px"}}>
 
           <h3> Example </h3>
-          <div style={{ width: '50%', margin: '0 auto' }}>
+          <div style={{  margin: '0 auto' }}>
 
             <Example summary={"A status page! A copy of the travis one!"}>
               <div>
