@@ -1580,7 +1580,6 @@ body {
   margin-top: -12px;
   margin-bottom: 0;
   border-top-color: transparent;
-  border-bottom-color: #000;
   border-bottom-color: rgba(51,51,51,0.9);
 }
 .tooltip-bottom:hover:before,

@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import './style.css';
 import '../../dist/psychic.min.css';
 import 'code-prettify/src/prettify.js';
 
-class Layout extends React.Component {
+class Layout extends Component {
   render () {
     const { children } = this.props;
 

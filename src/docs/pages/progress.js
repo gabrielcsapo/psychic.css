@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Example from '../components/example';
 
-class Progress extends React.Component {
+class Progress extends Component {
   constructor(props) {
     super(props);
     this.state = {

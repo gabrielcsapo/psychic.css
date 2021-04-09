@@ -9,5 +9,5 @@
 [![npm](https://img.shields.io/npm/dm/psychic.css.svg)]()
 
 <p align="center">
-  <a style="font-size:10vh" href="https://www.gabrielcsapo.com/psychic.css/">🔮</a>
+  <a style="font-size:10vh" href="https://www.gabrielcsapo.com/psychic.css/">See it in action here! 🔮</a>
 </p>
